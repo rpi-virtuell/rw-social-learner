@@ -1,0 +1,136 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Social Learner 1.0.4\n"
+"POT-Creation-Date: 2015-10-24 14:19+0800\n"
+"PO-Revision-Date: 2015-10-24 14:19+0800\n"
+"Last-Translator: BuddyBoss <support@buddyboss.com>\n"
+"Language-Team: BuddyBoss <support@buddyboss.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: buddypress/members/single/member-header.php:39
+msgid ", "
+msgstr ""
+
+#: buddypress/members/single/member-header.php:100
+msgid "Point"
+msgid_plural "Points"
+msgstr[0] ""
+msgstr[1] ""
+
+#: buddypress/members/single/member-header.php:107
+msgid "Following"
+msgstr ""
+
+#: buddypress/members/single/member-header.php:111
+msgid "Followers"
+msgstr ""
+
+#: buddypress/members/single/member-header.php:118
+msgid "Friends"
+msgstr ""
+
+#: comments.php:38
+msgid "Comments"
+msgstr ""
+
+#: comments.php:48
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:49
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:72
+msgid "Comment"
+msgstr ""
+
+#: functions.php:535
+msgid "See All"
+msgstr ""
+
+#: searchform-header.php:10
+msgid "Search for:"
+msgstr ""
+
+#: searchform-header.php:12 template-parts/header-middle-column.php:49
+msgid "Search"
+msgstr ""
+
+#: sidebar-buddypress.php:54
+msgid "Group Info"
+msgstr ""
+
+#: sidebar-buddypress.php:63
+msgid "Group Admins"
+msgstr ""
+
+#: sidebar-buddypress.php:72
+msgid "Group Mods"
+msgstr ""
+
+#: single.php:54
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: single.php:61
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/header-fluid-layout-column.php:12
+msgid "Menu"
+msgstr ""
+
+#: template-parts/header-profile.php:95
+msgid "Logout"
+msgstr ""
+
+#: template-parts/header-profile.php:114
+msgid "Register"
+msgstr ""
+
+#: template-parts/header-profile.php:117
+msgid "Login"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Social Learner 1.0.4"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.buddyboss.com/landing/promos-social/social-learner.php"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A Boss child theme for Sensei and LearnDash"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "BuddyBoss.com"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://buddyboss.com/"
+msgstr ""

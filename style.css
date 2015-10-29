@@ -1,0 +1,66 @@
+/*
+Theme Name:   Social Learner 1.0.4
+Theme URI: 	  http://www.buddyboss.com/landing/promos-social/social-learner.php
+Description:  A Boss child theme for Sensei and LearnDash
+Author:       BuddyBoss.com
+Author URI:   http://buddyboss.com/
+Template:     boss
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain:  social-learner
+Version:      1.0.4
+*/
+
+/*
+
+
+-- Updating --
+
+Before updating this theme, make sure to BACKUP any changes first.
+
+
+-- Stylesheet locations --
+
+Add your own customizations into /css/custom.css in this child theme.
+
+Parent styles are called from /buddyboss-inc/theme-functions.php in the 
+parent theme and are located in /boss/css/ in the parent theme.
+
+
+--- If you are editing CSS via the WordPress admin, do the following ---
+
+1. Install the plugin WP Editor: http://wordpress.org/plugins/wp-editor/
+2. Navigate to Appearance > Theme Editor in the WordPress admin.
+3. Navigate into the /css/ folder of this theme to edit custom.css.
+
+
+--- The styles are loaded in the following order ---
+
+-- PARENT THEME --
+
+1. buddyboss-slides.css 			Boss homepage slider
+2. main-global.css 					Global theme styles
+3. main-desktop.css 				Desktop-only theme styles
+4. main-mobile.css					Mobile-only theme styles
+
+-- CHILD THEME --
+
+5. main.css 						Social Learner theme styles
+6. custom.css 						Your own custom styles
+
+The later on a stylesheet is loaded, the higher precedent it gets.
+So for example, if you define a CSS element in custom.css that has already
+been defined in main-global.css, the version in custom.css will be used.
+
+Each stylesheet includes a table of contents to help you navigate
+through it. You will notice that many of them include a section with
+media queries. Media queries allow us to detect a browser's screen
+size, and load specific styles only if the screen is larger or smaller
+than that particular size. This allows us to define a large set of
+global styles, and then specific styles for phones, tablets,
+and desktops & laptops - just based on the predicted screen size
+of these devices. That's boss!
+
+
+*/

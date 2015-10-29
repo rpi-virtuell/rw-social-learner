@@ -1,0 +1,169 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Learner 0.0.1\n"
+"POT-Creation-Date: 2015-07-24 15:30+0530\n"
+"PO-Revision-Date: 2015-07-28 15:00-0400\n"
+"Language-Team: BuddyBoss <support@buddyboss.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: jean-pierre michaud <nexialys@yahoo.com>\n"
+"Language: fr_FR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:38
+msgid "Comments"
+msgstr "Commentaires"
+
+#: comments.php:48
+msgid "Comment navigation"
+msgstr "Commentaire sur la navigation"
+
+#: comments.php:49
+msgid "&larr; Older Comments"
+msgstr "&larr; Anciens commentaires"
+
+#: comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr "Nouveaux commentaires &rarr;"
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: comments.php:72
+msgid "Comment"
+msgstr "Commentaire"
+
+#: functions.php:401
+msgid "Social Learner Options"
+msgstr "Options Social Learner"
+
+#: functions.php:403
+msgid "These are additional options added by \"Social Learner child theme\"."
+msgstr "Voici les options additionnelles ajoutées par le thème enfant \"Social Learner\"."
+
+#: functions.php:415
+msgid "Active link color"
+msgstr "Couleur de lien actif"
+
+#: functions.php:430
+msgid "Sidebar BG"
+msgstr "Fond de barre latérale"
+
+#: functions.php:499
+msgid "See All"
+msgstr "Tout voir"
+
+#: header.php:55
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:84 searchform-header.php:12
+msgid "Search"
+msgstr "Rechercher"
+
+#: header.php:184
+msgid "My Sites"
+msgstr "Mes sites"
+
+#: header.php:188
+msgid "Network Admin"
+msgstr "Admin du réseau"
+
+#: header.php:192 header.php:214 header.php:233 header.php:248
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: header.php:193
+msgid "Sites"
+msgstr "Sites"
+
+#: header.php:194 header.php:215
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: header.php:195 header.php:216 header.php:241 header.php:256
+msgid "Themes"
+msgstr "Thèmes"
+
+#: header.php:196 header.php:217 header.php:240 header.php:255
+msgid "Plugins"
+msgstr "Extensions"
+
+#: header.php:237 header.php:252
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: header.php:238 header.php:253
+msgid "Widgets"
+msgstr "Widgets"
+
+#: header.php:239 header.php:254
+msgid "Menus"
+msgstr "Menus"
+
+#: header.php:280
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: header.php:296 header.php:411
+msgid "Register"
+msgstr "S'inscrire"
+
+#: header.php:299 header.php:414
+msgid "Login"
+msgstr "Se connecter"
+
+#: searchform-header.php:10
+msgid "Search for:"
+msgstr "Rechercher :"
+
+#: sidebar-buddypress.php:54
+msgid "Group Info"
+msgstr "Infos de Groupe"
+
+#: sidebar-buddypress.php:63
+msgid "Group Admins"
+msgstr "Groupe pour Admins"
+
+#: sidebar-buddypress.php:72
+msgid "Group Mods"
+msgstr "Groupe pour Mods"
+
+#: single.php:54
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuer la lecture %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: single.php:61
+msgid "Pages:"
+msgstr "Pages :"
+
+#: buddypress/members/single/member-header.php:37
+msgid ", "
+msgstr ","
+
+#: buddypress/members/single/member-header.php:92
+msgid "Point"
+msgid_plural "Points"
+msgstr[0] "Point"
+msgstr[1] "Points"
+
+#: buddypress/members/single/member-header.php:99
+msgid "Following"
+msgstr "Suivis"
+
+#: buddypress/members/single/member-header.php:103
+msgid "Followers"
+msgstr "Suiveurs"
+
+#: buddypress/members/single/member-header.php:110
+msgid "Friends"
+msgstr "Amis"
