@@ -25,6 +25,30 @@ function boss_child_theme_setup()
 }
 add_action( 'after_setup_theme', 'boss_child_theme_setup' );
 
+/**
+ * Add body class
+ * @param  array $classes 
+ * @return array $classes
+ */
+function social_learner_body_class( $classes ) {
+
+    $classes[] = 'social-learner';
+	return array_unique( $classes );
+}
+
+add_filter( 'body_class', 'social_learner_body_class' );
+
+/**
+* Set global orientation variable
+*/
+global $rtl;
+
+$rtl = false;
+
+if(is_rtl()){
+    $rtl = true; 
+}
+
 
 /**
  * Setup Social Learner's textdomain.
@@ -37,8 +61,6 @@ function boss_child_theme_languages() {
 }
 add_action( 'after_setup_theme', 'boss_child_theme_languages' );
 
-
-
 /**
  * Enqueues scripts and styles for child theme front-end.
  *
@@ -46,8 +68,13 @@ add_action( 'after_setup_theme', 'boss_child_theme_languages' );
  */
 add_action( 'wp_enqueue_scripts', 'boss_child_enqueue_styles', 9998 );
 function boss_child_enqueue_styles() {
-    wp_enqueue_script( 'child-js', get_stylesheet_directory_uri() . '/js/action.js', false, '1.0.2', false );
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.css', false, '1.0.2', 'all' );
+    global $rtl;
+    wp_enqueue_script( 'child-js', get_stylesheet_directory_uri() . '/js/action.js', false, '1.0.4', false );
+    if($rtl){
+        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.rtl.css', false, '1.0.4', 'all' );
+    } else {
+        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.css', false, '1.0.4', 'all' );
+    }
 }
 
 add_action( 'wp_enqueue_scripts', 'boss_child_enqueue_user_styles', 9999 );
@@ -61,50 +88,43 @@ function boss_child_enqueue_user_styles() {
  */
 
 add_filter( 'buddyboss_customizer_themes_preset', 'boss_edu_add_color_scheme' );
-function boss_edu_add_color_scheme($default_themes) {
-
-    $education = array(
-        /* below properties are for admin section */
-        'name'		=> 'Social Learner',//anything goes
-        'palette'	=> array( '#012243', '#00a6dc', '#ea6645', '#00a6dc' ),
-        /* below properties are to control the appearance of front end of site */
-        'rules'		=> array(
-            'boss_title_color' => '#ffffff',
-            /** Cover **/
-            'boss_cover_color'=> '#012243',
-             /** BuddyPanel **/
-            'boss_panel_logo_color'=> '#012243',
-            'boss_panel_color'=> '#012243',
-            'boss_panel_title_color'=> '#ffffff',
-            'boss_panel_icons_color'=> '#0e4362',
-            'boss_panel_open_icons_color'=> '#0e4362',
-             /** Layout **/         
-            'boss_layout_titlebar_bgcolor'=> '#fff',
-            'boss_layout_titlebar_color'=> '#8091a1',
-            'boss_layout_mobiletitlebar_bgcolor'=> '#012243',
-            'boss_layout_mobiletitlebar_color'=> '#fff',
-            'boss_layout_nobp_titlebar_bgcolor'=> '#012243', 
-            'boss_layout_nobp_titlebar_color'=> '#fff',
-            'boss_layout_nobp_titlebar_hover_color'=> '#ea6645',
-            'boss_layout_body_color'=> '#e3e9f0',
-            'boss_layout_footer_top_color'=> '#fff',
-            'boss_layout_footer_bottom_bgcolor'=> '#fff',
-            'boss_layout_footer_bottom_color'=> '#8091a1',
-             /** Text & Buttons **/       
-            'boss_links_pr_color'=> '#012243',
-            'boss_links_color'=> '#00a6dc',
-            'boss_slideshow_font_color'=> '#ffffff',
-            'boss_heading_font_color'=> '#012243',
-            'boss_body_font_color'=> '#012243',
-            /** Additional **/
-            'boss_edu_active_link_color'=> '#ea6645',
-            'boss_edu_sidebar_bg'=> '#cdd7e2',
-        ),
+function boss_edu_add_color_scheme($default_themes) {    
+    $education = array( 
+        'education' => array(
+            'alt'		 => 'Social Learner',
+            'img'		 => get_stylesheet_directory_uri() . '/images/social_learner.png',
+            'presets'	 => array(
+                'boss_title_color'						 => '#ffffff',
+                'boss_cover_color'						 => '#012243',
+                'boss_panel_logo_color'					 => '#545454',
+                'boss_panel_color'						 => '#012243',
+                'boss_panel_title_color'				 => '#ffffff',
+                'boss_panel_icons_color'				 => '#0e4362',
+                'boss_panel_open_icons_color'			 => '#0e4362',
+                'boss_layout_titlebar_bgcolor'			 => '#fff',
+                'boss_layout_titlebar_color'			 => '#8091a1',
+                'boss_layout_mobiletitlebar_bgcolor'	 => '#012243',
+                'boss_layout_mobiletitlebar_color'		 => '#fff',
+                'boss_layout_nobp_titlebar_bgcolor'		 => '#545454',
+                'boss_layout_nobp_titlebar_color'		 => '#fff',
+                'boss_layout_nobp_titlebar_hover_color'	 => '#ea6645',
+                'boss_layout_body_color'				 => '#e3e9f0',
+                'boss_layout_footer_top_color'			 => '#fff',
+                'boss_layout_footer_bottom_bgcolor'		 => '#fff',
+                'boss_layout_footer_bottom_color'		 => '#8091a1',
+                'boss_links_pr_color'					 => '#012243',
+                'boss_links_color'						 => '#00a6dc',
+                'boss_slideshow_font_color'				 => '#ffffff',
+                'boss_heading_font_color'				 => '#012243',
+                'boss_body_font_color'					 => '#012243',
+                'boss_admin_screen_background_color'	 => '#012243',
+                'boss_admin_screen_text_color'			 => '#ffffff',
+                'boss_admin_screen_button_color'		 => '#00a6dc',
+            )
+        )
     );
 
-    array_unshift($default_themes, $education);
-
-    return $default_themes;
+    return array_merge($education, $default_themes);
 
 }
 
@@ -116,9 +136,19 @@ function boss_edu_add_color_scheme($default_themes) {
 add_filter( 'boss_customizer_css', 'boss_edu_customizer_css' );
 
 function boss_edu_customizer_css($css) {
+    global $rtl;
     
-      $sidebar_color = esc_attr( get_option( 'boss_edu_sidebar_bg', '#cdd7e2' ) );
-      $active_link_color = esc_attr( get_option( 'boss_edu_active_link_color', '#ea6645' ) );
+    $big_logo_h		 = boss_logo_height( 'big' );
+    $small_logo_h	 = boss_logo_height( 'small' );
+    
+    $header_admin_class = '.right-col';
+    $header_menu_class = '.left-col';
+    if($rtl){
+        $header_admin_class = '.left-col';  
+        $header_menu_class = '.right-col';  
+    }
+      $sidebar_color = esc_attr( boss_get_option( 'boss_edu_sidebar_bg' ) );
+      $active_link_color = esc_attr( boss_get_option( 'boss_edu_active_link_color' ) );
     
       $css .= "
             #certificates_user_settings input[type=\"checkbox\"] +strong,
@@ -137,19 +167,19 @@ function boss_edu_customizer_css($css) {
             #post-entries a,
             .comments-area article header cite a,
             .course-inner h2 a,
-            .header-inner .left-col .header-navigation ul li a,
+            .header-inner {$header_menu_class} .header-navigation ul li a,
             h1, h2, h3, h4, h5, h6, body, p {
-                color: ". esc_attr( get_option( 'boss_heading_font_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
             }
             .widget_course_progress footer a.btn,
             .widget .my-account .button, .widget_course_teacher footer a.btn {
-                border-color: ". esc_attr( get_option( 'boss_heading_font_color' ) ) .";
+                border-color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
             }
             body #main-wrap {
-                background-color: ". esc_attr( get_option( 'boss_layout_body_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
             }
             .bp-avatar-nav ul.avatar-nav-items li.current {
-                border-bottom-color: ". esc_attr( get_option( 'boss_layout_body_color' ) ) .";
+                border-bottom-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
             }
             #secondary {
                 background-color: {$sidebar_color};
@@ -159,15 +189,15 @@ function boss_edu_customizer_css($css) {
             }
             .is-mobile.single-item.groups .page-right-sidebar,
             #primary {
-                background-color: ". esc_attr( get_option( 'boss_layout_body_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
             }
             .tablet .menu-panel #nav-menu > ul > li.dropdown > a:before, .tablet .menu-panel .bp_components ul li ul li.menupop.dropdown > a:before, body:not(.tablet) .menu-panel .screen-reader-shortcut:hover:before, body:not(.tablet) .menu-panel #nav-menu > ul > li:hover > a:before, body:not(.tablet) .menu-panel .bp_components ul li ul li.menupop:hover > a:before {
                 color: #fff;
             }
             .course-buttons .status.in-progress,
             .course-container a.button, .course-container a.button:visited, .course-container a.comment-reply-link, .course-container #commentform #submit, .course-container .submit, .course-container input[type=submit], .course-container input.button, .course-container button.button, .course a.button, .course a.button:visited, .course a.comment-reply-link, .course #commentform #submit, .course .submit, .course input[type=submit], .course input.button, .course button.button, .lesson a.button, .lesson a.button:visited, .lesson a.comment-reply-link, .lesson #commentform #submit, .lesson .submit, .lesson input[type=submit], .lesson input.button, .lesson button.button, .quiz a.button, .quiz a.button:visited, .quiz a.comment-reply-link, .quiz #commentform #submit, .quiz .submit, .quiz input[type=submit], .quiz input.button, .quiz button.button {
-                border-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
                 background-color: transparent;
             }
             .sensei-content .item-list-tabs ul li:hover, .sensei-content .item-list-tabs ul li.current,
@@ -176,14 +206,8 @@ function boss_edu_customizer_css($css) {
             #buddypress div#group-create-tabs ul > li,
             #buddypress div#group-create-tabs ul > li:first-child:not(:last-child),
             .quiz form ol#sensei-quiz-list li ul li.selected {
-                border-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
-            .woocommerce #respond input#submit, 
-            .woocommerce a.button, 
-            .woocommerce button.button, .woocommerce input.button,
-            .woocommerce #respond input#submit:hover, 
-            .woocommerce a.button:hover,
-            .woocommerce button.button, .woocommerce input.button:hover,
             .sensei-content .item-list-tabs ul li span,
             body:not(.tablet) .menu-panel #nav-menu > ul > li:hover, body:not(.tablet) .menu-panel ul li .menupop:hover,
             .menu-panel ul li a span,
@@ -195,11 +219,11 @@ function boss_edu_customizer_css($css) {
             .widget-area .widget.widget_course_progress .course-lessons-widgets > header,
             .course-header,
             #search-open {
-                background-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             body:not(.tablet) .menu-panel #nav-menu > ul > li:hover a span, body:not(.tablet) .menu-panel ul li .menupop:hover a span {
                 background-color: #fff;
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             nav.navigation.post-navigation .nav-links .nav-previous:before,
             nav.navigation.post-navigation .nav-links .nav-next:after,
@@ -225,18 +249,19 @@ function boss_edu_customizer_css($css) {
             #main .course .sensei-course-meta .course-author a,
             .course-inner h2 a:hover,
             .menu-toggle i {
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
-            .site-header .right-col,
+            .site-header {$header_admin_class},
             #search-open {
                 color: #fff;
             }
-            body,
-            .site-header .right-col,
+            body.is-desktop,
+            .site-header {$header_admin_class},
             .menu-panel, .menu-panel #nav-menu .sub-menu-wrap, 
             .bp_components ul li ul li.menupop .ab-sub-wrapper,
+            .is-desktop #mastlogo,
             #mastlogo {
-                background-color: ". esc_attr( get_option( 'boss_panel_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_panel_color' ) ) .";
             }
             .header-account-login a .name {
                 color: rgba(255,255,255,0.9);   
@@ -247,16 +272,16 @@ function boss_edu_customizer_css($css) {
             .widget-area .widget_course_teacher header span p,
             .header-account-login .user-link span.name:after,
             .header-notifications a.notification-link {
-                color: ". esc_attr( get_option( 'boss_layout_titlebar_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) .";
             }
             .mobile-site-title .colored,
             .site-title a .colored,
             section.entry span.course-lesson-count,
             .widget_course_progress .module.current header h2 a,
 .module .module-lessons ul li.current a, 
-            .header-inner .left-col .header-navigation ul li a:hover, 
-            .header-inner .left-col .header-navigation ul li.current-menu-item a, 
-            .header-inner .left-col .header-navigation ul li.current-page-item a {
+            .header-inner {$header_menu_class} .header-navigation ul li > a:hover, 
+            .header-inner {$header_menu_class} .header-navigation ul li.current-menu-item > a, 
+            .header-inner {$header_menu_class} .header-navigation ul li.current-page-item > a {
                 color: {$active_link_color};
             }
             #main .course .module-status, 
@@ -269,7 +294,7 @@ function boss_edu_customizer_css($css) {
             .widget_course_progress .module.current header h2 a:hover,
             .module .module-lessons ul li a:hover,
             #main .course .course-lessons-inner header h2 a:hover {
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             .lesson-status.complete, 
             .module .module-lessons ul li.completed a:before {
@@ -279,9 +304,9 @@ function boss_edu_customizer_css($css) {
             .widget_categories .cat-item i, 
             #wp-admin-bar-shortcode-secondary .alert, 
             .header-notifications a.notification-link span,
-            .header-navigation ul li a:hover:after, 
-            .header-navigation ul li.current-menu-item a:after, 
-            .header-navigation ul li.current-page-item a:after {
+            .header-navigation ul li > a:hover:after, 
+            .header-navigation ul li.current-menu-item > a:after, 
+            .header-navigation ul li.current-page-item > a:after {
                 background-color: {$active_link_color};
             }
             .widget_categories .cat-item i {
@@ -290,53 +315,59 @@ function boss_edu_customizer_css($css) {
             .page-template-page-no-buddypanel .header-account-login > a,
             .page-template-page-no-buddypanel .site-header #wp-admin-bar-shortcode-secondary .ab-icon:before,
             .page-template-page-no-buddypanel #wp-admin-bar-shortcode-secondary .thread-from a,
-            .page-template-page-no-buddypanel .header-inner .left-col .header-navigation ul li a,
-            .page-template-page-no-buddypanel .header-inner .left-col a {
-                color: " .esc_attr( get_option( 'boss_layout_nobp_titlebar_color' ) ) .";
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a,
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} a {
+                color: " .esc_attr( boss_get_option( 'boss_layout_nobp_titlebar_color' ) ) .";
             }
-            .page-template-page-no-buddypanel .header-inner .left-col .header-navigation ul li a:hover, 
-            .page-template-page-no-buddypanel .header-inner .left-col .header-navigation ul li.current-menu-item a, 
-            .page-template-page-no-buddypanel .header-inner .left-col .header-navigation ul li.current-page-item a {
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a:hover, 
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.current-menu-item a, 
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.current-page-item a {
                 color: {$active_link_color};
             }
             .page-template-page-no-buddypanel .header-notifications a.notification-link {
-                color: ". esc_attr( get_option( 'boss_layout_titlebar_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) .";
             }
             .page-template-page-no-buddypanel #masthead #searchsubmit {
-                color: ". esc_attr( get_option( 'boss_heading_font_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
             }
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.hideshow li a {
+                color: ". esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) .";
+            }
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.hideshow li a:hover,
             .course-inner .course-price del,
             .widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.current span,
             .page-template-page-no-buddypanel .header-account-login a:hover,
             .page-template-page-no-buddypanel .header-notifications .pop a:hover,
-            .page-template-page-no-buddypanel .header-inner .left-col .header-navigation ul li a:hover {
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a:hover {
                 color: {$active_link_color};
             } 
+            .header-account-login .pop .logout a,
             .is-mobile #buddypress div#subnav.item-list-tabs ul li.current a {
                 color: #fff;
             }
             
             .wpProQuiz_questionList input[type=\"checkbox\"] + strong, 
             .wpProQuiz_questionList input[type=\"radio\"] + strong {
-                color: ". esc_attr( get_option( 'boss_heading_font_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
             }
             .single-sfwd-lessons u + table td .button-primary,
             .wpProQuiz_button2,
             input[type=\"button\"]:not(.button-small).wpProQuiz_button,
             #sfwd-mark-complete input[type=\"submit\"],
             .sfwd-courses a.button {
-                border-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";                
+                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";                
             }
             .wpb_row .woocommerce ul.products li.product a img:hover {
-                border-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
+            .header-account-login .pop .logout a,
             body .wpb_gallery .wpb_flexslider .flex-control-paging .flex-active {
-                background-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             body .entry-content #students .vc_col-sm-3 a,
             body .entry-content #counters h3 {
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             .wpProQuiz_formFields input[type=\"radio\"]:checked+strong,
             .courses-quizes-results .percent,
@@ -350,7 +381,7 @@ function boss_edu_customizer_css($css) {
             .wpProQuiz_question_page,
             .learndash .in-progress:before,
             .learndash .notcompleted:before {
-                color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             .wpProQuiz_quiz_time,
             #learndash_profile dd.course_progress div.course_progress_blue,
@@ -359,22 +390,22 @@ function boss_edu_customizer_css($css) {
             .type-sfwd-courses .item-list-tabs ul li span,
             .single-sfwd-quiz dd.course_progress div.course_progress_blue,
             .wpProQuiz_time_limit .wpProQuiz_progress {
-                background-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             .type-sfwd-courses .item-list-tabs ul li:hover, .type-sfwd-courses .item-list-tabs ul li.current {
-                border-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             .wpProQuiz_questionList .wpProQuiz_questionListItem label.selected {
-                border-color: ". esc_attr( get_option( 'boss_links_color' ) ) .";
+                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
             }
             .quiz_title a:hover,
             #learndash_profile .learndash_profile_details b,
             .profile_edit_profile a:hover {
-                color: ". esc_attr( get_option( 'boss_heading_font_color' ) ) .";
+                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
             }
             .wpProQuiz_catName,
             span.wpProQuiz_catPercent {
-                background-color: ". esc_attr( get_option( 'boss_layout_body_color' ) ) .";
+                background-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
             }
             #course_navigation .topic_item a.current,
             #course_navigation .active .lesson a {
@@ -383,54 +414,63 @@ function boss_edu_customizer_css($css) {
             #learndash_profile .learndash_profile_heading.course_overview_heading {
                 background-color: {$sidebar_color};
             }
+            .header-navigation li.hideshow > ul, .header-navigation .sub-menu, body.activity:not(.bp-user) .item-list-tabs ul li, .logged-in .dir-form .item-list-tabs ul li, .dir-form .item-list-tabs ul li:last-child {
+                border-top: 2px solid ". esc_attr( boss_get_option( 'boss_links_color' ) ) ." !important;
+            } 
             ";
+    
+           if ( boss_get_option( 'mini_logo_switch' ) && boss_get_option( 'boss_small_logo', 'id' ) ) { 
+                $css .= "
+                /* .header-navigation > div > ul {
+                    line-height: ".$small_logo_h."px;
+                    height: ".$small_logo_h."px;
+                } */
+                #header-menu > ul > li {
+                    height: ".$small_logo_h."px;
+                    line-height: ".$small_logo_h."px;
+                }
+                ";
+           }   
+    
+           if ( boss_get_option( 'logo_switch' ) && boss_get_option( 'boss_logo', 'id' ) ) { 
+                $css .= "
+                /* .left-menu-open .header-navigation > div > ul {
+                    line-height: ".$big_logo_h."px;
+                    height: ".$big_logo_h."px;
+                } */
+                .left-menu-open #header-menu > ul > li {
+                    height: ".$big_logo_h."px;
+                    line-height: ".$big_logo_h."px;
+                }
+                ";
+           }
+    
     return $css;
+}
+
+add_filter('boss_default_color_sheme', 'boss_edu_default_color_scheme');
+/**
+ * Default color sheme
+ */
+function boss_edu_default_color_scheme($default){
+    return 'eductaion';
 }
 
 /**
  * Additional fields to customizer
  * 
  */
-function boss_edu_customize_register( $wp_customize ) {
-    
-    $wp_customize->add_section( 'boss_edu_color_section' , array(
-	    'title'       => __( 'Social Learner Options', 'social-learner' ),
-	    'priority'    => 99999,
-	    'description' => __( 'These are additional options added by "Social Learner child theme".', 'social-learner' )
-	) );
+add_filter('boss_filter_color_options', 'boss_edu_customize_register');
 
-		// Active link color
-		$wp_customize->add_setting( 'boss_edu_active_link_color', array(
-                'default'   		=> '#ea6645',
-		        'transport' 		=> 'postMessage',
-		        'sanitize_callback' => 'sanitize_hex_color',
-		        'capability'        => 'edit_theme_options',
-		        'type'           	=> 'option',
-		    ) );
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'boss_edu_active_link_color', array(
-			    'label'  	    	=> __( 'Active link color', 'social-learner' ),
-			    'section'    		=> 'boss_edu_color_section',
-			    'settings'  	 	=> 'boss_edu_active_link_color',
-			    'priority'  	  	=> 1
-			) ) );
+function boss_edu_customize_register( $array ) {
+    $additional = array(
+        array( 'slug' => 'boss_edu_color_section', 'desc' => 'Social Learner Options', 'type' => 'info' ),
+        array( 'slug' => 'boss_edu_active_link_color', 'title' => 'Active link color', 'subtitle' => 'Set the color for active links.', 'desc' => '', 'type' => 'color', 'default' => '#ea6645' ),
+        array( 'slug' => 'boss_edu_sidebar_bg', 'title' => 'Sidebar Background', 'subtitle' => 'Set the color for sidebar.', 'desc' => '', 'type' => 'color', 'default' => '#cdd7e2' )
+    );
     
-		// Sidebar Color
-		$wp_customize->add_setting( 'boss_edu_sidebar_bg', array(
-                'default'   		=> '#cdd7e2',
-		        'transport' 		=> 'postMessage',
-		        'sanitize_callback' => 'sanitize_hex_color',
-		        'capability'        => 'edit_theme_options',
-		        'type'           	=> 'option',
-		    ) );
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'boss_edu_sidebar_bg', array(
-			    'label'  	    	=> __( 'Sidebar BG', 'social-learner' ),
-			    'section'    		=> 'boss_edu_color_section',
-			    'settings'  	 	=> 'boss_edu_sidebar_bg',
-			    'priority'  	  	=> 2
-			) ) );
-       
+    return array_merge($array, $additional);
 }
-add_action( 'customize_register', 'boss_edu_customize_register' );
 
 /**
  * Output badges on profile
@@ -521,3 +561,26 @@ function boss_edu_profile_cover_sizes () {
     }
     return array('322'=>'Big', '200'=>'Small', 'none' => 'No photo');
 }
+
+/**
+ * Cart icon html
+ */
+
+function boss_edu_cart_icon_html() {
+
+	global $woocommerce;
+	if ( $woocommerce ) {
+		$cart_items = $woocommerce->cart->cart_contents_count; ?>
+
+		<div class="header-notifications cart">
+			<a class="cart-notification notification-link fa fa-shopping-cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">               
+				<?php if ( $cart_items ) { ?>
+							<span><?php echo $cart_items; ?></span>
+				<?php } ?>
+			</a>
+		</div>
+		<?php
+	}
+}
+
+include "rw_functions.php";

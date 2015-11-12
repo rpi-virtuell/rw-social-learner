@@ -168,3 +168,12 @@ function rw_bp_docs_set_the_doc_relatetd_group(){
 	<hr>
 	<?php
 }
+
+/**
+ * Enqueues scripts and styles for reliwerk front-end.
+ */
+add_action( 'wp_enqueue_scripts', 'rw_child_enqueue_styles', 9998 );
+function rw_child_enqueue_styles() {
+    wp_enqueue_script( 'reliwerk-js', get_stylesheet_directory_uri() . '/js/reliwerk.js', false, '1.0.4', false );
+    
+}

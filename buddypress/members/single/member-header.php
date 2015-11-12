@@ -12,10 +12,12 @@
 
 <?php
 	//output cover photo.
-	echo buddyboss_cover_photo("user",bp_displayed_user_id());
+    if ( boss_get_option( 'boss_layout_style' ) != 'boxed' ) {
+	   echo buddyboss_cover_photo("user",bp_displayed_user_id());
+    }
 ?>
 
-<?php $cover_class = 'big'; if(esc_attr( get_option( 'boss_cover_profile_size' ) ) == 200 ) { $cover_class = 'small'; } ?>
+<?php $cover_class = 'big'; if(esc_attr( boss_get_option( 'boss_cover_profile_size' ) ) == 200 ) { $cover_class = 'small'; } ?>
 
 <div id="item-header-cover" class="table <?php echo $cover_class; ?>">
     
@@ -37,13 +39,19 @@
                         <h1><?php echo bp_get_displayed_user_fullname(); ?></h1><span class="sep"><?php _e(', ','social-learner'); ?></span>
                         <h2 class="user-nicename">@<?php bp_displayed_user_username(); ?></h2>
 						<?php 
-						$address_field = get_option( 'boss_misc_profile_field_address' );
+						$address_field = boss_get_option( 'boss_misc_profile_field_address' );
 						if( $address_field ){
 							$address = bp_get_profile_field_data( array( 'field'=>$address_field ) );
 							if( $address ){
+								if(is_array($address)) {
+                                ?>
+                                <span class="location"><?php echo join( ', ', $address );?></span>
+                                <?php
+                                } else {
 								?>
 								<span class="location"><?php echo stripslashes( $address );?></span>
 								<?php 
+                                }
 							}
 						}
 						?>

@@ -1,128 +1,51 @@
-/*--------------------------------------------------------------
-INSTALLATION
---------------------------------------------------------------*/
+geändert
+=== Social Learner ===
+Contributors: BuddyBoss
+Requires at least: 3.8
+Tested up to: 4.3.1
+Version: 1.0.4
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-= From your WordPress dashboard =
+== Description ==
 
--Boss Theme-
+A child theme for the Boss theme, designed to be used in conjunction with our Boss for LearnDash and Boss for Sensei plugins.
 
-1. Go to 'Appearance > Themes'
-2. Click 'Add New'
-3. Upload Boss theme (as a ZIP file)
+== Installation ==
 
--Social Learner-
+1. Make sure BuddyPress and the Boss theme are activated.
+2. Visit 'Appearance > Themes'
+3. Click 'Add New'
+4. Upload the file 'social-learner.zip'
+5. Activate Social Learner from your Themes page.
 
-1. Go to 'Appearance > Themes'
-2. Click 'Add New'
-3. Upload Social Learner child theme (as a ZIP file)
-5. Activate Social Learner child theme
-6. Customize your website at 'Appearance > Customize'
-7. Have fun!
+== Changelog ==
 
-Instructions: http://www.buddyboss.com/tutorials/
-Support: http://www.buddyboss.com/support-forums/
-Release Notes: http://www.buddyboss.com/release-notes/
+= 1.0.4 =
+* Compatibility with Boss 2.0.0
+* New - Boxed layout option
+* New - Support for RTL (Right to Left) languages
+* Added modular header code for easier theme updates
+* Various CSS fixes
+* Added translation .POT file
+* Standard readme.txt format
 
+= 1.0.3 =
+* Added language files
+* Added French translations, credits to Jean-Pierre Michaud
+* Various CSS fixes
+* Fixed dropdown color
+* HTML tag is more Validator friendly
+* WooCommerce buttons migrated into Boss theme
+* WooCommerce cart icon added for logged-out users
+* Fixed layout with sidebar for mobile
 
-/*--------------------------------------------------------------
-CHANGELOG
-----------------------------------------------------------------
-/*--------------------------------------------------------------
-1.0.2 - July 10, 2015
---------------------------------------------------------------*/
+= 1.0.2 =
+* Compatibility with LearnDash
+* layout fixes
 
-FEATURES:
+= 1.0.1 =
+* Fixed error with BadgeOS not installed
 
-	Compatibility with LearnDash
-
-BUG FIXES:
-
-	layout fixes
-
-CHANGED FILES:
-
-	/buddypress/members/single/member-header.php
-	/css/main.css
-	functions.php
-	header.php
-	/js/action.js
-	readme.txt
-	single.php
-	style.css
-
-TESTED WITH:
-
-	-- WordPress --
-	WordPress 4.0, 4.1, 4.2+
-	BuddyPress 2.1, 2.2, 2.3+
-	bbPress 2.5+
-
-	-- Mobile --
-	iOS 6, 7
-	Android 4.1+ 
-	Windows Phone
-
-	-- Browsers --
-	Chrome
-	Safari
-	Firefox
-	Internet Explorer 9
-
-/*--------------------------------------------------------------
-1.0.1 - June 26, 2015
---------------------------------------------------------------*/
-
-BUG FIXES:
-
-	Fixed error with BadgeOS not installed
-
-CHANGED FILES:
-
-	functions.php
-	readme.txt
-	style.css
-
-TESTED WITH:
-
-	-- WordPress --
-	WordPress 4.0, 4.1, 4.2+
-	BuddyPress 2.1, 2.2, 2.3+
-	bbPress 2.5+
-
-	-- Mobile --
-	iOS 6, 7
-	Android 4.1+ 
-	Windows Phone
-
-	-- Browsers --
-	Chrome
-	Safari
-	Firefox
-	Internet Explorer 9
-
-/*--------------------------------------------------------------
-1.0.0 - June 23, 2015
---------------------------------------------------------------*/
-
-FEATURES:
-
-	Initial public release
-
-TESTED WITH:
-
-	-- WordPress --
-	WordPress 4.0, 4.1, 4.2+
-	BuddyPress 2.1, 2.2, 2.3+
-	bbPress 2.5+
-
-	-- Mobile --
-	iOS 6, 7
-	Android 4.1+ 
-	Windows Phone
-
-	-- Browsers --
-	Chrome
-	Safari
-	Firefox
-	Internet Explorer 9
-
+= 1.0.0 =
+* Initial public release
