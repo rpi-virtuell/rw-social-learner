@@ -4,6 +4,17 @@ Add your css here
 /*******
 * Fix Layout for BuddyPress Group Email Subscription
 *******/
-div.group-subscription-div{
+#primary div.group-subscription-div, div.group-subscription-div{
 	display:none;
+}
+/*******
+* Fix Layout Adminbar
+*******/
+
+ul#wp-admin-bar-top-secondary{
+	display:none;
+}
+#wpadminbar {
+    background: #144A63 none repeat scroll 0 0;
+	border-bottom:1px solid #999;
 }
