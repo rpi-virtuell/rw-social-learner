@@ -1,5 +1,4 @@
 ;( function( $, window, document, undefined ) {
-    
     var $window = $(window),
         $document = $(document);
     
@@ -16,6 +15,7 @@
         $('.group-subscription-options').remove();
 		$('div.group-subscription-div').css('display','block');
 		
+		
 		/***
 		* link course title to course start site
 		***/
@@ -26,6 +26,23 @@
 			$('.course-lessons-widgets h3 a').attr('href', courselink);
 			
 		}
+		//Security Question
+		$('div.security-question-section h4').html('Zur Sicherheit noch ein kleiner Test');
+		
+		
+		//Activity Veröffentlichungsbutton 
+		
+		function showActivtyPostButton(){
+			
+			$('#buddypress form#whats-new-form textarea').css('margin-bottom','-20px');
+			$('input#aw-whats-new-submit').val('Veröffentlichen');
+			$('div#whats-new-options').show();
+		
+		}
+		
+		$('#whats-new-textarea').on('click', showActivtyPostButton);
+		$('#whats-new').on('keyup', showActivtyPostButton);
+		$('#whats-new').on('change', showActivtyPostButton);
 		
     });
 }( jQuery, document, window ) );
