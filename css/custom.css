@@ -24,3 +24,68 @@ ul#wp-admin-bar-top-secondary{
    margin: 0 auto !important;
    max-width: 430px !important;
 }
+
+@media print { 
+	header, footer, button,
+	#page-right-sidebar, #mobile-header, #secondary,
+	form#switcher-form, #wpadminbar, #masthead, #item-nav,
+	#subnav ,#respond,#nav-menu,#left-panel, ul#menu-buddypanel,
+	#item-header-content,#mobile-menu,
+	.header-inner, .doc-permissions, .doc-tabs, .bp-menu, 
+	.buddyboss-wall-form-wrapper, .group-header-avatar,
+	.buddyboss-bp-legacy, .switch-icon, .edit-link{
+		display:none !important;
+	}
+	
+	header.entry-header, header.page-cover{
+		display:none !important;
+		
+	}
+	
+	header.page-cover{
+		display:block !important;
+	}
+	
+	header.page-cover .comments-link{
+		display:none !important;
+	}
+	
+	header.page-cover .post-date *{
+		font-weight:normal !important;
+	}
+	
+	* { 
+		color: black !important;
+		border: none !important;
+		margin: 0 !important;
+		padding:0 !important;
+		width:auto;
+		font-size: 12pt !important;
+		background:none !important;
+	}
+	h1,h2 {
+		font-size: 200% !important;
+		margin: 30pt 0 !important;
+		
+	}
+	h3 {
+		font-size: 150% !important;
+		margin: 15pt 0 !important;
+	}
+	
+	p, .doc-content div div{
+		margin: 10pt 0 !important;
+	}
+	img {
+		float: none;
+		margin: 15pt 15pt !important;
+	}
+	
+	header.page-cover .post-author a{
+		padding-right:15pt !important;
+	}
+	
+	body {
+		margin:30pt 0!important;
+	}
+}

@@ -177,3 +177,19 @@ function rw_child_enqueue_styles() {
     wp_enqueue_script( 'reliwerk-js', get_stylesheet_directory_uri() . '/js/reliwerk.js', false, '1.0.4', false );
     
 }
+
+// BuddyPress Honeypot
+function add_honeypot() {
+    echo '<div style="display: none;">';
+	echo '<input type="text" name="system55" id="system55" />';
+	echo '</div>';
+}
+add_action('bp_after_signup_profile_fields','add_honeypot');
+function check_honeypot() {
+    if (!empty($_POST['system55'])) {
+        global $bp;
+        wp_redirect(home_url());
+        exit;
+    }
+}
+add_filter('bp_core_validate_user_signup','check_honeypot');
