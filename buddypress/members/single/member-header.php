@@ -12,9 +12,9 @@
 
 <?php
 	//output cover photo.
-    if ( boss_get_option( 'boss_layout_style' ) != 'boxed' ) {
+//    if ( boss_get_option( 'boss_layout_style' ) != 'boxed' ) {
 	   echo buddyboss_cover_photo("user",bp_displayed_user_id());
-    }
+//    }
 ?>
 
 <?php $cover_class = 'big'; if(esc_attr( boss_get_option( 'boss_cover_profile_size' ) ) == 200 ) { $cover_class = 'small'; } ?>

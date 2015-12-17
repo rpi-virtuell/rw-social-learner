@@ -1,6 +1,6 @@
 <?php
 global $rtl;
-$boxed = boss_get_option( 'boss_layout_style' );
+$boxed	= 'fluid';
 
 if ( $boxed == 'boxed' ) {
     // <!-- Custom menu -->

@@ -13,12 +13,32 @@ This is the Global stylesheet, served to all devices.
     3.4 - Course Group Template
 4.0 - Sensei Extensions
     4.1 - Sensei Course Progress
-5.0 Media queries
+5.0 - Media queries
 */
 
 /* ----------------------------------------------------------------
 1.0 - Global
 ---------------------------------------------------------------- */
+#attached-media ul,
+.post.module .module-lessons ul,
+.module .module-description {
+    border-left: none;
+    border-right: none;
+}
+
+#attached-media ul {
+    border-bottom: none;
+}
+
+#attached-media h2, 
+#main .course .course-lessons-inner header, 
+#main .course .course-results-lessons header, 
+.module-archive #module_stats, 
+.single-course #main .course .post.module+.course-lessons>header, 
+.single-course .post.module>header {
+    border: none;
+}
+
 section.entry ul {
     list-style: disc;
     padding-left: 20px;
@@ -50,6 +70,15 @@ body #main-wrap {
     border-left: none;
     border-right: none;
 }
+/*
+.boxed .dir-page-entry .inner-padding, 
+.boxed .page-full-width, 
+.boxed .page-right-sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1170px;
+}
+*/
 #primary {
     border-right: none !important;
 }
@@ -317,6 +346,9 @@ body #titlebar-search #searchform {
     -moz-transition: all .15s ease-in-out;
     -o-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
+}
+.site-header li.hideshow ul li a:after {
+    display: none;
 }
 .header-account-login .user-link span.name {
     /* display: none; */

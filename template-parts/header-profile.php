@@ -1,6 +1,6 @@
 <?php
 global $rtl, $woocommerce;
-$boxed = boss_get_option( 'boss_layout_style' );
+$boxed	= 'fluid';
 ?>
 <div class="<?php echo ($rtl)?'left-col':'right-col'; ?><?php if($woocommerce) { echo ' woocommerce'; } ?>">
 
@@ -76,7 +76,7 @@ $boxed = boss_get_option( 'boss_layout_style' );
                     <!-- Dashboard links -->
                     <?php
                     if ( boss_get_option( 'boss_dashboard' ) && ( current_user_can( 'level_10' ) || bp_get_member_type( get_current_user_id() ) == 'teacher' || bp_get_member_type( get_current_user_id() ) == 'group_leader') ) :
-                        get_template_part( 'template-parts/dashboard-links' );
+                        get_template_part( 'template-parts/header-dashboard-links' );
                     endif;
                     ?>
 

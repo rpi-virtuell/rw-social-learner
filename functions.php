@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package Social Learner
  * The parent theme functions are located at /boss/buddyboss-inc/theme-functions.php
@@ -11,44 +10,45 @@
  *
  * @since Social Learner 1.0.0
  */
-function boss_child_theme_setup()
-{
-  /**
-   * Makes child theme available for translation.
-   * Translations can be added into the /languages/ directory.
-   * Read more at: http://www.buddyboss.com/tutorials/language-translations/
-   */
-  
-  // Translate text from the CHILD theme only.
-  load_child_theme_textdomain( 'social-learner', get_stylesheet_directory() . '/languages' );
-
+function boss_child_theme_setup() {
+	/**
+	 * Makes child theme available for translation.
+	 * Translations can be added into the /languages/ directory.
+	 * Read more at: http://www.buddyboss.com/tutorials/language-translations/
+	 */
+	// Translate text from the CHILD theme only.
+	load_child_theme_textdomain( 'social-learner', get_stylesheet_directory() . '/languages' );
 }
+
 add_action( 'after_setup_theme', 'boss_child_theme_setup' );
 
 /**
  * Add body class
- * @param  array $classes 
+ * @param  array $classes
  * @return array $classes
  */
 function social_learner_body_class( $classes ) {
+	$classes[] = 'social-learner';
 
-    $classes[] = 'social-learner';
+	foreach ( $classes as $key => $value ) {
+		if ( $value == 'boxed' )
+			unset( $classes[ $key ] );
+	}
 	return array_unique( $classes );
 }
 
-add_filter( 'body_class', 'social_learner_body_class' );
+add_filter( 'body_class', 'social_learner_body_class', 20, 2 );
 
 /**
-* Set global orientation variable
-*/
+ * Set global orientation variable
+ */
 global $rtl;
 
 $rtl = false;
 
-if(is_rtl()){
-    $rtl = true; 
+if ( is_rtl() ) {
+	$rtl = true;
 }
-
 
 /**
  * Setup Social Learner's textdomain.
@@ -57,8 +57,9 @@ if(is_rtl()){
  * Translations can be filed in the /languages/ directory.
  */
 function boss_child_theme_languages() {
-    load_child_theme_textdomain( 'social-learner',  get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'social-learner', get_stylesheet_directory() . '/languages' );
 }
+
 add_action( 'after_setup_theme', 'boss_child_theme_languages' );
 
 /**
@@ -67,90 +68,97 @@ add_action( 'after_setup_theme', 'boss_child_theme_languages' );
  * @since Social Learner  1.0.0
  */
 add_action( 'wp_enqueue_scripts', 'boss_child_enqueue_styles', 9998 );
+
 function boss_child_enqueue_styles() {
-    global $rtl;
-    wp_enqueue_script( 'child-js', get_stylesheet_directory_uri() . '/js/action.js', false, '1.0.4', false );
-    if($rtl){
-        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.rtl.css', false, '1.0.4', 'all' );
-    } else {
-        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.css', false, '1.0.4', 'all' );
-    }
+	global $rtl;
+	wp_enqueue_script( 'child-js', get_stylesheet_directory_uri() . '/js/action.js', false, '1.0.4', false );
+	if ( $rtl ) {
+		wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.rtl.css', false, '1.0.6', 'all' );
+	} else {
+		wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.css', false, '1.0.6', 'all' );
+	}
+
+	$theme_layout = boss_get_option( 'boss_layout_style' );
+
+	if ( $theme_layout == 'boxed' ) {
+		wp_deregister_style( 'boss-learndash-boxed' );
+		wp_deregister_style( 'boss-sensei-boxed' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'boss_child_enqueue_user_styles', 9999 );
+
 function boss_child_enqueue_user_styles() {
-    wp_enqueue_style( 'user-style', get_stylesheet_directory_uri() . '/css/custom.css');
+	wp_enqueue_style( 'user-style', get_stylesheet_directory_uri() . '/css/custom.css' );
 }
 
 /**
  * Add color sheme to customizer
- * 
+ *
  */
-
 add_filter( 'buddyboss_customizer_themes_preset', 'boss_edu_add_color_scheme' );
-function boss_edu_add_color_scheme($default_themes) {    
-    $education = array( 
-        'education' => array(
-            'alt'		 => 'Social Learner',
-            'img'		 => get_stylesheet_directory_uri() . '/images/social_learner.png',
-            'presets'	 => array(
-                'boss_title_color'						 => '#ffffff',
-                'boss_cover_color'						 => '#012243',
-                'boss_panel_logo_color'					 => '#545454',
-                'boss_panel_color'						 => '#012243',
-                'boss_panel_title_color'				 => '#ffffff',
-                'boss_panel_icons_color'				 => '#0e4362',
-                'boss_panel_open_icons_color'			 => '#0e4362',
-                'boss_layout_titlebar_bgcolor'			 => '#fff',
-                'boss_layout_titlebar_color'			 => '#8091a1',
-                'boss_layout_mobiletitlebar_bgcolor'	 => '#012243',
-                'boss_layout_mobiletitlebar_color'		 => '#fff',
-                'boss_layout_nobp_titlebar_bgcolor'		 => '#545454',
-                'boss_layout_nobp_titlebar_color'		 => '#fff',
-                'boss_layout_nobp_titlebar_hover_color'	 => '#ea6645',
-                'boss_layout_body_color'				 => '#e3e9f0',
-                'boss_layout_footer_top_color'			 => '#fff',
-                'boss_layout_footer_bottom_bgcolor'		 => '#fff',
-                'boss_layout_footer_bottom_color'		 => '#8091a1',
-                'boss_links_pr_color'					 => '#012243',
-                'boss_links_color'						 => '#00a6dc',
-                'boss_slideshow_font_color'				 => '#ffffff',
-                'boss_heading_font_color'				 => '#012243',
-                'boss_body_font_color'					 => '#012243',
-                'boss_admin_screen_background_color'	 => '#012243',
-                'boss_admin_screen_text_color'			 => '#ffffff',
-                'boss_admin_screen_button_color'		 => '#00a6dc',
-            )
-        )
-    );
 
-    return array_merge($education, $default_themes);
+function boss_edu_add_color_scheme( $default_themes ) {
+	$education = array(
+		'education' => array(
+			'alt'		 => 'Social Learner',
+			'img'		 => get_stylesheet_directory_uri() . '/images/social_learner.png',
+			'presets'	 => array(
+				'boss_title_color'						 => '#ffffff',
+				'boss_cover_color'						 => '#012243',
+				'boss_panel_logo_color'					 => '#012243',
+				'boss_panel_color'						 => '#012243',
+				'boss_panel_title_color'				 => '#ffffff',
+				'boss_panel_icons_color'				 => '#0e4362',
+				'boss_panel_open_icons_color'			 => '#0e4362',
+				'boss_layout_titlebar_bgcolor'			 => '#fff',
+				'boss_layout_titlebar_color'			 => '#8091a1',
+				'boss_layout_mobiletitlebar_bgcolor'	 => '#012243',
+				'boss_layout_mobiletitlebar_color'		 => '#fff',
+				'boss_layout_nobp_titlebar_bgcolor'		 => '#012243',
+				'boss_layout_nobp_titlebar_color'		 => '#fff',
+				'boss_layout_nobp_titlebar_hover_color'	 => '#ea6645',
+				'boss_layout_body_color'				 => '#e3e9f0',
+				'boss_layout_footer_top_color'			 => '#fff',
+				'boss_layout_footer_bottom_bgcolor'		 => '#fff',
+				'boss_layout_footer_bottom_color'		 => '#8091a1',
+				'boss_links_pr_color'					 => '#012243',
+				'boss_links_color'						 => '#00a6dc',
+				'boss_slideshow_font_color'				 => '#ffffff',
+				'boss_heading_font_color'				 => '#012243',
+				'boss_body_font_color'					 => '#012243',
+				'boss_admin_screen_background_color'	 => '#012243',
+				'boss_admin_screen_text_color'			 => '#ffffff',
+				'boss_admin_screen_button_color'		 => '#00a6dc',
+			)
+		)
+	);
 
+	return array_merge( $education, $default_themes );
 }
-
 
 /**
  * Additional css for customizer
- * 
+ *
  */
 add_filter( 'boss_customizer_css', 'boss_edu_customizer_css' );
 
-function boss_edu_customizer_css($css) {
-    global $rtl;
-    
-    $big_logo_h		 = boss_logo_height( 'big' );
-    $small_logo_h	 = boss_logo_height( 'small' );
-    
-    $header_admin_class = '.right-col';
-    $header_menu_class = '.left-col';
-    if($rtl){
-        $header_admin_class = '.left-col';  
-        $header_menu_class = '.right-col';  
-    }
-      $sidebar_color = esc_attr( boss_get_option( 'boss_edu_sidebar_bg' ) );
-      $active_link_color = esc_attr( boss_get_option( 'boss_edu_active_link_color' ) );
-    
-      $css .= "
+function boss_edu_customizer_css( $css ) {
+	global $rtl;
+
+	$big_logo_h		 = boss_logo_height( 'big' );
+	$small_logo_h	 = boss_logo_height( 'small' );
+
+	$header_admin_class	 = '.right-col';
+	$header_menu_class	 = '.left-col';
+	if ( $rtl ) {
+		$header_admin_class	 = '.left-col';
+		$header_menu_class	 = '.right-col';
+	}
+	$sidebar_color		 = esc_attr( boss_get_option( 'boss_edu_sidebar_bg' ) );
+	$active_link_color	 = esc_attr( boss_get_option( 'boss_edu_active_link_color' ) );
+
+	$css .= "
             #certificates_user_settings input[type=\"checkbox\"] +strong,
             .quiz form ol#sensei-quiz-list li ul li input[type='checkbox'] + label,
             .quiz form ol#sensei-quiz-list li ul li input[type='radio'] + label,
@@ -169,35 +177,35 @@ function boss_edu_customizer_css($css) {
             .course-inner h2 a,
             .header-inner {$header_menu_class} .header-navigation ul li a,
             h1, h2, h3, h4, h5, h6, body, p {
-                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_heading_font_color' ) ) . ";
             }
             .widget_course_progress footer a.btn,
             .widget .my-account .button, .widget_course_teacher footer a.btn {
-                border-color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
+                border-color: " . esc_attr( boss_get_option( 'boss_heading_font_color' ) ) . ";
             }
             body #main-wrap {
-                background-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
+                background-color: " . esc_attr( boss_get_option( 'boss_layout_body_color' ) ) . ";
             }
             .bp-avatar-nav ul.avatar-nav-items li.current {
-                border-bottom-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
+                border-bottom-color: " . esc_attr( boss_get_option( 'boss_layout_body_color' ) ) . ";
             }
             #secondary {
                 background-color: {$sidebar_color};
             }
-            .page-right-sidebar {
+            .is-desktop.single-item.groups .page-right-sidebar {
                 background-color: {$sidebar_color};
             }
             .is-mobile.single-item.groups .page-right-sidebar,
             #primary {
-                background-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
+                background-color: " . esc_attr( boss_get_option( 'boss_layout_body_color' ) ) . ";
             }
             .tablet .menu-panel #nav-menu > ul > li.dropdown > a:before, .tablet .menu-panel .bp_components ul li ul li.menupop.dropdown > a:before, body:not(.tablet) .menu-panel .screen-reader-shortcut:hover:before, body:not(.tablet) .menu-panel #nav-menu > ul > li:hover > a:before, body:not(.tablet) .menu-panel .bp_components ul li ul li.menupop:hover > a:before {
                 color: #fff;
             }
             .course-buttons .status.in-progress,
             .course-container a.button, .course-container a.button:visited, .course-container a.comment-reply-link, .course-container #commentform #submit, .course-container .submit, .course-container input[type=submit], .course-container input.button, .course-container button.button, .course a.button, .course a.button:visited, .course a.comment-reply-link, .course #commentform #submit, .course .submit, .course input[type=submit], .course input.button, .course button.button, .lesson a.button, .lesson a.button:visited, .lesson a.comment-reply-link, .lesson #commentform #submit, .lesson .submit, .lesson input[type=submit], .lesson input.button, .lesson button.button, .quiz a.button, .quiz a.button:visited, .quiz a.comment-reply-link, .quiz #commentform #submit, .quiz .submit, .quiz input[type=submit], .quiz input.button, .quiz button.button {
-                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                border-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
                 background-color: transparent;
             }
             .sensei-content .item-list-tabs ul li:hover, .sensei-content .item-list-tabs ul li.current,
@@ -206,7 +214,7 @@ function boss_edu_customizer_css($css) {
             #buddypress div#group-create-tabs ul > li,
             #buddypress div#group-create-tabs ul > li:first-child:not(:last-child),
             .quiz form ol#sensei-quiz-list li ul li.selected {
-                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                border-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .sensei-content .item-list-tabs ul li span,
             body:not(.tablet) .menu-panel #nav-menu > ul > li:hover, body:not(.tablet) .menu-panel ul li .menupop:hover,
@@ -219,17 +227,17 @@ function boss_edu_customizer_css($css) {
             .widget-area .widget.widget_course_progress .course-lessons-widgets > header,
             .course-header,
             #search-open {
-                background-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                background-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             body:not(.tablet) .menu-panel #nav-menu > ul > li:hover a span, body:not(.tablet) .menu-panel ul li .menupop:hover a span {
                 background-color: #fff;
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             nav.navigation.post-navigation .nav-links .nav-previous:before,
             nav.navigation.post-navigation .nav-links .nav-next:after,
             .bp-learndash-activity h4 i.fa-spinner,
             .bp-sensei-activity h4 i.fa-spinner,
-            .bp-user.achievements #item-body > #subnav li.current a,       
+            .bp-user.achievements #item-body > #subnav li.current a,
             #content .woocommerce-message .wc-forward,
             .widget_sensei_course_progress .course-progress-lessons .course-progress-lesson a:before,
             #learner-info .my-messages-link:before,
@@ -249,7 +257,7 @@ function boss_edu_customizer_css($css) {
             #main .course .sensei-course-meta .course-author a,
             .course-inner h2 a:hover,
             .menu-toggle i {
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .site-header {$header_admin_class},
             #search-open {
@@ -257,14 +265,12 @@ function boss_edu_customizer_css($css) {
             }
             body.is-desktop,
             .site-header {$header_admin_class},
-            .menu-panel, .menu-panel #nav-menu .sub-menu-wrap, 
-            .bp_components ul li ul li.menupop .ab-sub-wrapper,
-            .is-desktop #mastlogo,
-            #mastlogo {
-                background-color: ". esc_attr( boss_get_option( 'boss_panel_color' ) ) .";
+            .menu-panel, .menu-panel #nav-menu .sub-menu-wrap,
+            .bp_components ul li ul li.menupop .ab-sub-wrapper {
+                background-color: " . esc_attr( boss_get_option( 'boss_panel_color' ) ) . ";
             }
             .header-account-login a .name {
-                color: rgba(255,255,255,0.9);   
+                color: rgba(255,255,255,0.9);
             }
             .single-badgeos article .badgeos-item-points,
             .widget-area .widget:not(.widget_buddyboss_recent_post) .widget-achievements-listing li.has-thumb .widget-badgeos-item-title,
@@ -272,66 +278,66 @@ function boss_edu_customizer_css($css) {
             .widget-area .widget_course_teacher header span p,
             .header-account-login .user-link span.name:after,
             .header-notifications a.notification-link {
-                color: ". esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) . ";
             }
             .mobile-site-title .colored,
             .site-title a .colored,
             section.entry span.course-lesson-count,
             .widget_course_progress .module.current header h2 a,
-.module .module-lessons ul li.current a, 
-            .header-inner {$header_menu_class} .header-navigation ul li > a:hover, 
-            .header-inner {$header_menu_class} .header-navigation ul li.current-menu-item > a, 
+			.module .module-lessons ul li.current a,
+            .header-inner {$header_menu_class} .header-navigation ul li > a:hover,
+            .header-inner {$header_menu_class} .header-navigation ul li.current-menu-item > a,
             .header-inner {$header_menu_class} .header-navigation ul li.current-page-item > a {
                 color: {$active_link_color};
             }
-            #main .course .module-status, 
+            #main .course .module-status,
             .module-archive #main .status,
-            #main .course .module-status:before, 
+            #main .course .module-status:before,
             .module-archive #main .status:before,
-            .lesson-status.in-progress, .lesson-status.not-started, 
-            .module .module-lessons ul li a:before, 
+            .lesson-status.in-progress, .lesson-status.not-started,
+            .module .module-lessons ul li a:before,
             .module .module-lessons ul li a:hover:before,
             .widget_course_progress .module.current header h2 a:hover,
             .module .module-lessons ul li a:hover,
             #main .course .course-lessons-inner header h2 a:hover {
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
-            .lesson-status.complete, 
+            .lesson-status.complete,
             .module .module-lessons ul li.completed a:before {
                 color: #61a92c;
             }
-            #profile-nav span, 
-            .widget_categories .cat-item i, 
-            #wp-admin-bar-shortcode-secondary .alert, 
+            #profile-nav span,
+            .widget_categories .cat-item i,
+            #wp-admin-bar-shortcode-secondary .alert,
             .header-notifications a.notification-link span,
-            .header-navigation ul li > a:hover:after, 
-            .header-navigation ul li.current-menu-item > a:after, 
+            .header-navigation ul li > a:hover:after,
+            .header-navigation ul li.current-menu-item > a:after,
             .header-navigation ul li.current-page-item > a:after {
                 background-color: {$active_link_color};
             }
             .widget_categories .cat-item i {
                 background-color: {$active_link_color};
-            }          
+            }
             .page-template-page-no-buddypanel .header-account-login > a,
             .page-template-page-no-buddypanel .site-header #wp-admin-bar-shortcode-secondary .ab-icon:before,
             .page-template-page-no-buddypanel #wp-admin-bar-shortcode-secondary .thread-from a,
             .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a,
             .page-template-page-no-buddypanel .header-inner {$header_menu_class} a {
-                color: " .esc_attr( boss_get_option( 'boss_layout_nobp_titlebar_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_layout_nobp_titlebar_color' ) ) . ";
             }
-            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a:hover, 
-            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.current-menu-item a, 
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a:hover,
+            .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.current-menu-item a,
             .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.current-page-item a {
                 color: {$active_link_color};
             }
             .page-template-page-no-buddypanel .header-notifications a.notification-link {
-                color: ". esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) . ";
             }
             .page-template-page-no-buddypanel #masthead #searchsubmit {
-                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_heading_font_color' ) ) . ";
             }
             .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.hideshow li a {
-                color: ". esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_layout_titlebar_color' ) ) . ";
             }
             .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li.hideshow li a:hover,
             .course-inner .course-price del,
@@ -340,34 +346,34 @@ function boss_edu_customizer_css($css) {
             .page-template-page-no-buddypanel .header-notifications .pop a:hover,
             .page-template-page-no-buddypanel .header-inner {$header_menu_class} .header-navigation ul li a:hover {
                 color: {$active_link_color};
-            } 
+            }
             .header-account-login .pop .logout a,
             .is-mobile #buddypress div#subnav.item-list-tabs ul li.current a {
                 color: #fff;
             }
-            
-            .wpProQuiz_questionList input[type=\"checkbox\"] + strong, 
+
+            .wpProQuiz_questionList input[type=\"checkbox\"] + strong,
             .wpProQuiz_questionList input[type=\"radio\"] + strong {
-                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_heading_font_color' ) ) . ";
             }
             .single-sfwd-lessons u + table td .button-primary,
             .wpProQuiz_button2,
             input[type=\"button\"]:not(.button-small).wpProQuiz_button,
             #sfwd-mark-complete input[type=\"submit\"],
             .sfwd-courses a.button {
-                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";                
+                border-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .wpb_row .woocommerce ul.products li.product a img:hover {
-                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                border-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .header-account-login .pop .logout a,
             body .wpb_gallery .wpb_flexslider .flex-control-paging .flex-active {
-                background-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                background-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             body .entry-content #students .vc_col-sm-3 a,
             body .entry-content #counters h3 {
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .wpProQuiz_formFields input[type=\"radio\"]:checked+strong,
             .courses-quizes-results .percent,
@@ -381,7 +387,7 @@ function boss_edu_customizer_css($css) {
             .wpProQuiz_question_page,
             .learndash .in-progress:before,
             .learndash .notcompleted:before {
-                color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .wpProQuiz_quiz_time,
             #learndash_profile dd.course_progress div.course_progress_blue,
@@ -390,22 +396,22 @@ function boss_edu_customizer_css($css) {
             .type-sfwd-courses .item-list-tabs ul li span,
             .single-sfwd-quiz dd.course_progress div.course_progress_blue,
             .wpProQuiz_time_limit .wpProQuiz_progress {
-                background-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                background-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .type-sfwd-courses .item-list-tabs ul li:hover, .type-sfwd-courses .item-list-tabs ul li.current {
-                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                border-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .wpProQuiz_questionList .wpProQuiz_questionListItem label.selected {
-                border-color: ". esc_attr( boss_get_option( 'boss_links_color' ) ) .";
+                border-color: " . esc_attr( boss_get_option( 'boss_links_color' ) ) . ";
             }
             .quiz_title a:hover,
             #learndash_profile .learndash_profile_details b,
             .profile_edit_profile a:hover {
-                color: ". esc_attr( boss_get_option( 'boss_heading_font_color' ) ) .";
+                color: " . esc_attr( boss_get_option( 'boss_heading_font_color' ) ) . ";
             }
             .wpProQuiz_catName,
             span.wpProQuiz_catPercent {
-                background-color: ". esc_attr( boss_get_option( 'boss_layout_body_color' ) ) .";
+                background-color: " . esc_attr( boss_get_option( 'boss_layout_body_color' ) ) . ";
             }
             #course_navigation .topic_item a.current,
             #course_navigation .active .lesson a {
@@ -415,167 +421,164 @@ function boss_edu_customizer_css($css) {
                 background-color: {$sidebar_color};
             }
             .header-navigation li.hideshow > ul, .header-navigation .sub-menu, body.activity:not(.bp-user) .item-list-tabs ul li, .logged-in .dir-form .item-list-tabs ul li, .dir-form .item-list-tabs ul li:last-child {
-                border-top: 2px solid ". esc_attr( boss_get_option( 'boss_links_color' ) ) ." !important;
-            } 
+                border-top: 2px solid " . esc_attr( boss_get_option( 'boss_links_color' ) ) . " !important;
+            }
             ";
-    
-           if ( boss_get_option( 'mini_logo_switch' ) && boss_get_option( 'boss_small_logo', 'id' ) ) { 
-                $css .= "
+
+	if ( boss_get_option( 'mini_logo_switch' ) && boss_get_option( 'boss_small_logo', 'id' ) ) {
+		$css .= "
                 /* .header-navigation > div > ul {
-                    line-height: ".$small_logo_h."px;
-                    height: ".$small_logo_h."px;
+                    line-height: " . $small_logo_h . "px;
+                    height: " . $small_logo_h . "px;
                 } */
                 #header-menu > ul > li {
-                    height: ".$small_logo_h."px;
-                    line-height: ".$small_logo_h."px;
+                    height: " . $small_logo_h . "px;
+                    line-height: " . $small_logo_h . "px;
                 }
                 ";
-           }   
-    
-           if ( boss_get_option( 'logo_switch' ) && boss_get_option( 'boss_logo', 'id' ) ) { 
-                $css .= "
+	}
+
+	if ( boss_get_option( 'logo_switch' ) && boss_get_option( 'boss_logo', 'id' ) ) {
+		$css .= "
                 /* .left-menu-open .header-navigation > div > ul {
-                    line-height: ".$big_logo_h."px;
-                    height: ".$big_logo_h."px;
+                    line-height: " . $big_logo_h . "px;
+                    height: " . $big_logo_h . "px;
                 } */
                 .left-menu-open #header-menu > ul > li {
-                    height: ".$big_logo_h."px;
-                    line-height: ".$big_logo_h."px;
+                    height: " . $big_logo_h . "px;
+                    line-height: " . $big_logo_h . "px;
                 }
                 ";
-           }
-    
-    return $css;
+	}
+
+	return $css;
 }
 
-add_filter('boss_default_color_sheme', 'boss_edu_default_color_scheme');
+add_filter( 'boss_default_color_sheme', 'boss_edu_default_color_scheme' );
+
 /**
  * Default color sheme
  */
-function boss_edu_default_color_scheme($default){
-    return 'eductaion';
+function boss_edu_default_color_scheme( $default ) {
+	return 'eductaion';
 }
 
 /**
  * Additional fields to customizer
- * 
+ *
  */
-add_filter('boss_filter_color_options', 'boss_edu_customize_register');
+add_filter( 'boss_filter_color_options', 'boss_edu_customize_register' );
 
 function boss_edu_customize_register( $array ) {
-    $additional = array(
-        array( 'slug' => 'boss_edu_color_section', 'desc' => 'Social Learner Options', 'type' => 'info' ),
-        array( 'slug' => 'boss_edu_active_link_color', 'title' => 'Active link color', 'subtitle' => 'Set the color for active links.', 'desc' => '', 'type' => 'color', 'default' => '#ea6645' ),
-        array( 'slug' => 'boss_edu_sidebar_bg', 'title' => 'Sidebar Background', 'subtitle' => 'Set the color for sidebar.', 'desc' => '', 'type' => 'color', 'default' => '#cdd7e2' )
-    );
-    
-    return array_merge($array, $additional);
+	$additional = array(
+		array( 'slug' => 'boss_edu_color_section', 'desc' => 'Social Learner Options', 'type' => 'info' ),
+		array( 'slug' => 'boss_edu_active_link_color', 'title' => 'Active link color', 'subtitle' => 'Set the color for active links.', 'desc' => '', 'type' => 'color', 'default' => '#ea6645' ),
+		array( 'slug' => 'boss_edu_sidebar_bg', 'title' => 'Sidebar Background', 'subtitle' => 'Set the color for sidebar.', 'desc' => '', 'type' => 'color', 'default' => '#cdd7e2' )
+	);
+
+	return array_merge( $array, $additional );
 }
 
 /**
  * Output badges on profile
- * 
+ *
  */
-function boss_edu_profile_achievements (){
-    global $user_ID;
+function boss_edu_profile_achievements() {
+	global $user_ID;
 
-    //user must be logged in to view earned badges and points
+	//user must be logged in to view earned badges and points
 
-    if ( is_user_logged_in() && function_exists('badgeos_get_user_achievements')) {
+	if ( is_user_logged_in() && function_exists( 'badgeos_get_user_achievements' ) ) {
 
-        $achievements = badgeos_get_user_achievements(array( 'user_id' => bp_displayed_user_id()));
+		$achievements = badgeos_get_user_achievements( array( 'user_id' => bp_displayed_user_id() ) );
 
-        if ( is_array( $achievements ) && ! empty( $achievements ) ) {
+		if ( is_array( $achievements ) && !empty( $achievements ) ) {
 
-            $number_to_show = 5;
-            $thecount = 0;
+			$number_to_show	 = 5;
+			$thecount		 = 0;
 
-            wp_enqueue_script( 'badgeos-achievements' );
-            wp_enqueue_style( 'badgeos-widget' );
+			wp_enqueue_script( 'badgeos-achievements' );
+			wp_enqueue_style( 'badgeos-widget' );
 
-            //load widget setting for achievement types to display
-            $set_achievements = ( isset( $instance['set_achievements'] ) ) ? $instance['set_achievements'] : '';
+			//load widget setting for achievement types to display
+			$set_achievements = ( isset( $instance[ 'set_achievements' ] ) ) ? $instance[ 'set_achievements' ] : '';
 
-            //show most recently earned achievement first
-            $achievements = array_reverse( $achievements );
+			//show most recently earned achievement first
+			$achievements = array_reverse( $achievements );
 
-            echo '<ul class="profile-achievements-listing">';
-            
-            foreach ( $achievements as $achievement ) {
+			echo '<ul class="profile-achievements-listing">';
 
-                //verify achievement type is set to display in the widget settings
-                //if $set_achievements is not an array it means nothing is set so show all achievements
-                if ( ! is_array( $set_achievements ) || in_array( $achievement->post_type, $set_achievements ) ) {
+			foreach ( $achievements as $achievement ) {
 
-                    //exclude step CPT entries from displaying in the widget
-                    if ( get_post_type( $achievement->ID ) != 'step' ) {
+				//verify achievement type is set to display in the widget settings
+				//if $set_achievements is not an array it means nothing is set so show all achievements
+				if ( !is_array( $set_achievements ) || in_array( $achievement->post_type, $set_achievements ) ) {
 
-                        $permalink  = get_permalink( $achievement->ID );
-                        $title      = get_the_title( $achievement->ID );
-                        $img        = badgeos_get_achievement_post_thumbnail( $achievement->ID, array( 50, 50 ), 'wp-post-image' );
-                        $thumb      = $img ? '<a style="margin-top: -25px;" class="badgeos-item-thumb" href="'. esc_url( $permalink ) .'">' . $img .'</a>' : '';
-                        $class      = 'widget-badgeos-item-title';
-                        $item_class = $thumb ? ' has-thumb' : '';
+					//exclude step CPT entries from displaying in the widget
+					if ( get_post_type( $achievement->ID ) != 'step' ) {
 
-                        // Setup credly data if giveable
-                        $giveable   = credly_is_achievement_giveable( $achievement->ID, $user_ID );
-                        $item_class .= $giveable ? ' share-credly addCredly' : '';
-                        $credly_ID  = $giveable ? 'data-credlyid="'. absint( $achievement->ID ) .'"' : '';
+						$permalink	 = get_permalink( $achievement->ID );
+						$title		 = get_the_title( $achievement->ID );
+						$img		 = badgeos_get_achievement_post_thumbnail( $achievement->ID, array( 50, 50 ), 'wp-post-image' );
+						$thumb		 = $img ? '<a style="margin-top: -25px;" class="badgeos-item-thumb" href="' . esc_url( $permalink ) . '">' . $img . '</a>' : '';
+						$class		 = 'widget-badgeos-item-title';
+						$item_class	 = $thumb ? ' has-thumb' : '';
 
-                        echo '<li id="widget-achievements-listing-item-'. absint( $achievement->ID ) .'" '. $credly_ID .' class="widget-achievements-listing-item'. esc_attr( $item_class ) .'">';
-                        echo $thumb;
-                        echo '<a class="widget-badgeos-item-title '. esc_attr( $class ) .'" href="'. esc_url( $permalink ) .'">'. esc_html( $title ) .'</a>';
-                        echo '</li>';
+						// Setup credly data if giveable
+						$giveable	 = credly_is_achievement_giveable( $achievement->ID, $user_ID );
+						$item_class .= $giveable ? ' share-credly addCredly' : '';
+						$credly_ID	 = $giveable ? 'data-credlyid="' . absint( $achievement->ID ) . '"' : '';
 
-                        $thecount++;
+						echo '<li id="widget-achievements-listing-item-' . absint( $achievement->ID ) . '" ' . $credly_ID . ' class="widget-achievements-listing-item' . esc_attr( $item_class ) . '">';
+						echo $thumb;
+						echo '<a class="widget-badgeos-item-title ' . esc_attr( $class ) . '" href="' . esc_url( $permalink ) . '">' . esc_html( $title ) . '</a>';
+						echo '</li>';
 
-                        if ( $thecount == $number_to_show && $number_to_show != 0 ) {
-                            echo '<li id="widget-achievements-listing-item-more" class="widget-achievements-listing-item">';
-                            echo '<a class="badgeos-item-thumb" href="' . bp_core_get_user_domain( get_current_user_id() ) . '/achievements/"><span class="fa fa-ellipsis-h"></span></a>';
-                            echo '<a class="widget-badgeos-item-title '. esc_attr( $class ) .'" href="' . bp_core_get_user_domain( get_current_user_id() ) . '/achievements/">'. __('See All', 'social-learner') .'</a>';
-                            echo '</li>';
-                            break;
-                        }
+						$thecount++;
 
-                    }
+						if ( $thecount == $number_to_show && $number_to_show != 0 ) {
+							echo '<li id="widget-achievements-listing-item-more" class="widget-achievements-listing-item">';
+							echo '<a class="badgeos-item-thumb" href="' . bp_core_get_user_domain( get_current_user_id() ) . '/achievements/"><span class="fa fa-ellipsis-h"></span></a>';
+							echo '<a class="widget-badgeos-item-title ' . esc_attr( $class ) . '" href="' . bp_core_get_user_domain( get_current_user_id() ) . '/achievements/">' . __( 'See All', 'social-learner' ) . '</a>';
+							echo '</li>';
+							break;
+						}
+					}
+				}
+			}
 
-                }
-            }
-
-            echo '</ul><!-- widget-achievements-listing -->';
-
-        }
-
-    }
+			echo '</ul><!-- widget-achievements-listing -->';
+		}
+	}
 }
 
 /**
-* Filter cover sizes
-*
-**/
+ * Filter cover sizes
+ *
+ * */
 add_filter( 'boss_profile_cover_sizes', 'boss_edu_profile_cover_sizes' );
 
-function boss_edu_profile_cover_sizes () {
-    if($GLOBALS['badgeos']) {
-        return array('322'=>'Big', 'none' => 'No photo');
-    }
-    return array('322'=>'Big', '200'=>'Small', 'none' => 'No photo');
+function boss_edu_profile_cover_sizes() {
+	if ( $GLOBALS[ 'badgeos' ] ) {
+		return array( '322' => 'Big', 'none' => 'No photo' );
+	}
+	return array( '322' => 'Big', '200' => 'Small', 'none' => 'No photo' );
 }
 
 /**
  * Cart icon html
  */
-
 function boss_edu_cart_icon_html() {
 
 	global $woocommerce;
 	if ( $woocommerce ) {
-		$cart_items = $woocommerce->cart->cart_contents_count; ?>
+		$cart_items = $woocommerce->cart->cart_contents_count;
+		?>
 
 		<div class="header-notifications cart">
-			<a class="cart-notification notification-link fa fa-shopping-cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">               
+			<a class="cart-notification notification-link fa fa-shopping-cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
 				<?php if ( $cart_items ) { ?>
-							<span><?php echo $cart_items; ?></span>
+					<span><?php echo $cart_items; ?></span>
 				<?php } ?>
 			</a>
 		</div>
@@ -583,4 +586,38 @@ function boss_edu_cart_icon_html() {
 	}
 }
 
-include "rw_functions.php";
+/**
+ * Remove body class "boxed" option
+ */
+//function boss_edu_remove_body_class( $classes ) {
+//$classes = str_replace ('boxed ', '', $classes);
+//
+////  foreach($classes as $key => $value) {
+////
+////      if ($value == 'boxed') unset($classes[$key]);
+////  }
+//
+////        echo '<div style="background-color:#fff;">';
+////    echo '<pre>';
+////    var_dump($classes);
+////    echo '</pre>';
+////    echo '</div>';
+//
+//	return array_unique( $classes );
+//}
+//
+//add_filter( 'body_class', 'boss_edu_remove_body_class' );
+
+/**
+ * Remove layout option
+ */
+function boss_edu_remove_redux_field( $sections ) {
+	unset( $sections[ 1 ][ "fields" ][ 0 ] );
+
+	return $sections;
+}
+
+// In this example OPT_NAME is the returned opt_name.
+add_filter( "redux/options/boss_options/sections", 'boss_edu_remove_redux_field' );
+
+require_once "rw_functions.php";

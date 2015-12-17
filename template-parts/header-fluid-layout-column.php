@@ -1,6 +1,6 @@
 <?php
 global $rtl;
-$boxed = boss_get_option( 'boss_layout_style' );
+$boxed	= 'fluid';
 ?>
 <div class="<?php echo ($rtl)?'right-col':'left-col'; ?>">
     <div class="table">

@@ -2,6 +2,15 @@
 Add your css here
 ---------------------------------------------------------------*/
 /*******
+* Fix douple border in groups order
+*******/
+
+#groups-order-select {
+    border: 0 !important;
+    padding: 0;
+}
+
+/*******
 * Fix Layout for BuddyPress Group Email Subscription
 *******/
 

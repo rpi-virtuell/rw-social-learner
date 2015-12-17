@@ -28,7 +28,7 @@
 global $rtl;
     $logo	 = ( boss_get_option( 'logo_switch' ) && boss_get_option( 'boss_logo', 'id' ) ) ? '1' : '0';
     $inputs	 = ( boss_get_option( 'boss_inputs' ) ) ? '1' : '0';
-    $boxed	 = boss_get_option( 'boss_layout_style' );
+    $boxed	 = 'fluid';
 ?>
 
 <body <?php body_class(); ?> data-logo="<?php echo $logo; ?>" data-inputs="<?php echo $inputs; ?>" data-rtl="<?php echo ($rtl) ? 'true' : 'false'; ?>">

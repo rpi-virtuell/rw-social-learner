@@ -31,7 +31,7 @@
 		
 		
 		//Activity Veröffentlichungsbutton 
-		
+		/* im main theme gefixed
 		function showActivtyPostButton(){
 			
 			$('#buddypress form#whats-new-form textarea').css('margin-bottom','-20px');
@@ -43,6 +43,6 @@
 		$('#whats-new-textarea').on('click', showActivtyPostButton);
 		$('#whats-new').on('keyup', showActivtyPostButton);
 		$('#whats-new').on('change', showActivtyPostButton);
-		
+		*/
     });
 }( jQuery, document, window ) );

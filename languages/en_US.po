@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Learner 1.0.4\n"
-"POT-Creation-Date: 2015-10-24 14:18+0800\n"
-"PO-Revision-Date: 2015-10-24 14:18+0800\n"
+"Project-Id-Version: Social Learner v1.0.6\n"
+"POT-Creation-Date: 2015-11-05 20:41+0800\n"
+"PO-Revision-Date: 2015-11-05 20:41+0800\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: BuddyBoss <support@buddyboss.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: functions.php:535
+#: functions.php:542
 msgid "See All"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgid "Login"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Social Learner 1.0.4"
+msgid "Social Learner"
 msgstr ""
 
 #. Theme URI of the plugin/theme

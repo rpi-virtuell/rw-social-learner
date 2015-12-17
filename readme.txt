@@ -1,8 +1,8 @@
 === Social Learner ===
-Contributors: BuddyBoss, rpi-virtuell
+Contributors: BuddyBoss
 Requires at least: 3.8
-Tested up to: 4.3.2
-Version: 1.0.4
+Tested up to: 4.3.1
+Version: 1.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,15 @@ A child theme for the Boss theme, designed to be used in conjunction with our Bo
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+
+= 1.0.6 =
+* Removed Boxed layout option
+* Fixed Logo background color issue
+* Fixes for Sensei
+* Color fixes
+
+= 1.0.5 =
+* Fixed Dashboard links not visible in Profile Menu
 
 = 1.0.4 =
 * Compatibility with Boss 2.0.0
