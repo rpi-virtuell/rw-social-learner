@@ -1045,3 +1045,9 @@ body .entry-content #students .vc_col-sm-3 a {
 }
 
 .is-mobile .entry-buddypress-content { overflow: hidden; }
+
+div.widget_sticky_acivity {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+
+}
