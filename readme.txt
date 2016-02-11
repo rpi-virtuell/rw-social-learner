@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 3.8
 Tested up to: 4.3.1
-Version: 1.0.6.1
+Version: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,8 +20,13 @@ A child theme for the Boss theme, designed to be used in conjunction with our Bo
 
 == Changelog ==
 
+= 1.0.7 =
+* removed shortcodes to Group Description
+* add Widget or Sidebar Shortcode for sticky activity plugin to template
+
 = 1.0.6.1 =
-*added shortcodes to Group Description
+* added shortcodes to Group Description
+* css fix for "Widget or Sidebar Shortcode" Plugin in Group Description
 
 = 1.0.6 =
 * Removed Boxed layout option

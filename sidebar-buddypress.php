@@ -53,7 +53,9 @@
                         <div id="group-description">
                             <h3><?php _e("Group Info",'social-learner'); ?></h3>
                             <?php bp_group_description(); ?>
+							<?php echo do_shortcode( '[widget classname="RW_Sticky_Activity_Widget" instance="title=Angepinnt"]' ); ?>
                             <?php do_action( 'bp_group_header_meta' ); ?>
+
                         </div>
                           
                         <div id="item-actions">

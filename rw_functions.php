@@ -193,6 +193,3 @@ function check_honeypot() {
     }
 }
 add_filter('bp_core_validate_user_signup','check_honeypot');
-
-// Shortcodes for Groupinfo
-add_filter('bp_get_group_description', 'do_shortcode');
