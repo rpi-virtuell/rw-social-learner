@@ -193,3 +193,23 @@ function check_honeypot() {
     }
 }
 add_filter('bp_core_validate_user_signup','check_honeypot');
+
+//Allow more HTML-Tags in docs
+add_action( 'init', function () { 
+    global $allowedposttags;
+
+    $allowedposttags['iframe'] = array(
+        'src'    		=> array(),
+        'height' 		=> array(),
+        'width'  		=> array(),
+        'frameborder'  	=> array(),
+        'style'		  	=> array(),
+    );
+	
+}); // and for tinyMCE
+add_filter('tiny_mce_before_init', function( $a ) {
+    
+	$a["extended_valid_elements"] = 'iframe[src|height|width|frameborder]';
+    
+	return $a;
+});
