@@ -5,59 +5,6 @@
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-add_filter( 'bp_docs_sidebar_template', function(){
-    //set my own sidebar template which is compatible to the boss.theme
-    $tpl=locate_template( 'docs/sidebar.php' );
-    return $tpl;
-});
-
-add_action( 'buddyboss_inside_wrapper' , 'add_bp_doc_sidebar');
-function add_bp_doc_sidebar(){
-    //load the sidebar
-    if ( class_exists('RW_BuddyPress_Docs_Tree_Widget') ) {
-        //plugin is activated
-        if( RW_BuddyPress_Docs_Tree_Widget::is_bp_doc_page() && RW_BuddyPress_Docs_Tree_Widget::is_desktop() ){
-            bp_docs_get_sidebar();
-            return;
-        }
-    }
-
-};
-
-
-
-// Change the Profile nav tab order 
-function change_profile_tab_order() {
-	global $bp;
- 
-	$order = ''; // Add the component slugs coma separated in the order you like to have the nav menu tabs
- 
-	$order = str_replace(' ','',$order); 
-	$order = explode(",", $order);
-	$i = 1;
-	foreach($order as $item) {
-		$bp->bp_nav[$item]['position'] = $i;
-		$i ++;
-	}
-}
-add_action( 'wp', 'change_profile_tab_order', 999 );
- 
-// Change the Group nav tab order
-function change_groups_tab_order() {
-	global $bp;
- 
-	$order = 'gpages,forum,docs,members,invite-anyone,hierarchy,invite-anyone,group-chat,notifications'; // Add the component slugs coma separated in the order you like to have the nav menu tabs
- 
-	$order = str_replace(' ','',$order); 
-	$order = explode(",", $order);
-	$i = 1;
-	foreach($order as $item) {
-		$bp->bp_options_nav['groups'][$item]['position'] = $i;
-		$i ++;
-	}
-}
-add_action('wp', 'change_groups_tab_order');
-
 /**
  * Remove buggy limitations in bbpress integration from learnpress 
  * @see https://github.com/LearnPress/LearnPress-bbPress/blob/master/init.php 
@@ -68,7 +15,63 @@ remove_action( 'bbp_template_before_single_topic', 'learn_press_limit_access_cou
 remove_action( 'bbp_template_before_single_forum', 'learn_press_limit_access_course_forum' );
 
 
+//////////////////////////////////////////
+////////// LEFT GROUP ////////////////////
+//////////////////////////////////////////
+add_action( 'groups_leave_group', 'groups_left_group', 10, 2 );
+function groups_left_group( $group_id, $user_id = 0 ) {
+	global $bp;
 
+	if ( empty( $user_id ) )
+		$user_id = bp_loggedin_user_id();
+
+	// Record this in activity streams
+	groups_record_activity( array(
+		'type'    => 'left_group',
+		'item_id' => $group_id,
+		'user_id' => $user_id,
+	) );
+
+	// Modify group meta
+	groups_update_groupmeta( $group_id, 'last_activity', bp_core_current_time() );
+
+	return true;
+}
+function groups_register_left_actions() {
+	$bp = buddypress();
+
+	if ( ! bp_is_active( 'activity' ) ) {
+		return false;
+	}
+
+	bp_activity_set_action(
+		$bp->groups->id,
+		'left_group',
+		__( 'Left group', 'buddypress' ),
+		'bp_groups_format_activity_action_left_group',
+		__( 'Group Disbands', 'buddypress' ),
+		array( 'activity', 'group', 'member', 'member_groups' )
+	);
+
+	do_action( 'groups_register_activity_actions' );
+}
+
+add_action( 'bp_register_activity_actions', 'groups_register_left_actions' );
+function bp_groups_format_activity_action_left_group( $action, $activity ) {
+	$user_link = bp_core_get_userlink( $activity->user_id );
+
+	$group = groups_get_group( array(
+		'group_id'        => $activity->item_id,
+		'populate_extras' => false,
+	) );
+	$group_link = '<a href="' . esc_url( bp_get_group_permalink( $group ) ) . '">' . esc_html( $group->name ) . '</a>';
+
+	$action = sprintf( __( '%1$s left the group %2$s', 'buddypress' ), $user_link, $group_link );
+
+	return apply_filters( 'bp_groups_format_activity_action_joined_group', $action, $activity );
+}
+
+////////// END LEFT GROUP ////////////////////
 /**
  * Remove themespecific user options
  */
@@ -178,7 +181,8 @@ function rw_child_enqueue_styles() {
     
 }
 
-// BuddyPress Honeypot
+
+// BuddyPress Honeypot +++++++++++++++++++++++++++++++++++++++++++++++++ SECURITY
 function add_honeypot() {
     echo '<div style="display: none;">';
 	echo '<input type="text" name="system55" id="system55" />';
@@ -194,6 +198,9 @@ function check_honeypot() {
 }
 add_filter('bp_core_validate_user_signup','check_honeypot');
 
+
+/* allow more html tags to users  ++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 //Allow more HTML-Tags in docs
 add_action( 'init', function () { 
     global $allowedposttags;
@@ -206,10 +213,123 @@ add_action( 'init', function () {
         'style'		  	=> array(),
     );
 	
-}); // and for tinyMCE
+});
+
+// allow iframes for tinyMCE
 add_filter('tiny_mce_before_init', function( $a ) {
     
 	$a["extended_valid_elements"] = 'iframe[src|height|width|frameborder]';
     
 	return $a;
 });
+
+/* end allow more html tags to users  +++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* move doc permissions output into a tab ++++++++++++++++++++++++++++++++++++++++++++++++ */
+remove_action( 'bp_docs_single_doc_header_fields', 'bp_docs_render_permissions_snapshot' );
+add_action( 'bp_docs_header_tabs', function() {
+
+	?>
+		<?php if (! bp_docs_is_doc_edit() && ! bp_docs_is_doc_history() && is_user_logged_in()  ) : ?>
+			<li class="permissiontab">
+				<a href="#rechte" class="rw-doc-permissions-toggle">Zugriffsrechte</a>
+			</li>
+		<?php endif ?>
+	<?php
+},999);
+add_action( 'bp_docs_before_doc_title',  'rw_bp_docs_render_permissions_snapshot' );
+function rw_bp_docs_render_permissions_snapshot() {
+	?>
+	<style>
+		.permissiontab.doc-public{
+			background-color: #B2FFB2;
+		}
+		#doc-group-summary a:first-of-type{
+			display:none;
+		}
+		#doc-group-summary {
+			font-size: 120%;
+		}
+	</style>
+	<div id="rw-doc-permissions" style="display:none">
+	<?php
+	bp_docs_render_permissions_snapshot();
+	?>
+	<script>
+		jQuery(document).ready(function(){
+			//jQuery('.doc-permissions').css('display','none');
+			jQuery('#doc-permissions-details').css('display','block');
+			jQuery('.doc-permissions-toggle').remove();
+			jQuery('.rw-doc-permissions-toggle').on('click', function(){
+				jQuery('#rw-doc-permissions').toggle();
+				jQuery('.rw-doc-permissions-toggle').parent('li').toggleClass('current')
+			});
+			jQuery('.permissiontab').addClass(jQuery('#doc-permissions-summary').attr('class'));
+		});
+
+	</script>
+	</div>
+	<?php
+}
+/* end permissions tab ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/**
+ *  BP Attachments
+ */
+
+/**
+ * remove build in attachment downloader
+ */
+global $bp;
+$class = $bp->bp_docs->attachments;
+remove_action( 'template_redirect', array( $class, 'catch_attachment_request' ), 20 );
+
+/**
+ * add our own downloader with Content-Disposition: inline
+ */
+function rw_catch_attachment_request() {
+
+    global $bp;
+
+    if ( ! empty( $_GET['bp-attachment'] ) ) {
+
+        $fn = $_GET['bp-attachment'];
+
+        // Sanity check - don't do anything if this is not a Doc
+        if ( ! bp_docs_is_existing_doc() ) {
+            return;
+        }
+
+        if ( ! $bp->bp_docs->attachments->filename_is_safe( $fn ) ) {
+            wp_die( __( 'File not found.', 'bp-docs' ) );
+        }
+
+        $uploads = wp_upload_dir();
+        $filepath = $uploads['path'] . DIRECTORY_SEPARATOR . $fn;
+
+        if ( ! file_exists( $filepath ) ) {
+            wp_die( __( 'File not found.', 'bp-docs' ) );
+        }
+
+        $headers = $bp->bp_docs->attachments->generate_headers( $filepath );
+
+
+        foreach( $headers as $name => $field_value ) {
+
+            if( 'Content-Disposition'!= $name ){
+                $field_value = str_replace('attachment','inline',$field_value);
+
+                @header("{$name}: {$field_value}");
+            }
+
+        }
+
+        readfile( $filepath );
+        exit();
+    }
+}
+add_action( 'template_redirect', 'rw_catch_attachment_request' , 20 );
+
+add_action( 'wp_enqueue_scripts', function(){
+    wp_enqueue_script( 'child-js', 'http://lernlog.de/wp-content/plugins/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
+} );

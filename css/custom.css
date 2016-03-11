@@ -1,6 +1,39 @@
 /*--------------------------------------------------------------
 Add your css here
 ---------------------------------------------------------------*/
+#bp-docs-single-doc-header{
+	background-color: #fff;
+}
+.single-bp_doc h2.doc-title {
+	font-size: 190%;
+	color: #30455C;
+	margin: 40px 00px 0px 38px;
+	max-width:92%;
+	padding:0;
+	background-color: #fff;
+
+}
+
+.site div.doc-content {
+	border: 0;
+}
+
+#doc-content-permalink{
+	display: none;
+}
+
+.single-bp_doc .doc-tabs{
+	margin-top:30px;
+}
+li.permissiontab{
+	/*float: right !important;*/
+}
+.single-bp_doc .doc-tabs ul {
+	margin-right: 10px;
+}
+.doc-content{
+	background-color: #fff;
+}
 /*******
 * Fix douple border in groups order
 *******/
@@ -21,7 +54,7 @@ Add your css here
 /*******
 * Fix Layout Adminbar
 *******/
-
+/*
 ul#wp-admin-bar-top-secondary{
 	display:none;
 }
@@ -33,7 +66,19 @@ ul#wp-admin-bar-top-secondary{
    margin: 0 auto !important;
    max-width: 430px !important;
 }
+*/
+.single-bp_doc #bp-create-doc-button, .permissiontab{
+	display: none;
+}
 
+@media screen and (min-width: 700px) {
+	.single-bp_doc #bp-create-doc-button,.permissiontab{
+		display: block;
+	}
+
+}
+
+/*********************************** drucken ****************************************/
 @media print { 
 	header, footer, button,
 	#page-right-sidebar, #mobile-header, #secondary,
