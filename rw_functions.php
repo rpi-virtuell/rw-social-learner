@@ -333,3 +333,8 @@ add_action( 'template_redirect', 'rw_catch_attachment_request' , 20 );
 add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_script( 'child-js', 'http://lernlog.de/wp-content/plugins/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
 } );
+
+function rw_docs_disable_folder( $return ) {
+    return false;
+}
+add_filter( 'bp_docs_enable_folders', 'rw_docs_disable_folder' );
