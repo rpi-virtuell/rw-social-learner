@@ -189,12 +189,13 @@ function add_honeypot() {
 	echo '</div>';
 }
 add_action('bp_after_signup_profile_fields','add_honeypot');
-function check_honeypot() {
+function check_honeypot( $result ) {
     if (!empty($_POST['system55'])) {
         global $bp;
         wp_redirect(home_url());
         exit;
     }
+    return $result;
 }
 add_filter('bp_core_validate_user_signup','check_honeypot');
 

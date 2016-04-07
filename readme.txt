@@ -20,6 +20,9 @@ A child theme for the Boss theme, designed to be used in conjunction with our Bo
 
 == Changelog ==
 
+= 1.0.8 =
+* fix check honeypot
+
 = 1.0.7 =
 * removed shortcodes to Group Description
 * add Widget or Sidebar Shortcode for sticky activity plugin to template
