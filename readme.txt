@@ -1,8 +1,8 @@
 === Social Learner ===
 Contributors: BuddyBoss
 Requires at least: 3.8
-Tested up to: 4.3.1
-Version: 1.0.7
+Tested up to: 4.4.2
+Version: 1.0.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,12 @@ A child theme for the Boss theme, designed to be used in conjunction with our Bo
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.0.9
+* add buddypress docs tree support
+* add groups menu collaps
+* change single docs layout
+* display docs attachment images
+* reduce docs nav items
 
 = 1.0.8 =
 * fix check honeypot
