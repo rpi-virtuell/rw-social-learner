@@ -23,7 +23,9 @@ $titlebar_menu = wp_nav_menu( array(
     'walker'		 => new BuddybossWalker
 ) );
 
-if ( !empty( $buddypanel_menu ) || !empty( $titlebar_menu )):
+if ( ( isset($buddypanel_menu) && !empty( $buddypanel_menu ) )
+        && (isset($titlebar_menu) && !empty( $titlebar_menu ) )
+    ):
     ?>
     <!-- Navigation -->
     <div class="header-navigation">

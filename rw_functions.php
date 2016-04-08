@@ -15,6 +15,17 @@ remove_action( 'bbp_template_before_single_topic', 'learn_press_limit_access_cou
 remove_action( 'bbp_template_before_single_forum', 'learn_press_limit_access_course_forum' );
 
 
+add_action( 'wp_enqueue_scripts', function(){
+
+    wp_enqueue_script(
+        'rw-socs-tree2',
+        get_stylesheet_directory_uri() . '/js/jquery-sortable-lists.min.js',
+        array( 'jquery' )
+    );
+
+},30 );
+
+
 //////////////////////////////////////////
 ////////// LEFT GROUP ////////////////////
 //////////////////////////////////////////
@@ -330,6 +341,52 @@ function rw_catch_attachment_request() {
 }
 add_action( 'template_redirect', 'rw_catch_attachment_request' , 20 );
 
+/** add fancy box to attached images */
 add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_script( 'child-js', 'http://lernlog.de/wp-content/plugins/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
 } );
+
+/** add treeview for docs
+ * 	use /docs/docs-tree.php template
+ */
+add_filter('bp_docs_template',function($template_path, $bp_group_integration){
+	if(isset($_GET['tree'])){
+
+        return get_stylesheet_directory().'/docs/docs-tree.php' ;
+	}
+	return $template_path;
+},10, 2);
+
+/**
+ * add ajax tree node changer
+ */
+function rw_buddypress_docs_tree_change_node() {
+	check_ajax_referer( 'rw_buddypress_docs_tree_change_node_nonce', 'security' );
+
+	$post_id =  sanitize_text_field( $_POST['post_id'] );
+	$parent = sanitize_text_field( $_POST['parent'] );
+
+	$order = ( $_POST['order']);
+
+	foreach($order as $v){
+		$post = get_post($v['post_id']);
+		$post->menu_order = $v['menu_order'];
+
+		if($post_id == $v['post_id']){
+			$post->post_parent = $parent;
+		}
+
+		wp_update_post( $post );
+	}
+
+
+	header('Content-Type: application/json');
+	echo json_encode(array('success' => true, 'order'=>$order ));
+	die;
+}
+add_action( 'wp_ajax_rw_buddypress_docs_tree_change_node', 'rw_buddypress_docs_tree_change_node' );
+
+add_filter('bp_docs_parent_dropdown_query_args',function($array){
+	include_once 'RW_BuddyPress_Docs_Tree.php';
+	return RW_BuddyPress_Docs_Tree::bd_get_query_args($array);
+});

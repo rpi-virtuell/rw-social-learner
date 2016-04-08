@@ -9,7 +9,7 @@
 		 *******/
 
 		var navbar = jQuery('#item-nav .item-list-tabs ul')[0];
-		navbar.id='nav-bar-filter';
+		if(navbar) navbar.id='nav-bar-filter';
 
 		/*******
 		* Fix Layout for BuddyPress Group Email Subscription

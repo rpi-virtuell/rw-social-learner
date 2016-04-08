@@ -559,7 +559,7 @@ function boss_edu_profile_achievements() {
 add_filter( 'boss_profile_cover_sizes', 'boss_edu_profile_cover_sizes' );
 
 function boss_edu_profile_cover_sizes() {
-	if ( $GLOBALS[ 'badgeos' ] ) {
+	if (isset( $GLOBALS[ 'badgeos' ] )) {
 		return array( '322' => 'Big', 'none' => 'No photo' );
 	}
 	return array( '322' => 'Big', '200' => 'Small', 'none' => 'No photo' );

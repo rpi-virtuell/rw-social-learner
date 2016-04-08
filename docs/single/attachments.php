@@ -21,9 +21,10 @@
 	}
 </style>
 <div id="doc-attachments">
-	<?php foreach ( bp_docs_get_doc_attachments() as $attachment ) : ?>
+	<?php
+	$images = $files = array();
+	foreach ( bp_docs_get_doc_attachments() as $attachment ) {
 
-		<?php
 
 
 		switch($attachment->post_mime_type){
@@ -36,8 +37,8 @@
 
 				$image_url = $matches[1];
 				$thumb_url = str_replace('.jpg', '-150x150.jpg',$image_url);
-				$thumb_url = str_replace('.png', '-150x150.png',$thumb_url);
-				$thumb_url = str_replace('.gif', '-150x150.gif',$thumb_url);
+				//$thumb_url = str_replace('.png', '-150x150.png',$thumb_url);
+				//$thumb_url = str_replace('.gif', '-150x150.gif',$thumb_url);
 
 				$li = '<a class="fancybox" rel="doc"  href="'.$image_url.'">'.
 						'<img src="'.$thumb_url.'" class="doc-image">'.
@@ -47,13 +48,14 @@
 			break;
 
 			default:
-				$files[] = bp_docs_attachment_item_markup( $attachment->ID ) ;
+				$file = bp_docs_attachment_item_markup( $attachment->ID ) ;
+
+				$files[] = $file;
 		}
 
 
-		?>
+	}
 
-	<?php endforeach;
 	foreach($images  as $image){
 		echo $image;
 	}
@@ -61,7 +63,7 @@
 </div>
 <div style="clear:both"></div>
 <hr>
-<ul>
+<ul id="doc-attachments-ul">
 	<?php
 	foreach($files  as $file){
 		echo $file;
