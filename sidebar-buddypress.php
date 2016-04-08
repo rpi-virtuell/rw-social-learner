@@ -53,6 +53,18 @@
                         <div id="group-description">
                             <h3><?php _e("Group Info",'social-learner'); ?></h3>
                             <?php bp_group_description(); ?>
+							<?php if ( class_exists( 'RW_Group_Blogs_Server_API' ) ) { ?>
+								<br>
+								<h3><?php _e("Group Blogs",'social-learner'); ?></h3>
+								<?php
+								$group = groups_get_current_group();
+								$options = groups_get_groupmeta( $group->id, 'rw-group-blogs-blogdata' );
+								foreach ( $options as $key) { ?>
+									<a href="<?php echo $key[ 'site_url']; ?>"><?php echo $key[ 'site_url']; ?></a><br>
+								<?php
+								}
+								?>
+							<?php } ?>
 							<?php echo do_shortcode( '[widget classname="RW_Sticky_Activity_Widget" instance="title=Angepinnt"]' ); ?>
                             <?php do_action( 'bp_group_header_meta' ); ?>
 

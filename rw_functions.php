@@ -200,12 +200,13 @@ function add_honeypot() {
 	echo '</div>';
 }
 add_action('bp_after_signup_profile_fields','add_honeypot');
-function check_honeypot() {
+function check_honeypot( $result ) {
     if (!empty($_POST['system55'])) {
         global $bp;
         wp_redirect(home_url());
         exit;
     }
+    return $result;
 }
 add_filter('bp_core_validate_user_signup','check_honeypot');
 
@@ -346,6 +347,7 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_script( 'child-js', 'http://lernlog.de/wp-content/plugins/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
 } );
 
+<<<<<<< HEAD
 /** add treeview for docs
  * 	use /docs/docs-tree.php template
  */
@@ -390,3 +392,9 @@ add_filter('bp_docs_parent_dropdown_query_args',function($array){
 	include_once 'RW_BuddyPress_Docs_Tree.php';
 	return RW_BuddyPress_Docs_Tree::bd_get_query_args($array);
 });
+=======
+function rw_docs_disable_folder( $return ) {
+    return false;
+}
+add_filter( 'bp_docs_enable_folders', 'rw_docs_disable_folder' );
+>>>>>>> origin/master
