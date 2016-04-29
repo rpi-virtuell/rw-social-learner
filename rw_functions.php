@@ -396,5 +396,5 @@ add_filter('bp_docs_parent_dropdown_query_args',function($array){
 function rw_docs_disable_folder( $return ) {
     return false;
 }
-add_filter( 'bp_docs_enable_folders', 'rw_docs_disable_folder' );
+//add_filter( 'bp_docs_enable_folders', 'rw_docs_disable_folder' );
 

@@ -201,3 +201,76 @@ a.docs-tree-link .fa-file-o {
 	padding: 5px;
 	color: #ffffff;
 }
+
+
+/** fix missing buddyboss support for buddypress docs 1.9 **/
+.site .bp-docs-attachment-clip::before, .site .doc-attachment-mime-icon::before{
+	display:none;
+}
+.bp-docs-container .directory-title{
+	display:none;
+}
+
+ul.children {
+	margin-left: 60px;
+}
+.site .docs-folder-manage ul.children li .folder-info{
+	padding: 12px 28px 12px 10px;
+}
+
+#buddypress table.doctable > tr:nth-child(1st){
+	background-color: #eee !important;
+}
+
+#buddypress table.doctable tr.folder-row{
+	background-color: #ffffff !important;
+}
+
+.site .docs-folder-manage li .folder-info{
+    background-color: #ffffff;
+}
+.attachment-clip-cell .genericon.genericon-category {
+	margin: 3px 20px;
+}
+.folder-row{
+	position: relative;
+}
+
+.folder-row-name .genericon.genericon-category {
+	left: 25px;
+	position: absolute;
+	top: 30px;
+}
+
+.folder-loop .genericon.genericon-category{
+	left: 0px;
+}
+
+.folder-row .no-docs{
+	display: none;
+}
+
+
+body {
+}
+body {
+	color: #444;
+	font-family: "Open Sans",sans-serif;
+	font-size: 13px;
+	line-height: 1.4em;
+	min-width: 600px;
+}
+body, html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+*::-moz-placeholder {
+	color: #72777c;
+	opacity: 1;
+}
+.folder-toggle-link {
+	background-color: transparent;
+	border: none;
+
+}
