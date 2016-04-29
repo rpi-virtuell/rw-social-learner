@@ -19,6 +19,10 @@ A child theme for the Boss theme, designed to be used in conjunction with our Bo
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.1.0
+* add buddypress docs folder support
+* fix group cover photo 
+
 = 1.0.9
 * add buddypress docs tree support
 * add groups menu collaps
