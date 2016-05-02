@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 3.8
 Tested up to: 4.4.2
-Version: 1.0.9
+Version: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
