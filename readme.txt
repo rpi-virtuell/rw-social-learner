@@ -21,7 +21,7 @@ A child theme for the Boss theme, designed to be used in conjunction with our Bo
 == Changelog ==
 = 1.1.0
 * add buddypress docs folder support
-* fix group cover photo 
+* fix group cover photo
 
 = 1.0.9
 * add buddypress docs tree support

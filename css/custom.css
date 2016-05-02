@@ -233,7 +233,7 @@ ul.children {
 	margin: 3px 20px;
 }
 .folder-row{
-	position: relative;
+	position: relative !important;
 }
 
 .folder-row-name .genericon.genericon-category {
