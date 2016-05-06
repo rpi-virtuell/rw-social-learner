@@ -8,6 +8,8 @@ Add your css here
 
 #bp-docs-single-doc-header{
 	background-color: #fff;
+	padding-bottom:3px;
+	line-height: 188%;
 }
 .single-bp_doc h2.doc-title {
 	font-size: 190%;
@@ -74,6 +76,38 @@ ul#wp-admin-bar-top-secondary{
 */
 .single-bp_doc #bp-create-doc-button, .permissiontab{
 	display: none;
+}
+
+.single-bp_doc .commentlist .reply .comment-reply-link{
+	width: auto !important;
+	padding: 5px 10px 6px !important;
+	margin-top:5px;
+}
+.single-bp_doc #doc-attachments > li{
+	list-style: none;
+	margin-left: 0;
+}
+
+.bp_docs_attached_img {
+	float: left;
+	margin: 11px;
+	max-width: 150px;
+	overflow: hidden;
+}
+
+.bp_docs_attached_img > a {
+	display: table-row;
+}
+.bp_docs_attached_img > a:nth-child(2) {
+	display: inline-block;
+	height: 21px;
+	max-width: 150px;
+	overflow: hidden;
+}
+.bp_docs_attached_img > a.doc-attachment-delete{
+	background: red none repeat scroll 0 0;
+	display: table-cell;
+	padding: 1px;
 }
 
 @media screen and (min-width: 700px) {
@@ -207,6 +241,11 @@ a.docs-tree-link .fa-file-o {
 .site .bp-docs-attachment-clip::before, .site .doc-attachment-mime-icon::before{
 	display:none;
 }
+#doc-attachments-ul .doc-attachment-mime-icon::before{
+	display:block;
+	margin-top: 2px;
+}
+
 .bp-docs-container .directory-title{
 	display:none;
 }
@@ -263,6 +302,7 @@ ul.children {
 	font-size: 14px !important;
 	font-weight: normal !important;
 	margin: 0;
+	display: table-row;
 }
 .directory-breadcrumb-separator::before{
 	/*font-size: 0;*/

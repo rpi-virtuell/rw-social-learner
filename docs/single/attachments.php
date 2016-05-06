@@ -37,13 +37,15 @@
 
 				$image_url = $matches[1];
 				$thumb_url = str_replace('.jpg', '-150x150.jpg',$image_url);
-				//$thumb_url = str_replace('.png', '-150x150.png',$thumb_url);
-				//$thumb_url = str_replace('.gif', '-150x150.gif',$thumb_url);
+				$thumb_url = str_replace('.png', '.png',$thumb_url);
+				$thumb_url = str_replace('.gif', '.gif',$thumb_url);
 
-				$li = '<a class="fancybox" rel="doc"  href="'.$image_url.'">'.
+				$imgHtml = '<div class="bp_docs_attached_img"><a class="fancybox" rel="doc"  href="'.$image_url.'">'.
 						'<img src="'.$thumb_url.'" class="doc-image">'.
 						'</a>';
 
+				$li = str_replace('<span class="doc-attachment-mime-icon doc-attachment-mime-jpg"></span>',$imgHtml,$li);
+				$li = str_replace('</li>','</div></li>',$li);
 				$images[]=$li;
 			break;
 

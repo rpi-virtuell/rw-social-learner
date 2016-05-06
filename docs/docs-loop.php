@@ -74,12 +74,12 @@ if ( ! $bp_docs_do_theme_compat ) : ?>
 				<?php /* Just to keep things even */ ?>
 				<?php if ( bp_docs_enable_attachments() ) : ?>
 					<td class="attachment-clip-cell">
-						<?php bp_docs_attachment_icon() ?><?php bp_docs_genericon( 'category', 0 ); ?>
+						<?php bp_docs_attachment_icon() ?>
 					</td>
 				<?php endif ?>
 
 				<td class="folder-row-name" colspan=10>
-					<a href="<?php echo esc_url( bp_docs_get_parent_folder_url() ) ?>" class="up-one-folder"><span class="screen-reader-text"><?php _e( 'Go up one folder', 'bp-docs' ) ?></span><?php _ex( '.. parent folder', 'up one folder', 'bp-docs' ) ?></a>
+					<a href="<?php echo esc_url( bp_docs_get_parent_folder_url() ) ?>" class="up-one-folder"><span class="screen-reader-text"><?php _e( 'Go up one folder', 'bp-docs' ) ?></span><?php bp_docs_genericon( 'category', 0 ); ?><?php _ex( '.. ', 'up one folder', 'bp-docs' ) ?></a>
 				</td>
 			</tr>
 		<?php endif ?>
