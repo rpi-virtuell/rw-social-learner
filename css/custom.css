@@ -271,18 +271,38 @@ ul.children {
 .attachment-clip-cell .genericon.genericon-category {
 	margin: 3px 20px;
 }
-.folder-row{
+.folder-row-name{
 	position: relative !important;
 }
 
 .folder-row-name .genericon.genericon-category {
-	left: 25px;
+	left: -2vw;
 	position: absolute;
 	top: 30px;
+	padding-left: 10px;
 }
 
 .folder-loop .genericon.genericon-category{
 	left: 0px;
+}
+.folder-meta-info{
+	background-color: #CDD7E2 !important;
+}
+.folder-meta-info td{
+	padding:0 !important;
+	border-bottom: 1px solid #2e789b !important;
+}
+.folder-meta-info .genericon-attachment{
+	display: none !important;
+}
+.folder-meta-info a{
+	font-size: 0;
+}
+.folder-meta-info br{
+	display: none;
+}
+.folder-meta-info a strong{
+	font-size: 15px;
 }
 
 .folder-row .no-docs{
@@ -342,4 +362,8 @@ body, html {
 	background-color: transparent;
 	border: none;
 
+}
+/*fix new folder*/
+div.existing-or-new-selector {
+	margin-left: 10px;
 }
