@@ -2,6 +2,12 @@
 Add your css here
 ---------------------------------------------------------------*/
 
+.no-hidden {
+	overflow: visible !important;
+}
+.SumoSelect > .optWrapper > .options li label {
+	display: block !important;
+}
 #item-header .group-header-meta{
 	padding: 0;
 }

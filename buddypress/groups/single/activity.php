@@ -7,8 +7,8 @@
  */
 
 ?>
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-    <ul>
+<div class="item-list-tabs no-ajax no-hidden" id="subnav" role="navigation">
+    <ul class="no-hidden">
         <li class="feed"><a href="<?php bp_group_activity_feed_link(); ?>" title="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
         <?php
@@ -22,7 +22,7 @@
 
         <li id="activity-filter-select" class="last">
             <label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
-            <select id="activity-filter-by" class="activity-filter-by SumoUnder bp-ap-selectbox" multiple="multiple" >
+            <select id="activity-filter-by" class="activity-filter-by SumoUnder" multiple="multiple" >
                 <option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
                 <?php bp_activity_show_filters( 'group' ); ?>
