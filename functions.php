@@ -77,6 +77,8 @@ function boss_child_enqueue_styles() {
 	} else {
 		wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/main.css', false, '1.0.6', 'all' );
 	}
+	wp_enqueue_script( 'sumo', get_stylesheet_directory_uri() . '/js/jquery.sumoselect.js', false, '1.0.4', false );
+	wp_enqueue_style( 'sumocss', get_stylesheet_directory_uri() . '/css/sumoselect.css', false, '1.0.6', 'all' );
 
 	$theme_layout = boss_get_option( 'boss_layout_style' );
 

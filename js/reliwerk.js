@@ -53,3 +53,7 @@
 		*/
     });
 }( jQuery, document, window ) );
+
+jQuery( document ).ready(function() {
+	$('.activity-filter-by').SumoSelect();
+});
