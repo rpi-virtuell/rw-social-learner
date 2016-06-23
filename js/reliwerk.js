@@ -55,5 +55,5 @@
 }( jQuery, document, window ) );
 
 jQuery( document ).ready(function() {
-	$('.activity-filter-by').SumoSelect();
+	$('.activity-filter-by').SumoSelect( { csvDispCount:2});
 });
