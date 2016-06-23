@@ -61,7 +61,7 @@
 
 
     /*styling for multiple select*/
-    .SumoSelect > .optWrapper.multiple > .options li.opt { padding-left: 35px;cursor: pointer;}
+    .SumoSelect > .optWrapper.multiple > .options li.opt { padding-left: 35px;cursor: pointer; clear: both; }
         .SumoSelect > .optWrapper.multiple > .options li.opt span,
         .SumoSelect .select-all > span{position:absolute;display:block;width:30px;top:0;bottom:0;margin-left:-35px;}
             .SumoSelect > .optWrapper.multiple > .options li.opt span i,
