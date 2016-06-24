@@ -7,6 +7,11 @@
  */
 
 ?>
+<style>
+    .SumoSelect > .optWrapper {
+        position: absolute;
+    }
+</style>
 <div class="no-ajax no-hidden" id="subnav" role="navigation">
     <ul class="no-hidden">
         <li class="feed"><a href="<?php bp_group_activity_feed_link(); ?>" title="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
@@ -20,7 +25,7 @@
          */
         do_action( 'bp_group_activity_syndication_options' ); ?>
 
-        <li id="activity-filter-select" style="float: right; margin-top: -30px;">
+        <li id="activity-filter-select" style="float: right; z-index: 10000; margin-top: -30px;">
             <label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
             <select id="activity-filter-by" class="activity-filter-by SumoUnder" multiple="multiple" >
                 <option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
