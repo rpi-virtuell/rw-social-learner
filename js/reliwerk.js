@@ -54,6 +54,17 @@
     });
 }( jQuery, document, window ) );
 
+/*
+ * Added for multiple select on activity pages
+ */
 jQuery( document ).ready(function() {
-	$('.activity-filter-by').SumoSelect( { csvDispCount:2});
+	var jq = jQuery;
+	if ( undefined !== jq.cookie('bp-activity-filter') && jq('#activity-filter-select').length ) {
+		var sel = jq.cookie('bp-activity-filter');
+		var selArr = sel.split( ',');
+		for ( i=0; i < selArr.length; i++ ) {
+			jq('#activity-filter-by option[value="' + selArr[i] + '"]').prop('selected', true);
+		}
+	}
+	jq('.activity-filter-by').SumoSelect( { csvDispCount:2});
 });
