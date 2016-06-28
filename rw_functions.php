@@ -398,3 +398,23 @@ function rw_docs_disable_folder( $return ) {
 }
 //add_filter( 'bp_docs_enable_folders', 'rw_docs_disable_folder' );
 
+
+/**
+ * save bp-actifity-filter cookie to user metadata
+ */
+function activity_widget_filter() {
+	if ( get_current_user_id() != 0 ) {
+		$cookie = $_COOKIE[ 'bp-activity-filter' ];
+		update_user_meta( get_current_user_id(), 'bp-activity-filter', $cookie );
+	}
+}
+add_action( 'wp_ajax_activity_widget_filter', 'activity_widget_filter' );
+
+/**
+ * get bp-actifity-filter from user metadata and put it in cookie
+ */
+function set_activity_widget_filter() {
+	$data = get_user_meta( get_current_user_id(), 'bp-activity-filter', true );
+	setcookie( 'bp-activity-filter', $data, time()+ ( 60 * 60 ));
+}
+add_action('wp_login', 'set_activity_widget_filter');
