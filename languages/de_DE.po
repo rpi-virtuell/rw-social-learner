@@ -1,0 +1,2369 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boss. v1.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-20 15:53+0100\n"
+"PO-Revision-Date: 2016-06-20 16:08+0100\n"
+"Last-Translator: Joachim Happel <joachim.happel@gmail.com>\n"
+"Language-Team: BuddyBoss <support@buddyboss.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Loco-Target-Locale: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: js/jquery-ui.min.js:10
+msgid "'"
+msgstr "'"
+
+#: RW_BuddyPress_Docs_Tree.php:321 RW_BuddyPress_Docs_Tree.php:359
+msgid "Docs"
+msgstr "Artikel"
+
+# @ default
+# @ boss
+#: RW_BuddyPress_Docs_Tree.php:326
+msgid "Title:"
+msgstr "Titel:"
+
+#: RW_BuddyPress_Docs_Tree.php:361
+msgid "Widgets in this area will be shown on buddypress docs pages."
+msgstr "Widgets in diesem Bereich werden auf Gruppen-Artikelseiten angezeigt"
+
+# @ boss
+#: buddypress/groups/single/admin.php:16
+msgid "Group Name (required)"
+msgstr "Gruppenname (wird benötigt)"
+
+# @ boss
+#: buddypress/groups/single/admin.php:19
+msgid "Group Description (required)"
+msgstr "Gruppenbeschreibung (wird benötigt)"
+
+# @ boss
+#: buddypress/groups/single/admin.php:26
+msgid "Notify group members of these changes via email"
+msgstr "Gruppenmitglieder über diese Änderungen per E-Mail informieren"
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:34
+#: buddypress/groups/single/admin.php:119
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+# @ boss
+#: buddypress/groups/single/admin.php:49
+msgid "Enable discussion forum"
+msgstr "Diskussionsforum aktivieren"
+
+# @ boss
+#: buddypress/groups/single/admin.php:58
+msgid "Privacy Options"
+msgstr "Datenschutzeinstellungen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:63
+msgid "This is a public group"
+msgstr "Dies ist eine öffentliche Gruppe"
+
+# @ boss
+#: buddypress/groups/single/admin.php:65
+msgid "Any site member can join this group."
+msgstr "Jedes Mitglied dieser Seite kann dieser Gruppe beitreten."
+
+# @ boss
+#: buddypress/groups/single/admin.php:66 buddypress/groups/single/admin.php:76
+msgid ""
+"This group will be listed in the groups directory and in search results."
+msgstr ""
+"Diese Gruppe wird im Gruppenverzeichnis und in den Suchergebnissen gelisted."
+
+# @ boss
+#: buddypress/groups/single/admin.php:67
+msgid "Group content and activity will be visible to any site member."
+msgstr ""
+"Inhalte und Aktivitäten der Gruppe sind für alle Mitglieder der Seite "
+"sichtbar."
+
+# @ boss
+#: buddypress/groups/single/admin.php:73
+msgid "This is a private group"
+msgstr "Das ist eine private Gruppe"
+
+# @ boss
+#: buddypress/groups/single/admin.php:75
+msgid "Only users who request membership and are accepted can join the group."
+msgstr ""
+"Ausschließlich Benutzer, die eine Mitgliedschaft beantragt haben und "
+"zugelassen wurden, können der Gruppe beitreten."
+
+# @ boss
+#: buddypress/groups/single/admin.php:77 buddypress/groups/single/admin.php:87
+msgid ""
+"Group content and activity will only be visible to members of the group."
+msgstr ""
+"Die Gruppeninhalte und Aktivitäten sind nur für Mitglieder dieser Gruppe "
+"sichtbar."
+
+# @ boss
+#: buddypress/groups/single/admin.php:83
+msgid "This is a hidden group"
+msgstr "Dies ist eine verborgene Gruppe"
+
+# @ boss
+#: buddypress/groups/single/admin.php:85
+msgid "Only users who are invited can join the group."
+msgstr "Um dieser Gruppe beizutreten brauchst du eine Einladung."
+
+# @ boss
+#: buddypress/groups/single/admin.php:86
+msgid ""
+"This group will not be listed in the groups directory or search results."
+msgstr ""
+"Diese Gruppe wird nicht im Gruppenverzeichnis und in den Suchergebnissen "
+"gelisted."
+
+# @ boss
+#: buddypress/groups/single/admin.php:94
+msgid "Group Invitations"
+msgstr "Gruppeneinladungen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:96
+msgid "Which members of this group are allowed to invite others?"
+msgstr "Welche Gruppenmitglieder dürfen weitere Mitglieder einladen?"
+
+# @ boss
+#: buddypress/groups/single/admin.php:101
+msgid "All group members"
+msgstr "Alle Gruppenmitglieder"
+
+# @ boss
+#: buddypress/groups/single/admin.php:106
+msgid "Group admins and mods only"
+msgstr "Nur Gruppenadministratoren und Moderatoren"
+
+# @ boss
+#: buddypress/groups/single/admin.php:111
+msgid "Group admins only"
+msgstr "Nur Gruppenadministratoren"
+
+# @ boss
+#: buddypress/groups/single/admin.php:129
+msgid ""
+"Upload an image to use as an avatar for this group. The image will be shown "
+"on the main group page, and in search results."
+msgstr ""
+"Lade ein Bild hoch, um diese als Profilbild für diese Gruppe zu verwenden. "
+"Das Bild wird auf der Hauptseite der Gruppe und in Suchergebnissen angezeigt."
+
+# @ boss
+#: buddypress/groups/single/admin.php:133
+msgid ""
+"If you'd like to remove the existing avatar but not upload a new one, please "
+"use the delete avatar button."
+msgstr ""
+"Wenn Sie eine der bestehenden Avatar zu entfernen, aber ein neues nicht "
+"hochladen möchten, nutzen Sie bitte die Avatar Lösch-Button."
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:135
+msgid "Delete Avatar"
+msgstr "Avatar löschen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:145
+msgid "Crop Avatar"
+msgstr "Avatarbild beschneiden"
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:147
+msgid "Avatar to crop"
+msgstr "Avatarbild zuschneiden"
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:150
+msgid "Avatar preview"
+msgstr "Avatar-Vorschau"
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:153
+msgid "Crop Image"
+msgstr "Profilbild schneiden"
+
+#: buddypress/groups/single/admin.php:170
+msgid "Change Cover Image"
+msgstr "Hintergrundbild ändern"
+
+#: buddypress/groups/single/admin.php:181
+msgid "The Cover Image will be used to customize the header of your group."
+msgstr "Das Hintergrundbild wird im Kopfbereich deiner Gruppe angezeigt."
+
+# @ boss
+#: buddypress/groups/single/admin.php:201
+msgid "Administrators"
+msgstr "Administratoren"
+
+# @ boss
+#: buddypress/groups/single/admin.php:209
+#: buddypress/groups/single/admin.php:236
+#, php-format
+msgid "Profile picture of %s"
+msgstr "Profilbild von %s"
+
+# @ boss
+#: buddypress/groups/single/admin.php:215
+#: buddypress/groups/single/admin.php:243
+msgid "Demote to Member"
+msgstr "Zum Mitglied herabstufen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:229
+msgid "Moderators"
+msgstr "Moderatoren"
+
+# @ boss
+#: buddypress/groups/single/admin.php:242
+#: buddypress/groups/single/admin.php:289
+msgid "Promote to Admin"
+msgstr "Zum Admin machen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:256
+msgid "Members"
+msgstr "Mitglieder"
+
+# @ boss
+#: buddypress/groups/single/admin.php:274
+msgid "(banned)"
+msgstr "(verbannt)"
+
+# @ boss
+#: buddypress/groups/single/admin.php:283
+msgid "Unban this member"
+msgstr "Sperre für dieses Mitglied aufheben"
+
+# @ boss
+#: buddypress/groups/single/admin.php:283
+msgid "Remove Ban"
+msgstr "Bann aufheben"
+
+# @ boss
+#: buddypress/groups/single/admin.php:287
+msgid "Kick and ban this member"
+msgstr "Diesen Benutzer kicken und sperren"
+
+# @ boss
+#: buddypress/groups/single/admin.php:287
+msgid "Kick &amp; Ban"
+msgstr "Kicken &amp; Bannen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:288
+msgid "Promote to Mod"
+msgstr "Zum Moderator befördern"
+
+# @ boss
+#: buddypress/groups/single/admin.php:293
+msgid "Remove this member"
+msgstr "Mitglied entfernen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:293
+msgid "Remove from group"
+msgstr "Aus der Gruppe entfernen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:321
+msgid "This group has no members."
+msgstr "Diese Gruppe hat keine Mitglieder."
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:351
+msgid "Accept"
+msgstr "Annehmen"
+
+# @ boss
+# @ buddypress
+#: buddypress/groups/single/admin.php:353
+msgid "Reject"
+msgstr "Ablehnen"
+
+# @ boss
+#: buddypress/groups/single/admin.php:366
+msgid "There are no pending membership requests."
+msgstr "Es gibt keine ausstehenden Mitgliedschaftsanfragen."
+
+# @ boss
+#: buddypress/groups/single/admin.php:383
+msgid ""
+"WARNING: Deleting this group will completely remove ALL content associated "
+"with it. There is no way back, please be careful with this option."
+msgstr ""
+"ACHTUNG: Das Löschen der Gruppe entfernt ALLE verknüpften Inhalte. Es gibt "
+"keinen Weg zurück, also sei vorsichtig mit dieser Option."
+
+# @ boss
+#: buddypress/groups/single/admin.php:387
+msgid "I understand the consequences of deleting this group."
+msgstr "Ich kenne die Folgen, die durch das Löschen der Gruppe enstehen."
+
+# @ boss
+#: buddypress/groups/single/admin.php:393
+msgid "Delete Group"
+msgstr "Gruppe löschen"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:36
+#, php-format
+msgid "active %s"
+msgstr "aktiv %s"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:57
+msgid "Public"
+msgstr "Öffentlich"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:59
+msgid "Hidden"
+msgstr "Versteckt"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:61
+msgid "Private"
+msgstr "Privat"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:69
+msgid "Group"
+msgstr "Gruppe"
+
+#: buddypress/groups/single/group-header.php:83
+msgid "Member"
+msgid_plural "Members"
+msgstr[0] "Mitglied"
+msgstr[1] "Mitglieder"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:140 docs/single/edit.php:84
+#: docs/single/index.php:86 sidebar-buddypress.php:81
+msgid "Group Admins"
+msgstr "Gruppen-Administratoren"
+
+# @ boss
+#: buddypress/groups/single/group-header.php:151 docs/single/edit.php:93
+#: docs/single/index.php:95 sidebar-buddypress.php:90
+msgid "Group Mods"
+msgstr "Gruppen-Moderatoren"
+
+# @ boss
+#: buddypress/members/single/member-header.php:39
+msgid ", "
+msgstr ", "
+
+#: buddypress/members/single/member-header.php:100
+msgid "Point"
+msgid_plural "Points"
+msgstr[0] "Punkt"
+msgstr[1] "Punkte"
+
+# @ boss
+#: buddypress/members/single/member-header.php:107
+msgid "Following"
+msgstr "Folgen"
+
+# @ boss
+#: buddypress/members/single/member-header.php:111
+msgid "Followers"
+msgstr "Follower"
+
+# @ boss
+#: buddypress/members/single/member-header.php:118
+msgid "Friends"
+msgstr "Freunde"
+
+# @ boss
+#: comments.php:38
+msgid "Comments"
+msgstr "Kommentare"
+
+# @ boss
+#: comments.php:48
+msgid "Comment navigation"
+msgstr "Kommentar-Navigation"
+
+# @ boss
+#: comments.php:49
+msgid "&larr; Older Comments"
+msgstr "&larr; Ältere Kommentare"
+
+# @ boss
+#: comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+# @ boss
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "Die Kommentarfunktion ist geschlossen."
+
+# @ boss
+#: comments.php:72
+msgid "Comment"
+msgstr "Kommentar"
+
+#: docs/docs-header.php:16
+msgid "Read"
+msgstr "Lesen"
+
+# @ boss
+#: docs/docs-header.php:21
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: docs/docs-header.php:31
+msgid "This Doc is in the Trash"
+msgstr "Dieser Artikel liegt im Papierkorb"
+
+#: docs/docs-header.php:39
+msgid "New Doc"
+msgstr "Neuer Artikel"
+
+#: docs/docs-loop.php:27
+msgid "Manage Folders"
+msgstr "Ordner verwalten"
+
+#: docs/docs-loop.php:32
+msgid "Hide Folders"
+msgstr "Ordner verbergen"
+
+#: docs/docs-loop.php:33
+msgid "Show Folders"
+msgstr "Ordner anzeigen"
+
+# @ boss
+#: docs/docs-loop.php:47
+msgid "Title"
+msgstr "Titel"
+
+#: docs/docs-loop.php:52
+msgid "Author"
+msgstr "Autor"
+
+#: docs/docs-loop.php:57
+msgid "Created"
+msgstr "Erstellt"
+
+#: docs/docs-loop.php:61
+msgid "Last Edited"
+msgstr "Letzte Bearbeitung"
+
+#: docs/docs-loop.php:82
+msgid "Go up one folder"
+msgstr "Zum übergeordneten Ordner  wechslen"
+
+#: docs/docs-loop.php:82
+msgctxt "up one folder"
+msgid ".. "
+msgstr ".. "
+
+#: docs/docs-loop.php:163
+#, php-format
+msgid "Viewing %1$s-%2$s of %3$s docs"
+msgstr "%1$s-%2$s von %3$s Artikeln"
+
+#: docs/docs-loop.php:172
+#, php-format
+msgid "There are no docs for this view. Why not <a href=\"%s\">create one</a>?"
+msgstr ""
+"Es sind boch keine Artikel im Ordner Warum nicht gleich einen <a href=\"%s"
+"\">erstellen</a>?"
+
+#: docs/docs-loop.php:174
+msgid "There are no docs for this view."
+msgstr "Keine Artikel in dieser Ansicht."
+
+#: docs/single/attachments.php:5
+msgid "First save, then upload."
+msgstr "Erst speichern. Anschließend Dateien hochladen und anhängen."
+
+# @ boss
+#: docs/single/edit.php:75 docs/single/index.php:77 sidebar-buddypress.php:54
+msgid "Group Info"
+msgstr "Gruppen Info"
+
+#: docs/single/index-inner.php:11
+msgid "Locked"
+msgstr "Gesperrt"
+
+#: docs/single/index-inner.php:11
+msgid "(click for more info)"
+msgstr "(Klicken, um mehr Infos zu erhalten)"
+
+#: docs/single/index-inner.php:13
+#, php-format
+msgid ""
+"This doc is currently being edited by %1$s. In order to prevent edit "
+"conflicts, only one user can edit a doc at a time."
+msgstr ""
+"Dieser Artikel wird gerade von %1$s bearbeitet. Um Bearbeitungskonflikte zu "
+"vermeiden, darf ein Artikel von einem Autor gleichzeitig bearbeitet werden."
+
+#: docs/single/index-inner.php:16
+#, php-format
+msgid ""
+"Please try again in a few minutes. Or, as an admin, you can <a href=\"%s"
+"\">force cancel</a> the edit lock."
+msgstr ""
+"Versuche es bitte in Kürze noch einmal oder, als Admin, kannst du die <a "
+"href=\"%s\">Sperre aufheben</a>."
+
+#: docs/single/index-inner.php:18
+msgid "Please try again in a few minutes."
+msgstr "Versuche es bitte in Kürze noch einmal."
+
+#: docs/single/index-inner.php:34
+msgid "Attachments"
+msgstr "Dateianhänge"
+
+#: functions.php:542
+msgid "See All"
+msgstr "Alle anzeigen"
+
+#: rw_functions.php:61
+msgid "Left group"
+msgstr "Aus der Gruppe austreten"
+
+#: rw_functions.php:63
+msgid "Group Disbands"
+msgstr "Gruppe auflösen."
+
+#: rw_functions.php:80
+#, php-format
+msgid "%1$s left the group %2$s"
+msgstr "%1$s verlässt die Gruppe %2$s"
+
+#: rw_functions.php:316 rw_functions.php:323
+msgid "File not found."
+msgstr "Datei nicht gefunden."
+
+# @ boss
+#: searchform-header.php:10
+msgid "Search for:"
+msgstr "Suchen nach:"
+
+# @ boss
+#: searchform-header.php:12 template-parts/header-middle-column.php:51
+msgid "Search"
+msgstr "Suchen"
+
+#: sidebar-buddypress.php:64
+msgid "Group Blogs"
+msgstr "Gruppen Blogs"
+
+#: single.php:54
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiter lesen %s <span class=\"meta-nav\">&rarr;</span>"
+
+# @ boss
+#: single.php:61
+msgid "Pages:"
+msgstr "Seiten:"
+
+# @ boss
+#: template-parts/header-fluid-layout-column.php:12
+msgid "Menu"
+msgstr "Menü"
+
+# @ boss
+#: template-parts/header-profile.php:95 template-parts/left-panel.php:43
+msgid "Logout"
+msgstr "Abmelden"
+
+# @ boss
+#: template-parts/header-profile.php:114 template-parts/left-panel.php:35
+msgid "Register"
+msgstr "Registrieren"
+
+# @ boss
+#: template-parts/header-profile.php:117 template-parts/left-panel.php:38
+msgid "Login"
+msgstr "Anmelden"
+
+# @ boss
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+# @ boss
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
+
+# @ boss
+#~ msgid "Author Archives: %s"
+#~ msgstr "Autoren Archive: %s"
+
+# @ boss
+#~ msgid "in reply to: "
+#~ msgstr "Antwort auf:"
+
+# @ boss
+#~ msgid "Started by: %1$s"
+#~ msgstr "Beginnt bei: %1$s"
+
+# @ boss
+#~ msgid "in: <a href=\"%1$s\">%2$s</a>"
+#~ msgstr "in: <a href=\"%1$s\">%2$s</a>"
+
+# @ boss
+#~ msgid "Headings"
+#~ msgstr "Überschriften"
+
+# @ boss
+#~ msgid "Body Content"
+#~ msgstr "Seiten Inhalt"
+
+# @ boss
+#~ msgid "Site Title"
+#~ msgstr "Seiten Titel"
+
+# @ boss
+#~ msgid "Slides"
+#~ msgstr "Folien"
+
+# @ boss
+#~ msgid "Slide"
+#~ msgstr "Folie"
+
+# @ boss
+#~ msgid "Add New"
+#~ msgstr "Erstellen"
+
+# @ boss
+#~ msgid "Add New Slide"
+#~ msgstr "Folie erstellen"
+
+# @ boss
+#~ msgid "Edit Slide"
+#~ msgstr "Folie bearbeiten"
+
+# @ boss
+#~ msgid "View Slide"
+#~ msgstr "Folie anschauen"
+
+# @ boss
+#~ msgid "Search Slides"
+#~ msgstr "Folien suchen "
+
+# @ boss
+#~ msgid "No Slides found"
+#~ msgstr "Kein Folie gefunden"
+
+# @ boss
+#~ msgid "No Slides found in trash"
+#~ msgstr "Kein Folie im Papierkorb gefunden"
+
+# @ boss
+#~ msgid "Username"
+#~ msgstr "Loginname"
+
+# @ boss
+#~ msgid "Remember Me"
+#~ msgstr "Erinnere dich an mich"
+
+# @ boss
+#~ msgid "Module does not have the proper info array"
+#~ msgstr "Das Modul hat kein richtiges Info-Array"
+
+# @ boss
+#~ msgid "Profile: Extra Links"
+#~ msgstr "Profil: Extra Links"
+
+# @ boss
+#~ msgid "Group: Extra Links"
+#~ msgstr "Gruppe: Extra Links"
+
+# @ boss
+#~ msgid "Show:"
+#~ msgstr "Zeige:"
+
+# @ boss
+#~ msgid "Post in:"
+#~ msgstr "Beitrag in:"
+
+# @ boss
+#~ msgid "Page %s"
+#~ msgstr "Seite %s"
+
+# @ boss
+#~ msgid "Post navigation"
+#~ msgstr "Beitragsnavigation"
+
+# @ boss
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> äaltere Beiträge"
+
+# @ boss
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
+
+# @ boss
+#~ msgid "Pingback:"
+#~ msgstr "Pingback:"
+
+# @ boss
+#~ msgid "(Edit)"
+#~ msgstr "(Bearbeiten)"
+
+# @ boss
+#~ msgid "Post author"
+#~ msgstr "Autor des Beitrags"
+
+# @ boss
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Dein Kommentar wartet auf Freischaltung."
+
+# @ boss
+#~ msgid "View all posts by %s"
+#~ msgstr "Zeige alle Beiträge von %s"
+
+# @ boss
+#~ msgid "View Profile"
+#~ msgstr "Profil anzeigen"
+
+# @ boss
+#~ msgid "All Members <span>%s</span>"
+#~ msgstr "Alle Mitglieder <span>%s</span>"
+
+# @ boss
+#~ msgid "My Friends <span>%s</span>"
+#~ msgstr "Meine Freunde <span>%s</span>"
+
+# @ boss
+#~ msgid "My Groups <span>%s</span>"
+#~ msgstr "Meine Gruppen <span>%s</span>"
+
+# @ boss
+#~ msgid "My Favorites <span>%s</span>"
+#~ msgstr "Meine Favoriten <span>%s</span>"
+
+# @ boss
+#~ msgid "Mentions"
+#~ msgstr "Erwähnungen"
+
+# @ boss
+#~ msgctxt "Number of new activity mentions"
+#~ msgid "%s new"
+#~ msgid_plural "%s new"
+#~ msgstr[0] "%s neu"
+#~ msgstr[1] "%s neue"
+
+# @ boss
+#~ msgid "RSS"
+#~ msgstr "RSS-Feed"
+
+# @ boss
+#~ msgid "Updates"
+#~ msgstr "Updates"
+
+# @ boss
+#~ msgid "Posts"
+#~ msgstr "Antworten"
+
+# @ boss
+#~ msgid "Forum Topics"
+#~ msgstr "Forum-Themen"
+
+# @ boss
+#~ msgid "Forum Replies"
+#~ msgstr "Forum-Antworten"
+
+# @ boss
+#~ msgid "Friendships"
+#~ msgstr "Freundschaften"
+
+# @ boss
+#~ msgid "All Sites <span>%s</span>"
+#~ msgstr "Alle Seiten <span>%s</span>"
+
+# @ boss
+#~ msgid "My Sites <span>%s</span>"
+#~ msgstr "Meine Webseiten <span>%s</span>"
+
+# @ boss
+#~ msgid "Last Active"
+#~ msgstr "Zuletzt aktiv"
+
+# @ boss
+#~ msgid "Newest"
+#~ msgstr "Neu"
+
+# @ boss
+#~ msgid "All Topics <span>%s</span>"
+#~ msgstr "Alle Themen <span>%s</span>"
+
+# @ boss
+#~ msgid "My Topics <span>%s</span>"
+#~ msgstr "Meine Themen <span>%s</span>"
+
+# @ boss
+#~ msgid "Most Posts"
+#~ msgstr "Meiste Antworten"
+
+# @ boss
+#~ msgid "Unreplied"
+#~ msgstr "Unbeantwortet"
+
+# @ boss
+#~ msgid "Create New Topic:"
+#~ msgstr "Neues Thema erstellen:"
+
+# @ boss
+#~ msgid "Tags (comma separated):"
+#~ msgstr "Tags (komma-getrennt):"
+
+# @ boss
+#~ msgid "Post In Group Forum:"
+#~ msgstr "Veröffentlichen in der Gruppe:"
+
+# @ boss
+#~ msgid "----"
+#~ msgstr "----"
+
+# @ boss
+#~ msgid "Post Topic"
+#~ msgstr "Thema verfassen"
+
+# @ boss
+#~ msgid "Most Members"
+#~ msgstr "Meiste Mitglieder"
+
+# @ boss
+#~ msgid "Newly Created"
+#~ msgstr "Neu angelegt"
+
+# @ boss
+#~ msgid "Select people to invite from your friends list."
+#~ msgstr "Lade Leute aus deiner Freundesliste ein."
+
+# @ boss
+#~ msgid "Remove Invite"
+#~ msgstr "Einladung aufheben"
+
+# @ boss
+#~ msgid ""
+#~ "Once you have built up friend connections you will be able to invite "
+#~ "others to your group."
+#~ msgstr ""
+#~ "Sobald du ein paar Freundschaften geschlossen hast, kannst du andere in "
+#~ "deine Gruppe einladen."
+
+# @ boss
+#~ msgid "You have no outstanding group invites."
+#~ msgstr "Du hast keine ausstehenden Gruppeneinladungen."
+
+# @ boss
+#~ msgid "Send To (Username or Friend's Name)"
+#~ msgstr "Sende an (Benutzername oder Name eines Freundes)"
+
+# @ boss
+#~ msgid "Sent:"
+#~ msgstr "Gesendet:"
+
+# @ boss
+#~ msgid "Sorry, no notices were found."
+#~ msgstr "Keine Mitteilungen gefunden."
+
+# @ boss
+#~ msgid ""
+#~ "Apologies, but no results were found. Perhaps searching will help find a "
+#~ "related post."
+#~ msgstr ""
+#~ "Leider nichts gefunden. Vielleicht hilft die Suchfunktion, einen "
+#~ "passenden Beitrag zu finden."
+
+# @ boss
+#~ msgid "Permalink to %s"
+#~ msgstr "Permalink: %s"
+
+# @ boss
+#~ msgid ""
+#~ "BuddyBoss cannot find the starter file, should be located at: *wp root*/"
+#~ "wp-content/themes/buddyboss/buddyboss-inc/init.php"
+#~ msgstr ""
+#~ "BuddyBoss kann die Starter-Datei nicht finden, sollte sich bei: * wp "
+#~ "root*/wp-content/themes/buddyboss/buddyboss-inc/init.php befinden"
+
+# @ boss
+#~ msgid ""
+#~ "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span "
+#~ "class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</"
+#~ "time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
+#~ "&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+#~ "\"gallery\">%8$s</a>."
+#~ msgstr ""
+#~ "Veröffentlicht <span class=\"entry-date\"><time class=\"entry-date\" "
+#~ "datetime=\"%1$s\">%2$s</time></span> am <a href=\"%3$s\" title=\"Link to "
+#~ "full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title="
+#~ "\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+
+# @ boss
+#~ msgid "&larr; Previous"
+#~ msgstr "&larr;  Zurück"
+
+# @ boss
+#~ msgid "Next &rarr;"
+#~ msgstr "Vor &rarr;"
+
+# @ boss
+#~ msgid "No posts to display"
+#~ msgstr "Keine Beiträge, die hier angezeigt werden sollten."
+
+# @ boss
+#~ msgid ""
+#~ "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+#~ msgstr ""
+#~ "Bereit, um deinen ersten Beitrag zu veröffentlichen? <a href=\"%s"
+#~ "\">Starte hier</a>."
+
+# @ boss
+#~ msgid ""
+#~ "Sorry, but nothing matched your search criteria. Please try again with "
+#~ "some different keywords."
+#~ msgstr ""
+#~ "Entschuldigung, aber zu deinen Suchbegriffen wurde nichts passendes "
+#~ "gefunden. Bitte versuche es mit anderen Stichworten noch einmal."
+
+# @ boss
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Tag: %s"
+
+# @ boss
+#~ msgid "The public activity for everyone on this site."
+#~ msgstr "Aktivitäten aller Benutzer anzeigen."
+
+# @ boss
+#~ msgid "The activity of my friends only."
+#~ msgstr "Nur Aktivitäten meiner Freunde anzeigen."
+
+# @ boss
+#~ msgid "The activity of groups I am a member of."
+#~ msgstr "Aktivitäten der Gruppen in denen ich Mitglied bin."
+
+# @ boss
+#~ msgid "The activity I've marked as a favorite."
+#~ msgstr "Nur Aktivitäten anzeigen, die ich als Favoriten markiert habe."
+
+# @ boss
+#~ msgid "Activity that I have been mentioned in."
+#~ msgstr "Nur Aktivitäten anzeigen, in den ich erwähnt werde."
+
+# @ boss
+#~ msgid "RSS Feed"
+#~ msgstr "RSS-Feed"
+
+# @ boss
+#~ msgid "404"
+#~ msgstr "404"
+
+# @ boss
+#~ msgid "error"
+#~ msgstr "Fehler"
+
+# @ boss
+#~ msgid ""
+#~ "It looks like nothing was found at this location. Go Back or Maybe try a "
+#~ "search?"
+#~ msgstr ""
+#~ "Wie es aussieht, wurde an dieser Stelle nichts gefunden. Möchtest du "
+#~ "danach suchen?"
+
+# @ boss
+#~ msgid "BuddyPanel"
+#~ msgstr "BuddyPanel"
+
+# @ default
+#~ msgid "Your site&#8217;s most recent Posts."
+#~ msgstr "Die aktuellsten Beiträge deiner Webseite."
+
+# @ default
+#~ msgid "(BuddyBoss) Recent Posts"
+#~ msgstr "(BuddyBoss) Letzte Beiträge"
+
+# @ default
+#~ msgid "Recent Posts"
+#~ msgstr "Letzte Beiträge"
+
+# @ default
+#~ msgid "Number of posts to show:"
+#~ msgstr "Anzahl der Beiträge, die angezeigt werden:"
+
+# @ default
+#~ msgid "Display post date?"
+#~ msgstr "Veröffentlichungsdatum anzeigen?"
+
+# @ boss
+#~ msgid "Update Cover Photo"
+#~ msgstr "Hintergrundbild (Cover) zuschneiden"
+
+# @ boss
+#~ msgid "Error uploading cover photo."
+#~ msgstr "Fehler beim Hochladen des Cover-Foto."
+
+# @ boss
+#~ msgid "Invalid request try again later."
+#~ msgstr ""
+#~ "Der Server meldet eine ungültige Anfrage, versuche es später bitte "
+#~ "nochmal."
+
+# @ boss
+#~ msgid "Security error try later again."
+#~ msgstr ""
+#~ "Ein Sicherheits - Fehler ist aufgetaucht. Probiere es später noch einmal."
+
+# @ boss
+#~ msgid "You don't have permission to update cover photo."
+#~ msgstr "Sie haben keine Berechtigung, das Cover-Foto zu aktualisieren."
+
+# @ boss
+#~ msgid "The section you uploading cover does not exists."
+#~ msgstr ""
+#~ "Der Bereich, in den Sie das Foto hoch laden wollten, ist nicht vorhanden."
+
+# @ boss
+#~ msgid "Cover photo is successfully updated."
+#~ msgstr "Dein Foto wurde erfolgreich gelöscht!"
+
+# @ boss
+#~ msgid "Error while uploading the cover photo, try later again."
+#~ msgstr ""
+#~ "Fehler beim Uploaden des Cover-Fotos, versuchen Sie es später erneut."
+
+# @ boss
+#~ msgid "%s topic"
+#~ msgid_plural "%s topics"
+#~ msgstr[0] "%s Thema"
+#~ msgstr[1] "%s Themen"
+
+# @ boss
+#~ msgid ""
+#~ "<span class=\"post-num\">%1$s and %2$s</span> <span class=\"last-activity"
+#~ "\">Last updated by %3$s %4$s</span>"
+#~ msgstr ""
+#~ "<span class=\"post-num\">%1$s und %2$s</span> <span class=\"last-activity"
+#~ "\">Zuletzt aktualisiert von %3$s %4$s</span>"
+
+# @ boss
+#~ msgid ""
+#~ "<span class=\"post-num\">%1$s and %2$s</span> <span class=\"last-activity"
+#~ "\">Last updated by %3$s %4$s<span>"
+#~ msgstr ""
+#~ "<span class=\"post-num\">%1$s und %2$s</span> <span class=\"last-activity"
+#~ "\">Zuletzt aktualisiert von %3$s %4$s<span> </span> </span>"
+
+# @ boss
+#~ msgid ""
+#~ "<span class=\"post-num\">%1$s</span> <span class=\"last-activity\">Last "
+#~ "updated by %2$s %3$s</span>"
+#~ msgstr ""
+#~ "<span class=\"post-num\">%1$s</span> <span class=\"last-activity"
+#~ "\">Zuletzt aktualisiert von %2$s %3$s</span>"
+
+# @ boss
+#~ msgid "<span class=\"post-num\">%1$s and %2$s</span>"
+#~ msgstr "<span class=\"post-num\">%1$s und %2$s</span>"
+
+# @ boss
+#~ msgid "<span class=\"post-num\">%1$s</span>"
+#~ msgstr "<span class=\"post-num\">%1$s</span>"
+
+# @ boss
+#~ msgid "<span class=\"post-num\">0 topics and 0 posts</span>"
+#~ msgstr "<span class=\"post-num\">0 Themen und 0 Beiträge</span>"
+
+# @ boss
+#~ msgid "%s voice"
+#~ msgid_plural "%s voices"
+#~ msgstr[0] "%s Stimme"
+#~ msgstr[1] "%s Stimmen"
+
+# @ boss
+#~ msgid ""
+#~ "<span class=\"post-num\">%1$s, %2$s</span> <span class=\"last-activity"
+#~ "\">Last updated by %3$s %4$s</span>"
+#~ msgstr ""
+#~ "<span class=\"post-num\">%1$s, %2$s</span> <span class=\"last-activity"
+#~ "\">Zuletzt aktualisiert von %3$s %4$s</span>"
+
+# @ boss
+#~ msgid "<span class=\"post-num\">%1$s, %2$s</span>"
+#~ msgstr "<span class=\"post-num\">%1$s, %2$s</span>"
+
+# @ boss
+#~ msgid "<span class=\"post-num\">0 replies</span>"
+#~ msgstr "<span class=\"post-num\">0 Antworten</span>"
+
+# @ boss
+#~ msgctxt "Message dropdown filter"
+#~ msgid "Read"
+#~ msgstr "Lesen"
+
+# @ boss
+#~ msgctxt "Message dropdown filter"
+#~ msgid "Unread"
+#~ msgstr "Ungelesen"
+
+# @ boss
+#~ msgctxt "Message dropdown filter"
+#~ msgid "All"
+#~ msgstr "Alle"
+
+# @ boss
+#~ msgctxt "Message management markup"
+#~ msgid "Mark as Read"
+#~ msgstr "Als gelesen markieren"
+
+# @ boss
+#~ msgctxt "Message management markup"
+#~ msgid "Mark as Unread"
+#~ msgstr "Als ungelesen markieren"
+
+# @ boss
+#~ msgid "View Conversation"
+#~ msgstr "Konversation anzeigen"
+
+# @ boss
+#~ msgid "Mark as Favorite"
+#~ msgstr "Als Favorite markieren"
+
+# @ boss
+#~ msgid "Remove Favorite"
+#~ msgstr "Aus den Favoriten entfernen"
+
+# @ boss
+#~ msgid "Post"
+#~ msgstr "Veröffentlichen"
+
+# @ boss
+#~ msgid ""
+#~ "<strong>Attention Site Admin:</strong> Group forums require the <a href="
+#~ "\"%s\">correct setup and configuration</a> of a bbPress installation."
+#~ msgstr ""
+#~ "<strong>Achtung blogübergreifender Administrator:</strong> Gruppenforen "
+#~ "benötigen <a href=\"%s\">eine korrekte Installation und ein Einbindung</"
+#~ "a> von bbPress."
+
+# @ boss
+#~ msgid ""
+#~ "Upload an image to use as a profile photo for this group. The image will "
+#~ "be shown on the main group page, and in search results."
+#~ msgstr ""
+#~ "Lade ein Bild hoch, um diese als Profilbild für diese Gruppe zu "
+#~ "verwenden. Das Bild wird auf der Hauptseite der Gruppe und in "
+#~ "Suchergebnissen angezeigt."
+
+# @ boss
+#~ msgid ""
+#~ "To skip the group profile photo upload process, hit the \"Next Step\" "
+#~ "button."
+#~ msgstr ""
+#~ "Um das Hochladen des Gruppenprofilbildes zu überspringen, klicke auf "
+#~ "\"Nächster Schritt\"."
+
+# @ boss
+#~ msgid "Crop Group Profile Photo"
+#~ msgstr "Gruppen Profil-Bild zuschneiden"
+
+# @ boss
+#~ msgid "Profile photo to crop"
+#~ msgstr "Profil-Bild zuschneiden"
+
+# @ boss
+#~ msgid "Profile photo preview"
+#~ msgstr "Vorschau des Profilbildes"
+
+# @ boss
+#~ msgid "Create Group and Continue"
+#~ msgstr "Gruppe erstellen und fortfahren"
+
+# @ boss
+#~ msgid ""
+#~ "<span class=\"meta-wrap\"><span class=\"count\">%1s</span> <span>member</"
+#~ "span></span>"
+#~ msgid_plural ""
+#~ "<span class=\"meta-wrap\"><span class=\"count\">%1s</span> <span>members</"
+#~ "span></span>"
+#~ msgstr[0] ""
+#~ "<span class=\"meta-wrap\"><span class=\"count\">%1s</span> "
+#~ "<span>Mitglied</span></span>"
+#~ msgstr[1] ""
+#~ "<span class=\"meta-wrap\"><span class=\"count\">%1s</span> "
+#~ "<span>Mitglieder</span></span>"
+
+# @ boss
+#~ msgid "<span class=\"count\">%s</span> <span>member</span>"
+#~ msgid_plural "<span class=\"count\">%s</span> <span>member</span>"
+#~ msgstr[0] "<span class=\"count\">%s</span> <span>Mitglied</span>"
+#~ msgstr[1] "<span class=\"count\">%s</span> <span>Mitglieder</span>"
+
+# @ boss
+#~ msgid "Conversation between"
+#~ msgstr "Gespräch zwischen"
+
+# @ boss
+#~ msgid "and you."
+#~ msgstr "und Dir."
+
+# @ boss
+#~ msgid "&copy;"
+#~ msgstr "&copy;"
+
+# @ boss
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+# @ boss
+#~ msgid "Themes"
+#~ msgstr "Themes"
+
+# @ boss
+#~ msgid "Customize"
+#~ msgstr "Anpassen"
+
+# @ boss
+#~ msgid "Widgets"
+#~ msgstr "Widgets"
+
+# @ boss
+#~ msgid "Menus"
+#~ msgstr "Menüs"
+
+# @ boss
+#~ msgid "Background"
+#~ msgstr "Hintergrund"
+
+# @ boss
+#~ msgid "Logo Area"
+#~ msgstr "Logo Bereich"
+
+# @ boss
+#~ msgid "Titlebar"
+#~ msgstr "Titelleiste"
+
+# @ boss
+#~ msgid "Choose scheme"
+#~ msgstr "Farbschema wählen"
+
+# @ boss
+#~ msgid ""
+#~ "Upload large and small logos for open/collapsed BuddyPanel. Small logo "
+#~ "will not work without large."
+#~ msgstr ""
+#~ "Laden Sie ein großes und ein kleines Logo für geöffneten/reduzierten "
+#~ "BuddyPanel hoch. Das kleine Logo funktioniert nicht ohne das große."
+
+# @ buddypress
+#~ msgid ""
+#~ "Your avatar will be used on your profile and throughout the site. If "
+#~ "there is a <a href=\"http://gravatar.com\">Gravatar</a> associated with "
+#~ "your account email we will use that, or you can upload an image from your "
+#~ "computer."
+#~ msgstr ""
+#~ "Dein Profilbild wird auf deinem Profil und seitenübergreifend benutzt. "
+#~ "Falls deine E-Mail-Adresse einem <a href=\"http://gravatar.com"
+#~ "\">Gravatar</a> zugeordnet ist, verwenden wir dieses, ansonsten kannst du "
+#~ "auch selbst ein Bild hochladen."
+
+# @ buddypress
+#~ msgid ""
+#~ "Click below to select a JPG, GIF or PNG format photo from your computer "
+#~ "and then click 'Upload Image' to proceed."
+#~ msgstr ""
+#~ "Klicke hier, um ein JPG, GIF oder PNG-Bild von deinem Computer "
+#~ "auszuwählen und klicke dann auf 'Bild hochladen', um fortzufahren."
+
+# @ buddypress
+#~ msgid ""
+#~ "If you'd like to delete your current avatar but not upload a new one, "
+#~ "please use the delete avatar button."
+#~ msgstr ""
+#~ "Um dein Profilbild zu entfernen ohne ein Neues hinzuzufügen, benutze "
+#~ "bitte den Lösch-Buttom."
+
+# @ buddypress
+#~ msgid ""
+#~ "Your avatar will be used on your profile and throughout the site. To "
+#~ "change your avatar, please create an account with <a href=\"http://"
+#~ "gravatar.com\">Gravatar</a> using the same email address as you used to "
+#~ "register with this site."
+#~ msgstr ""
+#~ "Dein Profilbild wird auf deinem Profil und seitenübergreifend benutzt. Um "
+#~ "dein Profilbild zu ändern, erzeuge ein Konto bei <a href=\"http://"
+#~ "gravatar.com\">Gravatar</a> mit der selben E-Mail Adresse, welche du für "
+#~ "die Registrierung auf dieser Seite benutzt hast."
+
+# @ buddypress
+#~ msgid "Editing '%s' Profile Group"
+#~ msgstr "Bearbeite '%s'"
+
+# @ buddypress
+#~ msgid ""
+#~ "This field can be seen by: <span class=\"current-visibility-level\">%s</"
+#~ "span>"
+#~ msgstr ""
+#~ "Dieses Feld ist sichtbar für: <span class=\"current-visibility-level\">"
+#~ "%s</span> "
+
+# @ buddypress
+#~ msgid "Who can see this field?"
+#~ msgstr "Das Feld soll sichtbar sein für:"
+
+# @ boss
+#~ msgid "<i class=\"fa fa-reply\"></i>"
+#~ msgstr "<i class=\"fa fa-reply\"></i>"
+
+# @ boss
+#~ msgid "Social"
+#~ msgstr "Social"
+
+# @ boss
+#~ msgid ""
+#~ "<span class='buddyboss-credit'>&middot; Powered by <a href='http://www."
+#~ "buddyboss.com' title='BuddyPress themes' target='_blank'>BuddyBoss</a></"
+#~ "span>"
+#~ msgstr ""
+#~ "<span class='buddyboss-credit'>&middot; Powered by <a href='http://www."
+#~ "buddyboss.com' title='BuddyPress themes' target='_blank'>BuddyBoss</a></"
+#~ "span>"
+
+# @ boss
+#~ msgid "Footer"
+#~ msgstr "Fußzeile"
+
+# @ buddypress
+#~ msgid ""
+#~ "<a href=\"%1$s\">%2$s</a> replied <a href=\"%3$s\" class=\"activity-time-"
+#~ "since\"><span class=\"time-since\">%4$s</span></a>"
+#~ msgstr ""
+#~ "<a href=\"%1$s\">%2$s</a> hat geantwortet <a href=\"%3$s\" class="
+#~ "\"activity-time-since\"><span class=\"time-since\">%4$s</span></a>"
+
+# @ buddypress
+#~ msgid "Reply"
+#~ msgstr "Antworten"
+
+# @ buddypress
+#~ msgid "You have no pending friendship requests."
+#~ msgstr "Du hast keine offenen Freundschaftsanfragen."
+
+# @ boss
+#~ msgid "My Sites"
+#~ msgstr "Meine Webseiten"
+
+# @ boss
+#~ msgid "Network Admin"
+#~ msgstr "Netzwerk Administrator"
+
+# @ boss
+#~ msgid "Sites"
+#~ msgstr "Seiten"
+
+# @ boss
+#~ msgid "Users"
+#~ msgstr "Benutzer"
+
+# @ boss
+#~ msgid "Plugins"
+#~ msgstr "Plugins"
+
+# @ buddypress
+#~ msgid "No new notifications"
+#~ msgstr "Keine neuen Benachrichtigungen"
+
+# @ bbpress
+#~ msgid "Now Editing &ldquo;%s&rdquo;"
+#~ msgstr "Jetzt bearbeiten &ldquo;%s&rdquo;"
+
+# @ bbpress
+#~ msgid "Create New Topic in &ldquo;%s&rdquo;"
+#~ msgstr "Neues Thema erstellen in &ldquo;%s&rdquo;"
+
+# @ bbpress
+#~ msgid "Create New Topic"
+#~ msgstr "Neues Thema erstellen"
+
+# @ bbpress
+#~ msgid ""
+#~ "This forum is marked as closed to new topics, however your posting "
+#~ "capabilities still allow you to do so."
+#~ msgstr ""
+#~ "Dieser Beitrag ist für neue Antworten geschlossen, mit Ihren "
+#~ "Benutzerrechten dürfen Sie dennoch weiterhin neue Themen anlegen."
+
+# @ bbpress
+#~ msgid "Your account has the ability to post unrestricted HTML content."
+#~ msgstr ""
+#~ "Mit Ihrem Konto dürfen Sie uneingeschränkt HTML Inhalte veröffentlichen."
+
+# @ bbpress
+#~ msgid "Topic Title (Maximum Length: %d):"
+#~ msgstr "Überschrift (Maximale Länge: %d):"
+
+# @ bbpress
+#~ msgid ""
+#~ "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> "
+#~ "tags and attributes:"
+#~ msgstr ""
+#~ "Du kannst folgende <abbr title=\"HyperText Markup Language\">HTML</abbr>-"
+#~ "Tags benutzen: %s"
+
+# @ bbpress
+#~ msgid "Topic Tags:"
+#~ msgstr "Themen-Tags:"
+
+# @ bbpress
+#~ msgid "Forum:"
+#~ msgstr "Forum:"
+
+# @ bbpress
+#~ msgid "(No Forum)"
+#~ msgstr "(Kein Forum)"
+
+# @ bbpress
+#~ msgid "Topic Type:"
+#~ msgstr "Themen Typ:"
+
+# @ bbpress
+#~ msgid "Topic Status:"
+#~ msgstr "Thema Status:"
+
+# @ bbpress
+#~ msgid "Notify the author of follow-up replies via email"
+#~ msgstr ""
+#~ "Den Autor/ die Autorin via E-Mail über eingehende Antworten informieren."
+
+# @ bbpress
+#~ msgid "Notify me of follow-up replies via email"
+#~ msgstr "Mich über  eingehende Antworten per E-Mail benachrichtigen."
+
+# @ bbpress
+#~ msgid "Keep a log of this edit:"
+#~ msgstr "Notiere diese Bearbeitung:"
+
+# @ bbpress
+#~ msgid "Optional reason for editing:"
+#~ msgstr "Möglicher Grund für die Bearbeitung:"
+
+# @ bbpress
+#~ msgid "Submit"
+#~ msgstr "Speichern"
+
+# @ bbpress
+#~ msgid "The forum &#8216;%s&#8217; is closed to new topics and replies."
+#~ msgstr ""
+#~ "Das Forum &#8216;%s&#8217; ist für neue Beiträge und Antworten "
+#~ "geschlossen."
+
+# @ bbpress
+#~ msgid "You cannot create new topics."
+#~ msgstr "Sie können keine neuen Themen erstellen."
+
+# @ bbpress
+#~ msgid "You must be logged in to create new topics."
+#~ msgstr "Sie müssen angemeldet sein, um neue Themen zu erstellen."
+
+# @ bbpress
+#~ msgid "Merge topic \"%s\""
+#~ msgstr "Thema verbinden \"%s\""
+
+# @ bbpress
+#~ msgid ""
+#~ "Select the topic to merge this one into. The destination topic will "
+#~ "remain the lead topic, and this one will change into a reply."
+#~ msgstr ""
+#~ "Wählen Sie den (Ziel-) Thema, mit dem dieser Thread hier zusammengeführt "
+#~ "werden soll. Der Zielbeitrag wird der Hauptbeitrag bleiben, und dieser "
+#~ "Beitrag wird in einen Antwort gewandelt."
+
+# @ bbpress
+#~ msgid ""
+#~ "To keep this topic as the lead, go to the other topic and use the merge "
+#~ "tool from there instead."
+#~ msgstr ""
+#~ "Um diesen Beitrag als Hauptbeitrag zu erhalten, gehe zu dem anderen "
+#~ "Beitrag und verwende das Werkzeug zum Zusammenführen von dort aus."
+
+# @ bbpress
+#~ msgid ""
+#~ "All replies within both topics will be merged chronologically. The order "
+#~ "of the merged replies is based on the time and date they were posted. If "
+#~ "the destination topic was created after this one, it's post date will be "
+#~ "updated to second earlier than this one."
+#~ msgstr ""
+#~ "Alle Antworten zu beiden Beiträgen werden chronologisch zusammengeführt. "
+#~ "Die Reihenfolge der zusammengeführten Antworten basiert auf Zeit und "
+#~ "Datum ihrer Veröffentlichung. Falls der Zielbeitrag nach diesem Beitrag "
+#~ "erstellt wurde, wird sein Veröffentlichungsdatum auf einen früheren "
+#~ "Zeitpunkt aktualisiert."
+
+# @ bbpress
+#~ msgid "Destination"
+#~ msgstr "Zielbeitrag"
+
+# @ bbpress
+#~ msgid "Merge with this topic:"
+#~ msgstr "Mit diesem Thema verbinden:"
+
+# @ bbpress
+#~ msgid "There are no other topics in this forum to merge with."
+#~ msgstr "In diesem Forum sind keine zusammenführbare Themen vorhanden."
+
+# @ bbpress
+#~ msgid "Topic Extras"
+#~ msgstr "Themen Extras"
+
+# @ bbpress
+#~ msgid "Merge topic subscribers"
+#~ msgstr "Themen Abonnenten zusammenführen"
+
+# @ bbpress
+#~ msgid "Merge topic favoriters"
+#~ msgstr "Themen Favoriten zusammenführen"
+
+# @ bbpress
+#~ msgid "Merge topic tags"
+#~ msgstr "Themen-Tags verbinden"
+
+# @ bbpress
+#~ msgid "<strong>WARNING:</strong> This process cannot be undone."
+#~ msgstr ""
+#~ "<strong>WARNUNG:</strong> Dieser Vorgang kann nicht rückg&aumlngig "
+#~ "gemacht werden."
+
+# @ bbpress
+#~ msgid "You do not have the permissions to edit this topic!"
+#~ msgstr ""
+#~ "Du hast nicht die erforderlichen Rechte, um dieses Thema zu bearbeiten."
+
+# @ bbpress
+#~ msgid "You cannot edit this topic."
+#~ msgstr "Du kannst den angeforderten Benutzer nicht bearbeiten."
+
+# @ bbpress
+#~ msgid "Split topic \"%s\""
+#~ msgstr "Thema \"%s\" aufteilen"
+
+# @ bbpress
+#~ msgid ""
+#~ "When you split a topic, you are slicing it in half starting with the "
+#~ "reply you just selected. Choose to use that reply as a new topic with a "
+#~ "new title, or merge those replies into an existing topic."
+#~ msgstr ""
+#~ "Wenn Sie ein Thema trennen, teilen Sie ihn auf, beginnend mit der von "
+#~ "Ihnen ausgewählten Antwort. Legen Sie diese Antwort als neuen Beitrag mit "
+#~ "neuem Titel fest - oder führen Sie solche Beiträge innerhalb eines "
+#~ "vorhandenen Beitrags zusammen."
+
+# @ bbpress
+#~ msgid ""
+#~ "If you use the existing topic option, replies within both topics will be "
+#~ "merged chronologically. The order of the merged replies is based on the "
+#~ "time and date they were posted."
+#~ msgstr ""
+#~ "Wenn Du die Option des vorhandenen Beitrags verwendest, werden die "
+#~ "Antworten beider Beiträge chronologisch zusammengeführt. Die Reihenfolge "
+#~ "der zusammengeführten Antworten basiert auf Zeit und Datum ihrer "
+#~ "Veröffentlichung."
+
+# @ bbpress
+#~ msgid "Split Method"
+#~ msgstr "Aufteilungsmethode"
+
+# @ bbpress
+#~ msgid "New topic in <strong>%s</strong> titled:"
+#~ msgstr "Neuer Beitrag in <strong>%s</strong>. mit dem Titel:"
+
+# @ bbpress
+#~ msgid "Split: %s"
+#~ msgstr "Trennen: %s"
+
+# @ bbpress
+#~ msgid "Use an existing topic in this forum:"
+#~ msgstr "Verwende ein existierendes Forenthema:"
+
+# @ bbpress
+#~ msgid "Copy subscribers to the new topic"
+#~ msgstr "Kopiere die Abonnenten zu dem neuen Thema"
+
+# @ bbpress
+#~ msgid "Copy favoriters to the new topic"
+#~ msgstr "Kopiere die Favoritten zu dem neuen Thema"
+
+# @ bbpress
+#~ msgid "Copy topic tags to the new topic"
+#~ msgstr "Kopiere die Themen-Tags zu dem neuen Thema"
+
+# @ boss
+#~ msgid "Select a shortcode"
+#~ msgstr "Shortcode auswählen"
+
+# @ boss
+#~ msgid "Choose a shortcode from the list."
+#~ msgstr "Wähle ein Shortcode aus der Liste."
+
+# @ boss
+#~ msgid "Accordion"
+#~ msgstr "Akkordion"
+
+# @ boss
+#~ msgid "Button"
+#~ msgstr "Button"
+
+# @ boss
+#~ msgid "Buttons Group"
+#~ msgstr "Button Gruppe"
+
+# @ boss
+#~ msgid "Dropdown"
+#~ msgstr "Dropdown"
+
+# @ boss
+#~ msgid "Progress Bar"
+#~ msgstr "Fortschrittsanzeige"
+
+# @ boss
+#~ msgid "Tabs"
+#~ msgstr "Registerkarten"
+
+# @ boss
+#~ msgid "Tooltip"
+#~ msgstr "Tooltip"
+
+# @ boss
+#~ msgid "Number of accordion elements"
+#~ msgstr "Anzahl der Akkordeon Elemente"
+
+# @ boss
+#~ msgid "Enter the number of accordion elements."
+#~ msgstr "Geben Sie die Anzahl der Akkordeon-Elemente ein."
+
+# @ boss
+#~ msgid "Number of tabs"
+#~ msgstr "Anzahl der Registerkarten"
+
+# @ boss
+#~ msgid "Enter the number of tabs."
+#~ msgstr "Geben Sie die Anzahl der Registerkarten ein."
+
+# @ boss
+#~ msgid "Style"
+#~ msgstr "Stil"
+
+# @ boss
+#~ msgid "Choose style."
+#~ msgstr "Stil wählen."
+
+# @ buddyboss-creative-theme
+# @ boss
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+# @ buddyboss-creative-theme
+# @ boss
+#~ msgid "Long"
+#~ msgstr "Lang"
+
+# @ boss
+#~ msgid "Size"
+#~ msgstr "Größe"
+
+# @ boss
+#~ msgid "Choose size."
+#~ msgstr "Größe wählen."
+
+# @ boss
+#~ msgid "Wide"
+#~ msgstr "Breite"
+
+# @ boss
+#~ msgid "Striped"
+#~ msgstr "Gestreift"
+
+# @ boss
+#~ msgid "The text that appears above the progress bar."
+#~ msgstr "Der Text, der über dem Fortschrittsbalken angezeigt wird."
+
+# @ boss
+#~ msgid "Percent"
+#~ msgstr "Prozent"
+
+# @ boss
+#~ msgid "Don't enter \"%\", just the number e.g. \"30\"."
+#~ msgstr "Geben Sie nciht \"%\" an, nur die Nummer z.B. \"30\"."
+
+# @ boss
+#~ msgid "Default is the main site color."
+#~ msgstr "Standard ist die Haupt-Website-Farbe."
+
+# @ boss
+#~ msgid "Red"
+#~ msgstr "Rot"
+
+# @ boss
+#~ msgid "Green"
+#~ msgstr "Grün"
+
+# @ boss
+#~ msgid "Yellow"
+#~ msgstr "Gelb"
+
+# @ boss
+#~ msgid "Button label"
+#~ msgstr "Button Bezeichnung"
+
+# @ boss
+#~ msgid "The text that appears on your button."
+#~ msgstr "Dieser Text wird auf dem Button angezeigt."
+
+# @ boss
+#~ msgid "Button link"
+#~ msgstr "Button Link"
+
+# @ boss
+#~ msgid "Where should your button link to?"
+#~ msgstr "Wohin soll der Button verlinkt werden?"
+
+# @ boss
+#~ msgid "New window"
+#~ msgstr "Neues Fenster"
+
+# @ boss
+#~ msgid "Same window"
+#~ msgstr "Dieses Fenster"
+
+# @ boss
+#~ msgid "Button size"
+#~ msgstr "Button Größe"
+
+# @ boss
+#~ msgid "Choose the size of your button here."
+#~ msgstr "Wählen Sie die Größe der Schaltfläche."
+
+# @ boss
+#~ msgid "Large"
+#~ msgstr "Groß"
+
+# @ boss
+#~ msgid "Button FontAwesome icon"
+#~ msgstr "Button FontAwesome-Icon"
+
+# @ boss
+#~ msgid ""
+#~ "Enter class <a href=\"http://fontawesome.io/icons/\" target=\"_blank"
+#~ "\">http://fontawesome.io/icons/</a>"
+#~ msgstr ""
+#~ "Geben Sie die CSS-Klasse <a href=\"http://fontawesome.io/icons/\" target="
+#~ "\"_blank\">http://fontawesome.io/icons/</a>"
+
+# @ boss
+#~ msgid "Button type"
+#~ msgstr "Button type"
+
+# @ boss
+#~ msgid "Choose button type."
+#~ msgstr "Button Typ wählen."
+
+# @ boss
+#~ msgid "Success"
+#~ msgstr "Erfolg!"
+
+# @ boss
+#~ msgid "Warning"
+#~ msgstr "Warnung"
+
+# @ boss
+#~ msgid "Danger"
+#~ msgstr "Gefahr"
+
+# @ boss
+#~ msgid "Inverse"
+#~ msgstr "Invertiert"
+
+# @ boss
+#~ msgid "Shadow"
+#~ msgstr "Schatten"
+
+# @ boss
+#~ msgid "Button bottom margin"
+#~ msgstr "Unterer Buttonabstand"
+
+# @ boss
+#~ msgid "Don't enter \"px\", just the number e.g. \"30\"."
+#~ msgstr "Geben Sie sich nicht \"px\", nur die Zahl ein z.B. \"30\"."
+
+# @ boss
+#~ msgid "Number of buttons"
+#~ msgstr "Anzahl der Buttons"
+
+# @ boss
+#~ msgid "Enter the number of buttons."
+#~ msgstr "Anzahl der Buttons eingeben."
+
+# @ boss
+#~ msgid "Group type"
+#~ msgstr "Gruppen Typ"
+
+# @ boss
+#~ msgid "Type of buttons."
+#~ msgstr "Button Typ"
+
+# @ boss
+#~ msgid "Group bottom margin"
+#~ msgstr "Unterer Abstand der Gruppe"
+
+# @ boss
+#~ msgid "Unordered List"
+#~ msgstr "Unsortierte Liste"
+
+# @ boss
+#~ msgid ""
+#~ "Example:<br /><br />&lt;ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;"
+#~ "List item one&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;List item "
+#~ "with dropdowns:&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br /"
+#~ ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Subitem 1&lt;/"
+#~ "li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;"
+#~ "Subitem 2&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />&nbsp;"
+#~ "&nbsp;&nbsp;&nbsp;&lt;li&gt;Final list item&lt;/li&gt;<br />&lt;/ul&gt;"
+#~ msgstr ""
+#~ "Beispiel:<br /><br />&lt;ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;"
+#~ "List item one&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;List item "
+#~ "with dropdowns:&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br /"
+#~ ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Subitem 1&lt;/"
+#~ "li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;"
+#~ "Subitem 2&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />&nbsp;"
+#~ "&nbsp;&nbsp;&nbsp;&lt;li&gt;Final list item&lt;/li&gt;<br />&lt;/ul&gt;"
+
+# @ boss
+#~ msgid "Dark"
+#~ msgstr "Dunkel"
+
+# @ boss
+#~ msgid "Tooltip text goes in title attribute"
+#~ msgstr "QuickInfo-Text im Title-Attribut"
+
+# @ boss
+#~ msgid ""
+#~ "Ex:<br /><br />&lt;span title=\"Tooltip text\"&gt;This becomes a "
+#~ "tooltip&lt;/span&gt;"
+#~ msgstr ""
+#~ "Ex:<br><br>&lt; span Titel \"QuickInfo-Text\" = &gt; das wird eine "
+#~ "QuickInfo &lt; / span &gt;"
+
+# @ boss
+#~ msgid "Insert shortcode"
+#~ msgstr "Shortcode Einfügen"
+
+# @ boss
+#~ msgid "All Photos"
+#~ msgstr "Alle Fotos"
+
+# @ boss
+#~ msgid "All Albums"
+#~ msgstr "Alle Alben"
+
+# @ boss
+#~ msgid "There were no albums found."
+#~ msgstr "Kein Album gefunden"
+
+# @ boss
+#~ msgid "Titles"
+#~ msgstr "Titel"
+
+# @ boss
+#~ msgid "Cover Photos"
+#~ msgstr "Hintergrund Fotos (Cover Fotos)"
+
+# @ boss
+#~ msgid "Displayed in profiles and groups"
+#~ msgstr "Angezeigt in Profile und Gruppenseiten"
+
+# @ boss
+#~ msgid "BuddyPress field in Profile Covers"
+#~ msgstr "BuddyPress-Feld im Profil Bereich"
+
+# @ boss
+#~ msgid "Panel background"
+#~ msgstr "Panel Hintergrund"
+
+# @ boss
+#~ msgid "Icons (opened)"
+#~ msgstr "Icons (geöffnet)"
+
+# @ boss
+#~ msgid "Icons (closed)"
+#~ msgstr "Icons (geschlossen)"
+
+# @ boss
+#~ msgid "Select a predefined color scheme."
+#~ msgstr "Vordefiniertes Farbschema wählen."
+
+# @ boss
+#~ msgid "Slide &amp; Page Titles"
+#~ msgstr "Folie &amp; Seitentitel"
+
+# @ boss
+#~ msgid "Notification"
+#~ msgstr "Benachrichtigung"
+
+# @ boss
+#~ msgid "Date Received"
+#~ msgstr "Erhalten"
+
+# @ boss
+#~ msgid "Actions"
+#~ msgstr "Aktionen"
+
+# @ boss
+#~ msgid "Background (desktop)"
+#~ msgstr "Hintergrund (Desktop)"
+
+# @ boss
+#~ msgid "Background (mobile)"
+#~ msgstr "Hintergrund (Mobile)"
+
+# @ boss
+#~ msgid "Logged out users"
+#~ msgstr "abgemeldete Benutzer"
+
+# @ boss
+#~ msgid "Ideal size: 1050x320px"
+#~ msgstr "Ideale Größe: 1050x320px"
+
+# @ boss
+#~ msgid ""
+#~ "To display all font characters in your language correctly, the browser "
+#~ "must know what character set (charset) to use. Latin is used for English "
+#~ "and similar languages."
+#~ msgstr ""
+#~ "Um alle Schriftzeichen in Ihrer Sprache korrekt anzuzeigen, muss der "
+#~ "Browser wissen welche (Charset) zu verwendenden Zeichensatz. Latein wird "
+#~ "für Englisch und ähnliches verwendet."
+
+# @ boss
+#~ msgid ""
+#~ "We use device detection to determine the correct layout, with media "
+#~ "queries as a fallback."
+#~ msgstr ""
+#~ "Wir verwenden Geräteerkennung, um die korrekte Darstellung mit Medien "
+#~ "Abfragen als Fallback zu bestimmen."
+
+# @ boss
+#~ msgid "Desktop layout"
+#~ msgstr "Desktop Layout"
+
+# @ boss
+#~ msgid "Tablet layout"
+#~ msgstr "Tablet Layout"
+
+# @ boss
+#~ msgid "Phone layout"
+#~ msgstr "Smartphone Layout"
+
+# @ boss
+#~ msgid "Layout switch button"
+#~ msgstr "Layout-Optionen"
+
+# @ boss
+#~ msgid "Mobile Options"
+#~ msgstr "Mobile Optionen"
+
+# @ boss
+#~ msgid "Search Input"
+#~ msgstr "Suchfeld"
+
+# @ boss
+#~ msgid "Titlebar Links (in left panel)"
+#~ msgstr "Titleleiste Links (im linken Panel)"
+
+# @ boss
+#~ msgid "Desktop Options"
+#~ msgstr "Desktop Optionen"
+
+# @ boss
+#~ msgid "BuddyPanel Default State"
+#~ msgstr "BuddyPanel Standart Status"
+
+# @ boss
+#~ msgid "Profile Dropdown (admins)"
+#~ msgstr "Profil Dropdown (Admins)"
+
+# @ boss
+#~ msgid "Profile Dropdown (all users)"
+#~ msgstr "Profil Dropdown (Alle Nutzende)"
+
+# @ boss
+#~ msgid "Group Cover Photo"
+#~ msgstr "Gruppenprofil Bild"
+
+# @ boss
+#~ msgid "Profile Cover Photo"
+#~ msgstr "Profil Hintergrundbild"
+
+# @ boss
+#~ msgid "Links"
+#~ msgstr "Links"
+
+# @ boss
+#~ msgid "Titlebar (No BuddyPanel)"
+#~ msgstr "Titelleiste (keine BuddyPanel)"
+
+# @ boss
+#~ msgid ""
+#~ "When using the \"No BuddyPanel\" template, or when hiding the BuddyPanel "
+#~ "from logged out users."
+#~ msgstr ""
+#~ "Wenn die Vorlage kein BuddyPanel verwendet, oder BuddyPanel für "
+#~ "abgemeldete benutzer ausgeschaltet ist."
+
+# @ boss
+#~ msgid "Links Hover"
+#~ msgstr "Mouseover Links"
+
+# @ boss
+#~ msgid "The \"BuddyPanel\" is the left navigation panel on desktops."
+#~ msgstr ""
+#~ "Die \"BuddyPanel\" ist im linken Navigationsbereich in der Desktopansicht."
+
+# @ boss
+#~ msgid "Body BG"
+#~ msgstr "Body BG"
+
+# @ boss
+#~ msgid "Footer Widget Area BG"
+#~ msgstr "Widget BereichFußzeile BG"
+
+# @ boss
+#~ msgid "Footer Bottom Area BG"
+#~ msgstr "Unterer Bereich Fußzeile BG"
+
+# @ boss
+#~ msgid "Footer Bottom Area text"
+#~ msgstr "Unterer Bereich Fußzeile Text"
+
+# @ boss
+#~ msgid "Slide Title text"
+#~ msgstr "Folien Titel"
+
+# @ boss
+#~ msgid "Heading text"
+#~ msgstr "Überschrift"
+
+# @ boss
+#~ msgid "Body text"
+#~ msgstr "Inhalt"
+
+# @ boss
+#~ msgid "Link text"
+#~ msgstr "Link Text"
+
+# @ boss
+#~ msgid "Buttons &amp; Nav Items"
+#~ msgstr "Buttons &amp; Nav-Elemente"
+
+# @ boss
+#~ msgid "Fonts"
+#~ msgstr "Schriftarten"
+
+# @ boss
+#~ msgid "View as Desktop"
+#~ msgstr "Desktopversion"
+
+# @ boss
+#~ msgid "View as Mobile"
+#~ msgstr "Mobilversion"
+
+# @ boss
+#~ msgid "Layout Options"
+#~ msgstr "Layout-Optionen"
+
+# @ boss
+#~ msgid "Activity Infinite Scrolling"
+#~ msgstr "Aktivitäten beim Scrollen nachladen"
+
+# @ woocommerce
+#~ msgctxt "Product quantity input tooltip"
+#~ msgid "Qty"
+#~ msgstr "Menge"
+
+# @ boss
+#~ msgid "Everything"
+#~ msgstr "Alles"
+
+# @ boss
+#~ msgid "New Groups"
+#~ msgstr "Neue Gruppen"
+
+# @ boss
+#~ msgid "Group Memberships"
+#~ msgstr "Gruppenmitgliedschaften"
+
+# @ boss
+#~ msgid "New Members"
+#~ msgstr "Neue Mitglieder"
+
+# @ boss
+#~ msgid "Alphabetical"
+#~ msgstr "Alphabetisch"
+
+# @ boss
+#~ msgid "Content:"
+#~ msgstr "Inhalt:"
+
+# @ boss
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+# @ boss
+#~ msgid ""
+#~ "You are not a member of any groups so you don't have any group forums you "
+#~ "can post in. To start posting, first find a group that matches the topic "
+#~ "subject you'd like to start. If this group does not exist, why not <a "
+#~ "href='%s'>create a new group</a>? Once you have joined or created the "
+#~ "group you can post your topic in that group's forum."
+#~ msgstr ""
+#~ "Weil du noch nicht Mitglied einer Gruppe bist gibt es kein Gruppenforum, "
+#~ "in dem du schreiben kannst. Du kannst aber einer passenden Gruppe "
+#~ "beitreten oder \n"
+#~ "<a href='%s'>eien neue Gruppe anlegen</a>."
+
+# @ boss
+#~ msgid "All Groups <span>%s</span>"
+#~ msgstr "Alle Gruppen <span>%s</span>"
+
+# @ boss
+#~ msgid "Send Invites"
+#~ msgstr "Einladen"
+
+# @ boss
+#~ msgid "Newest Registered"
+#~ msgstr "Zuletzt registriert"
+
+# @ boss
+#~ msgid "Sorry, no members were found."
+#~ msgstr "Keine Mitglieder gefunden."
+
+# @ boss
+#~ msgid "%s members"
+#~ msgstr "%s Mitglieder"
+
+# @ boss
+#~ msgid "This is a notice to all users."
+#~ msgstr "Dies ist eine Nachricht an alle."
+
+# @ boss
+#~ msgid "Subject"
+#~ msgstr "Betreff"
+
+# @ boss
+#~ msgid "Message"
+#~ msgstr "Nachricht"
+
+# @ boss
+#~ msgid "Send Message"
+#~ msgstr "Nachricht senden"
+
+# @ boss
+#~ msgid "From:"
+#~ msgstr "Von:"
+
+# @ boss
+#~ msgid "To:"
+#~ msgstr "An:"
+
+# @ buddypress
+# @ boss
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+# @ boss
+#~ msgid "Sorry, no messages were found."
+#~ msgstr "Keine Nachrichten gefunden."
+
+# @ boss
+#~ msgid "Delete Message"
+#~ msgstr "Nachricht löschen"
+
+# @ boss
+#~ msgid "Nothing Found"
+#~ msgstr "Nichts gefunden"
+
+# @ boss
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+# @ boss
+#~ msgid "View Message"
+#~ msgstr "Nachricht anzeigen"
+
+# @ boss
+#~ msgid "Color Scheme"
+#~ msgstr "Farbschema"
+
+# @ boss
+#~ msgid "0 comments"
+#~ msgstr "0 Kommentare"
+
+# @ boss
+#~ msgid "1 comment"
+#~ msgstr "1 Kommentar"
+
+# @ boss
+#~ msgid "%s comments"
+#~ msgstr "%s Kommentare"
+
+# @ boss
+#~ msgid "%s reply"
+#~ msgid_plural "%s replies"
+#~ msgstr[0] "%s Antwort"
+#~ msgstr[1] "%s Antworten"
+
+# @ boss
+#~ msgid "Group Forums"
+#~ msgstr "Gruppenforen"
+
+# @ boss
+#~ msgid "Should this group have a forum?"
+#~ msgstr "Soll diese Gruppe ein Forum haben?"
+
+# @ boss
+#~ msgid "Back to Previous Step"
+#~ msgstr "Zurück zum vorherigen Schritt"
+
+# @ boss
+#~ msgid "Next Step"
+#~ msgstr "Nächster Schritt"
+
+# @ boss
+#~ msgid "Finish"
+#~ msgstr "Fertigstellen"
+
+# @ boss
+#~ msgid "Groups"
+#~ msgstr "Gruppen"
+
+# @ boss
+#~ msgid "Your Comment..."
+#~ msgstr "Dein Kommentar..."
+
+# @ boss
+#~ msgid "Profile"
+#~ msgstr "Profil"
+
+# @ boss
+#~ msgid "Color"
+#~ msgstr "Farbe"
+
+# @ boss
+#~ msgid "Large Logo (ideal size 280x80)"
+#~ msgstr "Großes Logo (ideal: 280x80 Pixel)"
+
+# @ boss
+#~ msgid "Small Logo (ideal size 80x80)"
+#~ msgstr "Kleines Logo (ideal: 80x80 Pixel)"
+
+# @ boss
+#~ msgid "Choose a file"
+#~ msgstr "Datei auswählen"
+
+# @ buddypress
+#~ msgid "Change Avatar"
+#~ msgstr "Avatar ändern"
+
+# @ buddypress
+#~ msgid "Delete My Avatar"
+#~ msgstr "Meinen Avatar löschen"
+
+# @ buddypress
+#~ msgid "Crop Your New Avatar"
+#~ msgstr "Das neuen Avatarbild beschneiden"
+
+# @ buddypress
+#~ msgid "Change"
+#~ msgstr "Ändern"
+
+# @ buddypress
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+# @ boss
+#~ msgid "My Profile"
+#~ msgstr "Mein Profil"
+
+# @boss
+#~ msgid "Daily Archives: %s"
+#~ msgstr "Tägliche Archive: %s"
+
+# @boss
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "Monatliche Archive: %s"
+
+# @boss
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "Jährliche Archive: %s"
+
+# @ boss
+#~ msgid "Archives"
+#~ msgstr "Archive"
+
+# @boss
+#~ msgid "About %s"
+#~ msgstr "Über %s"
+
+# @ boss
+#~ msgid "Logo"
+#~ msgstr "Logo"
+
+# @ boss
+#~ msgid "Edit Profile"
+#~ msgstr "Profil editieren"
+
+# @ boss
+#~ msgid "Password"
+#~ msgstr "Passwort"
+
+# @ boss
+#~ msgid "Log In"
+#~ msgstr "Einloggen"
+
+# @ boss
+#~ msgid "Order By:"
+#~ msgstr "Sortieren nach:"
+
+# @ boss
+#~ msgid "There were no groups found."
+#~ msgstr "Keine Gruppen gefunden"
+
+# @ boss
+# @ buddypress
+#~ msgid "Upload Image"
+#~ msgstr "Bild hochladen"

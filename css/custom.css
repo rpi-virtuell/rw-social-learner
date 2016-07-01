@@ -12,6 +12,11 @@ Add your css here
 	padding: 0;
 }
 
+/*--------------------------------------------------------------
+bp-docs
+---------------------------------------------------------------*/
+
+
 #bp-docs-single-doc-header{
 	background-color: #fff;
 	padding-bottom:3px;
@@ -47,6 +52,14 @@ li.permissiontab{
 .doc-content{
 	background-color: #fff;
 }
+/*******
+* bp groups hierarchy breadcrumbs
+*******/
+.bp-group-hierarchy-breadcrumbs a{
+
+	color: #fff;
+}
+
 /*******
 * Fix douple border in groups order
 *******/
