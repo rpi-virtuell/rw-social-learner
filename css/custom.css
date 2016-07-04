@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 Add your css here
 ---------------------------------------------------------------*/
+html.mce-fullscreen{
+	height:100% !important;
+	margin:0 !important;
+}
 
 .no-hidden {
 	overflow: visible !important;
@@ -347,10 +351,13 @@ span.bp-docs-folder-breadcrumb a{
 }
 
 body {
+}
+body {
 	color: #444;
 	font-family: "Open Sans",sans-serif;
 	font-size: 13px;
 	line-height: 1.4em;
+	min-width: 600px;
 }
 body, html {
 	height: 100%;

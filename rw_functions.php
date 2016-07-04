@@ -418,3 +418,67 @@ function set_activity_widget_filter() {
 	setcookie( 'bp-activity-filter', $data, time()+ ( 60 * 60 ));
 }
 add_action('wp_login', 'set_activity_widget_filter');
+
+
+/**
+* tiny mce fullscreen mode 
+*/
+function enable_advanced_tiny_mce_fullscreen_mode(){
+	?>
+	<script>
+	var buddypanel_magin_left= '272px';
+	var buddypanel_magin_top = '74px';
+	var editor_frame_height = $(window).height();
+	
+	jQuery( document ).on( 'tinymce-editor-init', function( event, editor ) {
+		editor.on('FullscreenStateChanged', function(e) {
+			if ( tinymce.editors[0].plugins.fullscreen.isFullscreen() ){
+				$('footer').hide();
+				
+				$('#masthead').hide();
+				$('#wpadminbar').hide();
+				$('#secondary').hide();
+				$('#item-header').hide();
+				$('#item-nav').hide();
+				$('#left-panel').hide();
+				$('.bb-cover-photo').hide();
+				
+				buddypanel_magin_left=$('#right-panel-inner').css('margin-left');
+				
+				$('#right-panel').css({'margin-top':'0'});
+				$('#right-panel-inner').css({'position':'initial', 'width':'100%', 'margin-left':'0'});
+				
+				$('.mce-stack-layout').first().css({ 'border': '1px solid #ddd', 'margin-left': 'auto',  'margin-right': 'auto',  'max-width': '1000px'});
+				$('.mce-stack-layout-item').first().before($('#doc-content-title'));
+				$('#doc-content-title').css({'margin': '0',  'width': '102%'});
+				$('#doc-content-title label').hide();
+				$('#doc-title').css({'margin': '0 0 5px 0'});
+				
+				$('#primary').height(editor_frame_height);
+				$('#doc_content_ifr').height(editor_frame_height-165);
+				
+			}else{
+				$('footer').show();
+				$('#masthead').show();
+				$('#wpadminbar').show();
+				$('#secondary').show();
+				$('#item-header').show();
+				$('#item-nav').show();
+				$('#left-panel').show();
+				$('.bb-cover-photo').show();
+				$('#right-panel-inner').css({'position':'relative', 'width':'auto', 'margin-left':buddypanel_magin_left});
+				$('#right-panel').css({'margin-top':buddypanel_magin_top});
+				$('.mce-stack-layout').first().css({ 'border': '0px solid #ddd', 'margin-left': 'none',  'margin-right': 'none',  'max-width': 'none'});
+				$('#doc-content-textarea').before($('#doc-content-title'));
+				$('#doc-content-title').css({'margin': '0 0 20px 0',  'width': 'auto'});
+				$('#doc-title').css({'margin': '0 0 30px 0'});
+				$('#doc-content-title label').show();
+				$('#primary').height('auto');
+			}
+		});
+	});
+		
+	</script>
+	<?php
+}
+add_action( 'bp_docs_after_doc_edit_content', 'enable_advanced_tiny_mce_fullscreen_mode');
