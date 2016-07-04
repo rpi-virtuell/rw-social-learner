@@ -2,7 +2,7 @@
 Contributors: BuddyBoss, Joachim Happel, rpi-virtuell
 Requires at least: 3.8
 Tested up to: 4.4.2
-Version: 1.1.5
+Version: 1.1.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,9 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.1.6 =
+* css fix for chrome in groups activity filter
+
 = 1.1.5 =
 * removed min-width for smartphone/mobile view.
 

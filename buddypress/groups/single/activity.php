@@ -25,7 +25,7 @@
          */
         do_action( 'bp_group_activity_syndication_options' ); ?>
 
-        <li id="activity-filter-select" style="float: right; z-index: 10000; margin-top: -30px;">
+        <li id="activity-filter-select" style="float: right; z-index: 10000; margin-top: -30px; margin-bottom: 10px;">
             <label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
             <select id="activity-filter-by" class="activity-filter-by SumoUnder" multiple="multiple" >
                 <option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
