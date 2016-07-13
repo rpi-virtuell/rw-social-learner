@@ -31,21 +31,24 @@
 			case 'image/jpg':
 			case 'image/jpeg':
 			case 'image/png':
+				
 			case 'image/gif':
 				$li = bp_docs_attachment_item_markup( $attachment->ID ) ;
 				preg_match('#<a href="([^"]*)".*</a>#',$li,$matches);
 
 				$image_url = $matches[1];
-				$thumb_url = str_replace('.jpg', '-150x150.jpg',$image_url);
-				$thumb_url = str_replace('.png', '.png',$thumb_url);
-				$thumb_url = str_replace('.gif', '.gif',$thumb_url);
-
+				$thumb_url = $image_url;
+				$thumb_url = str_replace('.jpg', '-150x150.jpg',$thumb_url);
+				
 				$imgHtml = '<div class="bp_docs_attached_img"><a class="fancybox" rel="doc"  href="'.$image_url.'">'.
 						'<img src="'.$thumb_url.'" class="doc-image">'.
 						'</a>';
 
 				$li = str_replace('<span class="doc-attachment-mime-icon doc-attachment-mime-jpg"></span>',$imgHtml,$li);
+				$li = str_replace('<span class="doc-attachment-mime-icon doc-attachment-mime-gif"></span>',$imgHtml,$li);
+				$li = str_replace('<span class="doc-attachment-mime-icon doc-attachment-mime-png"></span>',$imgHtml,$li);
 				$li = str_replace('</li>','</div></li>',$li);
+										
 				$images[]=$li;
 			break;
 

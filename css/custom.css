@@ -6,6 +6,23 @@ html.mce-fullscreen{
 	margin:0 !important;
 }
 
+.doc-content h1 {
+	line-height: 1.5em!important;
+	margin:1em 0;
+}
+
+.doc-content h2 {
+	line-height: 1.2em!important;
+	margin:1em 0;
+}
+.doc-content h3 {
+	line-height: 1.2em!important;
+	margin:0.8em 0 ;
+}
+.doc-content h4 {
+	line-height: 1.2em!important;
+	margin:0.8em 0 ;
+}
 .no-hidden {
 	overflow: visible !important;
 }

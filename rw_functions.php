@@ -421,6 +421,71 @@ add_action('wp_login', 'set_activity_widget_filter');
 
 
 /**
+* tiny mce buttons
+*/
+function enable_more_buttons($buttons) {
+
+	if(bp_docs_is_doc_edit() or bp_docs_is_doc_create()){
+		$buttons =array(
+			'bold',
+			'italic',
+			'forecolor',
+			'backcolor',
+			'strikethrough',
+			'|',
+			'blockquote',
+			'bullist',
+			'numlist',
+			'|',
+			'alignleft',
+			'aligncenter',
+			'alignright',
+			'alignjustify',
+			'indent',
+			'outdent',
+			'|',
+			'table',
+			'pastetext',
+			'|',
+			'fullscreen'
+		);
+
+
+	}
+	return $buttons;
+}
+add_filter("mce_buttons", "enable_more_buttons",9999);
+function enable_more_buttons_2($buttons) {
+
+	if(bp_docs_is_doc_edit() or bp_docs_is_doc_create()){
+
+		$buttons =array(
+			'formatselect',
+			'fontsizeselect',
+			'undo',
+			'redo',
+			'removeformat',
+			'searchreplace',
+			'charmap',
+			'hr',
+			'link',
+			'unlink',
+			'anchor',
+			'wp_page',
+			'tabindent',
+			'image',
+			'media',
+			'visualblocks'
+
+		);
+
+	}
+	return $buttons;
+}
+add_filter("mce_buttons_2", "enable_more_buttons_2",9999);
+add_filter("mce_buttons_3", function(){return false;});
+
+/**
 * tiny mce fullscreen mode 
 */
 function enable_advanced_tiny_mce_fullscreen_mode(){
@@ -482,3 +547,19 @@ function enable_advanced_tiny_mce_fullscreen_mode(){
 	<?php
 }
 add_action( 'bp_docs_after_doc_edit_content', 'enable_advanced_tiny_mce_fullscreen_mode');
+
+
+/**
+* fix firefox behavior of preloading pre/next site
+* causes a multi generic wpnonce and access denies (403)
+*/
+add_filter( 'index_rel_link', 'disable_stuff' );
+add_filter( 'parent_post_rel_link', 'disable_stuff' );
+add_filter( 'start_post_rel_link', 'disable_stuff' );
+add_filter( 'previous_post_rel_link', 'disable_stuff' );
+add_filter( 'next_post_rel_link', 'disable_stuff' );
+
+function disable_stuff( $data ) {
+	return false;
+}
+
