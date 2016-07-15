@@ -68,3 +68,4 @@ jQuery( document ).ready(function() {
 	}
 	jq('.activity-filter-by').SumoSelect( { csvDispCount:2});
 });
+

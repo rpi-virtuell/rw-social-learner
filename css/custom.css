@@ -37,6 +37,7 @@ html.mce-fullscreen{
 	background-color: #fff;
 	padding-bottom:3px;
 	line-height: 188%;
+	border-top: 1px solid #ddd;
 }
 .single-bp_doc h2.doc-title {
 	font-size: 190%;
@@ -143,7 +144,11 @@ ul#wp-admin-bar-top-secondary{
 	}
 
 }
-
+@media screen and (min-width: 481px){
+	#mastlogo {
+		padding-top: 10px !important;
+	}
+}
 /*********************************** drucken ****************************************/
 @media print { 
 	header, footer, button,
@@ -284,13 +289,6 @@ ul.children {
 	padding: 12px 28px 12px 10px;
 }
 
-#buddypress table.doctable > tr:nth-child(1st){
-	background-color: #eee !important;
-}
-
-#buddypress table.doctable tr.folder-row{
-	background-color: #ffffff !important;
-}
 
 .site .docs-folder-manage li .folder-info{
     background-color: #ffffff;
@@ -309,11 +307,8 @@ ul.children {
 	padding-left: 10px;
 }
 
-.folder-loop .genericon.genericon-category{
-	left: 0px;
-}
 .folder-meta-info{
-	background-color: #CDD7E2 !important;
+	background-color: transparent !important;
 }
 .folder-meta-info td{
 	padding:0 !important;
@@ -335,6 +330,16 @@ ul.children {
 .folder-row .no-docs{
 	display: none;
 }
+
+
+#buddypress table.doctable tbody {
+    background: #ffffff ;
+}
+
+#buddypress table.doctable tr:nth-child(even) {
+    background-color: transparent !important; 
+}
+
 .list-item-breadcrumb{
 	font-size: 15px !important;
 	font-weight: normal !important;
@@ -351,20 +356,52 @@ ul.children {
 	margin: 0;
 	display: table-row;
 }
+.bp-docs-folder-breadcrumb .genericon.genericon-category{
+	float:none;
+	display: none;
+}
+
 .directory-breadcrumb-separator::before{
 	/*font-size: 0;*/
+}
+h2.directory-title{
+	padding:0 !important;
+	background-color:transparent !important;
 }
 .site .directory-breadcrumb-separator{
 	margin: 0 !important;
 	font-size: 0px !important;
+	display:table-cell;
+	padding:0 5px;
 
 }
-span.bp-docs-folder-breadcrumb a{
+
+.site h2.directory-title .bp-docs-folder-breadcrumb, .site h2.directory-title .breadcrumb-current {
+	display:table-cell;
+}	
+h2.directory-title .breadcrumb-current 	.genericon{
+	display:none;
+}
+.site h2.directory-title .site .bp-docs-folder-breadcrumb a, .site .breadcrumb-current{
 	padding-top: 5px !important;
 }
-.bp-docs-folder-breadcrumb .genericon.genericon-category{
-	float:none;
-	display: none;
+.site h2.directory-title a,.site h2.directory-title .breadcrumb-current{
+	font-weight: bold;
+	font-size: 13px !important;
+	font-family: Arial;
+	color:black;
+	line-height:12px;
+	display:table-cell;
+}
+.site h2.directory-title a:hover{
+	color:#0080C6;
+}
+.site h2.directory-title.breadcrumb{
+	margin-top:-50px
+}
+
+.bp-docs-container #bp-docs-all-docs li,.docs-info-header .currently-viewing{
+	display:none;
 }
 
 body {
@@ -394,3 +431,4 @@ body, html {
 div.existing-or-new-selector {
 	margin-left: 10px;
 }
+
