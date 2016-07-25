@@ -105,9 +105,6 @@ if ( boss_get_option( 'boss_layout_style' ) != 'boxed' && boss_get_option('boss_
 					echo 'primary-btn';
 				}
 				?>">
-						 <?php
-						 bp_group_join_button();
-						 ?>
 				</div>
 
 				<?php

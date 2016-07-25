@@ -2,7 +2,7 @@
 Contributors: BuddyBoss, Joachim Happel, rpi-virtuell
 Requires at least: 3.8
 Tested up to: 4.5.3
-Version: 1.1.7
+Version: 1.1.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,9 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.1.8 =
+* remove "leave group" button on group header. https://github.com/rpi-virtuell/reliwerk/issues/117
+
 = 1.1.7 =
 * fix firefox preload behavior with 403 on bp-doc save
 * add bp-doc fullscreenmode 
