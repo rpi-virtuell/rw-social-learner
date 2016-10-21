@@ -505,7 +505,8 @@ function enable_more_buttons($buttons) {
 			'table',
 			'pastetext',
 			'|',
-			'fullscreen'
+			'fullscreen',
+			'wp_adv'
 		);
 
 
