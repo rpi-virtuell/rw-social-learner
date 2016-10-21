@@ -1,6 +1,6 @@
 <div id="buddypress">
 
-    <?php if ( bp_has_groups( array('show_hidden' => true, 'include'=>bp_doc_single_group_id() ) ) ) : while ( bp_groups() ) : bp_the_group(); ?>
+    <?php if ( bp_has_groups( array('show_hidden' => true, 'include'=>rw_bp_doc_single_group_id() ) ) ) : while ( bp_groups() ) : bp_the_group(); ?>
         <?php do_action( 'bp_before_group_home_content' ); ?>
 
         <div id="item-header" role="complementary">

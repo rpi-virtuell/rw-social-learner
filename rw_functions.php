@@ -25,6 +25,64 @@ add_action( 'wp_enqueue_scripts', function(){
 
 },30 );
 
+/**
+ * copied from boss  theme functions because of code error
+ *
+ * @return int
+ */
+
+function rw_bp_doc_single_group_id( $return_dummy = true ){
+
+	$group_id = false;
+
+	if ( function_exists( 'bp_is_active' ) && bp_is_active( 'groups' ) ) {
+		if ( bp_docs_is_doc_create() ) {
+			$group_slug = isset( $_GET[ 'group' ] ) ? $_GET[ 'group' ] : '';
+			if ( $group_slug ) {
+				global $bp, $wpdb;
+				$group_id = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$bp->groups->table_name} WHERE slug=%s", $group_slug ) );
+
+			}
+			if ( !$group_id ) {
+				if ( $return_dummy )
+					$group_id = 99999999;
+			}
+			return $group_id;
+		}
+
+		$doc_group_ids	 = bp_docs_get_associated_group_id( get_the_ID(), false, true );
+		$doc_groups		 = array();
+		foreach ( $doc_group_ids as $dgid ) {
+			$maybe_group = groups_get_group(  $dgid );   // since buddypress 2.7 param should be integer
+
+			// Don't show hidden groups if the
+			// current user is not a member
+			if ( isset( $maybe_group->status ) && 'hidden' === $maybe_group->status ) {
+				// @todo this is slow
+				if ( !current_user_can( 'bp_moderate' ) && !groups_is_user_member( bp_loggedin_user_id(), $dgid ) ) {
+					continue;
+				}
+			}
+
+			if ( !empty( $maybe_group->name ) ) {
+				$doc_groups[] = $dgid;
+			}
+		}
+
+		if ( !empty( $doc_groups ) && count( $doc_groups ) == 1 ) {
+			$group_id = $doc_groups[ 0 ];
+		}
+	}
+
+
+
+	if ( !$group_id ) {
+		if ( $return_dummy )
+			$group_id = 99999999;
+	}
+	return $group_id;
+
+}
 
 //////////////////////////////////////////
 ////////// LEFT GROUP ////////////////////
