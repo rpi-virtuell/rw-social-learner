@@ -19,6 +19,9 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.2.0 =
+* fix for use with buddypress 2.7
+
 = 1.1.9 =
 * add "kitchen sink" button to tiny-mce Toolbar for docs edit
 

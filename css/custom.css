@@ -405,13 +405,11 @@ h2.directory-title .breadcrumb-current 	.genericon{
 }
 
 body {
-}
-body {
 	color: #444;
 	font-family: "Open Sans",sans-serif;
 	font-size: 13px;
 	line-height: 1.4em;
-	min-width: 600px;
+	/*min-width: 400px;*/
 }
 body, html {
 	height: 100%;
@@ -432,3 +430,6 @@ div.existing-or-new-selector {
 	margin-left: 10px;
 }
 
+.buddypress div.entry-buddypress-content h3 {
+	padding-left: 70px;
+}

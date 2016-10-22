@@ -622,3 +622,120 @@ function disable_stuff( $data ) {
 	return false;
 }
 
+
+
+/**
+ * add group types since buddypress 2.7
+ */
+
+function my_bp_custom_group_types() {
+    bp_groups_register_group_type( 'further_education', array(
+        'labels' => array(
+            'name' => 'Fortbildungen',
+            'singular_name' => 'Fortbildung'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'further_education',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Fort- und Weiterbildungen',
+        'create_screen_checked' => true
+    ) );
+
+    bp_groups_register_group_type( 'adult_education', array(
+        'labels' => array(
+            'name' => 'Erwachsenenbildung',
+            'singular_name' => 'Erwachsenenbildung'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'adult_education',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Angebote der Erwachsenbildung',
+        'create_screen_checked' => true
+    ) );
+
+    bp_groups_register_group_type( 'adult_education', array(
+        'labels' => array(
+            'name' => 'Erwachsenenbildung',
+            'singular_name' => 'Erwachsenenbildung'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'adult_education',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Angebote der Erwachsenbildung',
+        'create_screen_checked' => true
+    ) );
+    bp_groups_register_group_type( 'course', array(
+        'labels' => array(
+            'name' => 'Lerngruppen',
+            'singular_name' => 'Lerngruppe'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'course',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Lerngruppen',
+        'create_screen_checked' => true
+    ) );
+    bp_groups_register_group_type( 'working_community', array(
+        'labels' => array(
+            'name' => 'Arbeitsgemeinschaften',
+            'singular_name' => 'Arbeitsgemeinschaft'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'working_community',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Arbeitsgemeinschaften sind in der Regel Gruppen von erwachsenen Personen die im sich im beruflichen Kontext zusammenschließen',
+        'create_screen_checked' => true
+    ) );
+
+    bp_groups_register_group_type( 'open_community', array(
+        'labels' => array(
+            'name' => 'Community',
+            'singular_name' => 'Community'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'teams',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Gemeinschaft von Personen',
+        'create_screen_checked' => true
+    ) );
+
+    bp_groups_register_group_type( 'youth_team', array(
+        'labels' => array(
+            'name' => 'Teams von Jugendlichen',
+            'singular_name' => 'Team von Jugendlichen'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'teams',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Team mit jungen Leuten aus dem kirchlichen Arbeitsfeldern',
+        'create_screen_checked' => true
+    ) );
+    bp_groups_register_group_type( 'class', array(
+        'labels' => array(
+            'name' => 'Klassen / Kurs',
+            'singular_name' => 'Klasse / Kurs'
+        ),
+
+        // New parameters as of BP 2.7.
+        'has_directory' => 'class',
+        'show_in_create_screen' => true,
+        'show_in_list' => true,
+        'description' => 'Schulklassen oder Kurs einer Schule',
+        'create_screen_checked' => true
+    ) );
+}
+//add_action( 'bp_groups_register_group_types', 'my_bp_custom_group_types' );
