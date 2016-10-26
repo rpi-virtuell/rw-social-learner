@@ -745,10 +745,11 @@ function my_bp_custom_group_types() {
  */
 function rw_bp_docs_redirect_fallback($status, $url){
 
-	if(bp_docs_is_doc_create()  &&  !empty( $_POST['doc-edit-submit'] ) ) {
+	if(function_exists('bp_docs_is_doc_create') && bp_docs_is_doc_create()  &&  !empty( $_POST['doc-edit-submit'] ) ) {
 		header("Location: ".$url.'/edit', true, $status);
 		die();
 	}
 	return $status;
 }
 add_filter( 'wp_redirect_status' , 'rw_bp_docs_redirect_fallback', 90, 2 ) ;
+
