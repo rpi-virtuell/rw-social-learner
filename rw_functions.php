@@ -402,7 +402,7 @@ add_action( 'template_redirect', 'rw_catch_attachment_request' , 20 );
 
 /** add fancy box to attached images */
 add_action( 'wp_enqueue_scripts', function(){
-    wp_enqueue_script( 'child-js', 'http://lernlog.de/wp-content/plugins/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
+    wp_enqueue_script( 'child-js', plugins_url(). '/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
 } );
 
 
@@ -740,6 +740,8 @@ function my_bp_custom_group_types() {
 }
 //add_action( 'bp_groups_register_group_types', 'my_bp_custom_group_types' );
 
+//add_action( 'bp_groups_register_group_types', 'my_bp_custom_group_types' );
+
 /**
  * Nach dem speichern eines neuen Artikels nicht automatisch auf die Lesen Seite wechseln.
  */
@@ -751,5 +753,3 @@ function rw_bp_docs_redirect_fallback($status, $url){
 	}
 	return $status;
 }
-add_filter( 'wp_redirect_status' , 'rw_bp_docs_redirect_fallback', 90, 2 ) ;
-
