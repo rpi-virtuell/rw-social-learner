@@ -4,7 +4,14 @@
 <?php if ( !bp_is_user() ) : ?>
 	<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 		<?php // bp_docs_tabs( bp_docs_current_user_can_create_in_context() ) ?>
-		<?php  //if(! bp_docs_is_doc_history()) bp_docs_tabs( bp_docs_current_user_can_create_in_context() ) ?>
+		<?php
+		if(! ( bp_docs_is_doc_edit() || bp_docs_is_doc_read() || bp_docs_is_doc_create() || bp_docs_is_doc_history() ) )
+		{
+			?><div class="create_doc" style=""><?php
+			bp_docs_tabs( bp_docs_current_user_can_create_in_context() ) ;
+			?></div><?php
+		}
+		?>
 	</div><!-- .item-list-tabs -->
 <?php endif ?>
 
