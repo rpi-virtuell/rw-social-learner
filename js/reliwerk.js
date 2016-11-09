@@ -38,9 +38,11 @@
 		 *  workaround to show styled radio buttons in chrome
 		 ***/
 		if($.browser.chrome){
+			$('input[type="checkbox"]').parent().css('font-weight', '300');
 			$('input[type="radio"]').parent().css('font-weight', '300');
 			setTimeout (
 				function(){
+					$('input[type="checkbox"]').parent().css('font-weight', 'inherit');
 					$('input[type="radio"]').parent().css('font-weight', 'inherit');
 				}, 500
 			);
