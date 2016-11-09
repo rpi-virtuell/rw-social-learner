@@ -33,25 +33,21 @@
 			$('.course-lessons-widgets h3 a').attr('href', courselink);
 			
 		}
-		//Security Question
-	//	$('div.security-question-section h4').html('Zur Sicherheit noch ein kleiner Test');
-		
-		
-		//Activity Veröffentlichungsbutton 
-		/* im main theme gefixed
-		function showActivtyPostButton(){
-			
-			$('#buddypress form#whats-new-form textarea').css('margin-bottom','-20px');
-			$('input#aw-whats-new-submit').val('Veröffentlichen');
-			$('div#whats-new-options').show();
-		
+
+		/***
+		 *  workaround to show styled radio buttons in chrome
+		 ***/
+		if($.browser.chrome){
+			$('input[type="radio"]').parent().css('font-weight', '300');
+			setTimeout (
+				function(){
+					$('input[type="radio"]').parent().css('font-weight', 'inherit');
+				}, 500
+			);
 		}
-		
-		$('#whats-new-textarea').on('click', showActivtyPostButton);
-		$('#whats-new').on('keyup', showActivtyPostButton);
-		$('#whats-new').on('change', showActivtyPostButton);
-		*/
-    });
+
+
+	});
 }( jQuery, document, window ) );
 
 /*

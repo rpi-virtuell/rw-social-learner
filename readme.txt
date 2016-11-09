@@ -2,7 +2,7 @@
 Contributors: BuddyBoss, Joachim Happel, rpi-virtuell
 Requires at least: 3.8
 Tested up to: 4.5.3
-Version: 1.1.9
+Version: 1.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,10 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.2.1 =
+* workaround to show styled radio buttons in chrome
+
+
 = 1.2.0 =
 * fix for use with buddypress 2.7
 
