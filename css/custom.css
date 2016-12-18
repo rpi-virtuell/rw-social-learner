@@ -383,12 +383,16 @@ h2.directory-title{
 }
 
 
+
 .site .directory-breadcrumb-separator{
 	margin: 0 !important;
 	font-size: 0px !important;
-	display:table-cell;
+	display:inline;
 	padding:0 5px;
 
+}
+h2 span.directory-breadcrumb-separator {
+	display: table-cell !important;
 }
 
 .site div.manage-folders-link, .site div.toggle-folders-link {
