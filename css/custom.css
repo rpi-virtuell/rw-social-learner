@@ -482,5 +482,18 @@ body.directory.groups.buddypress  form#groups-directory-form div.item-list-tabs 
 	
 }#buddypress #item-body .activity-greeting {
 	margin-top: 0px !important;
-	
+
 }
+
+/* integration von https://de.wordpress.org/plugins/google-calendar-events/ */
+
+.widget-area .widget .simcal-calendar dl dd{
+	width:100%;
+	text-align: left;
+}
+@media screen and (min-width: 901px){
+	#secondary.widget-area .widget_gce_widget>.inner {
+		max-width: 350px !important;
+	}
+}
+/* end integration */
