@@ -21,6 +21,7 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 == Changelog ==
 = 1.2.3 =
 * CSS Simple Calendar Integration
+* Fixed fancy fox issue (conflict with global search box)
 
 = 1.2.2 =
 * CSS Fixes

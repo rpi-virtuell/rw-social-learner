@@ -402,7 +402,7 @@ add_action( 'template_redirect', 'rw_catch_attachment_request' , 20 );
 
 /** add fancy box to attached images */
 add_action( 'wp_enqueue_scripts', function(){
-    wp_enqueue_script( 'child-js', plugins_url(). '/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
+    wp_enqueue_script( 'fancy-js', plugins_url(). '/buddyboss-media/assets/vendor/fancybox/jquery.fancybox.pack.js', false, '2.1.5', false );
 } );
 
 
