@@ -106,7 +106,9 @@ if ( boss_get_option( 'boss_layout_style' ) != 'boxed' && boss_get_option('boss_
 				}
 				?>">
 				</div>
-
+                <?php
+                bp_group_join_button();
+                ?>
 				<?php
 				if ( !empty( $action_output ) ): //only show if output exists
 					?>
