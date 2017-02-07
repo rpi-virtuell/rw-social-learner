@@ -545,15 +545,102 @@ add_filter("mce_buttons_2", "enable_more_buttons_2",9999);
 add_filter("mce_buttons_3", function(){return false;});
 
 //deny "Tiny MCE Advanced" in forums
-add_filter( 'tadv_allowed_buttons' , 'rw_tadv_allowed_buttons', 10 , 1);
-function rw_tadv_allowed_buttons($buttons){
-
+add_filter( 'mce_buttons', 'rw_tadv_buttons', 1000 );
+function rw_tadv_buttons($buttons){
     if(is_bbpress()){
-        //this do the trick
-        return false;
+        $buttons = explode(', ','bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, blockquote, bullist, numlist, removeformat, link, unlink');
     }
     return $buttons;
 }
+add_filter ('bbp_kses_allowed_tags', 'rw_bbp_kses_allowed_tags');
+function rw_bbp_kses_allowed_tags() {
+    return array(
+
+        // Links
+        'a' => array(
+            'href'     => array(),
+            'title'    => array(),
+            'rel'      => array()
+        ),
+
+        // Quotes
+        'blockquote'   => array(
+            'cite'     => array()
+        ),
+
+        // Code
+        'code'         => array(),
+        'pre'          => array(),
+
+        // Formatting
+        'em'           => array(),
+        'strong'       => array(),
+        'del'          => array(
+            'datetime' => true,
+        ),
+
+        // Lists
+        'ul'           => array(),
+        'ol'           => array(
+            'start'    => true,
+        ),
+        'li'           => array(),
+
+        // Images
+        'img'          => array(
+            'src'      => true,
+            'border'   => true,
+            'alt'      => true,
+            'height'   => true,
+            'width'    => true,
+        ),
+        'br'   		   => array(),
+        'p'		   => array(
+            'align' => true
+        ),
+        'b'		   => array(),
+        'input' 	   => array(
+            'name'  => true,
+            'type'  => true,
+            'value' => true,
+            'style' => array()
+        ),
+        'table'        => array(
+            'padding'  => true,
+            'border'   => true,
+            'spacing'  => true,
+            'height'   => true,
+            'width'    => true,
+            'bgcolor'  => true,
+        ),
+        'tbody'        => array(),
+        'tr'        	=> array(
+            'align'  	=> true,
+            'valign'   	=> true,
+            'style'  	=> true,
+            'height'   	=> true,
+            'width'    	=> true,
+            'colspan'   => true,
+        ),
+        'th'        	=> array(
+            'align'  	=> true,
+            'valign'   	=> true,
+            'style'  	=> true,
+            'height'   	=> true,
+            'width'    	=> true,
+            'colspan'   => true,
+            'bgcolor'   => true,
+        ),
+        'td'        	=> array(
+            'align'  	=> true,
+            'valign'   	=> true,
+            'height'   	=> true,
+            'width'    	=> true,
+            'bgcolor'  	=> true,
+        )
+    );
+}
+
 
 /**
 * tiny mce fullscreen mode 
