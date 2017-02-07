@@ -1,14 +1,26 @@
 === Social Learner ===
 Contributors: BuddyBoss, Joachim Happel, rpi-virtuell
 Requires at least: 3.8
-Tested up to: 4.5.3
-Version: 1.2.3
+Tested up to: 4.7.1
+Version: 1.2.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
 A child theme for the Boss theme, designed to be used in conjunction with Boss for LearnDash plugins.
+
+== Required Plugins:  ==
+
+* BuddyPress
+* Boss Theme (Buddyboss.com)
+* bbpress
+* BuddyPress Forum Editor
+* BP Group Hierarchy
+* Advanced Tiny-MCE
+* BuddyPress Docs
+* BuddyPress Global Search
+
 
 == Installation ==
 
@@ -19,6 +31,9 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.2.4 =
+* deny "Tiny MCE Advanced" in forums
+
 = 1.2.3 =
 * CSS Simple Calendar Integration
 * Fixed fancy fox issue (conflict with global search box)

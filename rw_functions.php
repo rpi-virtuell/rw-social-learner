@@ -544,6 +544,17 @@ function enable_more_buttons_2($buttons) {
 add_filter("mce_buttons_2", "enable_more_buttons_2",9999);
 add_filter("mce_buttons_3", function(){return false;});
 
+//deny "Tiny MCE Advanced" in forums
+add_filter( 'tadv_allowed_buttons' , 'rw_tadv_allowed_buttons', 10 , 1);
+function rw_tadv_allowed_buttons($buttons){
+
+    if(is_bbpress()){
+        //this do the trick
+        return false;
+    }
+    return $buttons;
+}
+
 /**
 * tiny mce fullscreen mode 
 */
@@ -753,3 +764,5 @@ function rw_bp_docs_redirect_fallback($status, $url){
 	}
 	return $status;
 }
+
+
