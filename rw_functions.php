@@ -516,6 +516,10 @@ function enable_more_buttons($buttons) {
 add_filter("mce_buttons", "enable_more_buttons",9999);
 function enable_more_buttons_2($buttons) {
 
+    if(is_bbpress()){
+        return false;
+    }
+
 	if(bp_docs_is_doc_edit() or bp_docs_is_doc_create()){
 
 		$buttons =array(
