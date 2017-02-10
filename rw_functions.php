@@ -515,11 +515,11 @@ function enable_more_buttons($buttons) {
 }
 add_filter("mce_buttons", "enable_more_buttons",9999);
 function enable_more_buttons_2($buttons) {
-
-    if(is_bbpress()){
-        return false;
-    }
-
+	
+	if(is_bbpress()){
+		return false;
+	}
+	
 	if(bp_docs_is_doc_edit() or bp_docs_is_doc_create()){
 
 		$buttons =array(
@@ -600,7 +600,8 @@ function rw_bbp_kses_allowed_tags() {
         ),
         'br'   		   => array(),
         'p'		   => array(
-            'align' => true
+            'align' => true,
+			'style' => true
         ),
         'b'		   => array(),
         'input' 	   => array(
