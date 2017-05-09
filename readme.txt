@@ -33,6 +33,7 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 == Changelog ==
 = 1.2.5 =
 * replaces BP Group Hierarchy with https://github.com/dcavins/hierarchical-groups-for-bp from David Cavins
+* force compatibillity with bp 2.8
 
 = 1.2.4 =
 * deny "Tiny MCE Advanced" in forums
