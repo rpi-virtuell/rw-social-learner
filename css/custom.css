@@ -501,3 +501,50 @@ body.directory.groups.buddypress  form#groups-directory-form div.item-list-tabs 
 	}
 }
 /* end integration */
+
+
+/** grouphierachie directory tree view**/
+#buddypress div.child-groups.open ul.item-list{
+	margin-left:0;
+	border-left: 0px dotted #c0c0c0;
+	border-top: 1px dotted #c0c0c0;
+}
+body.directory.groups #groups-list .item-list li{
+	padding: 30px 0 30px 2% !important;
+	border-bottom: 1px dotted #c0c0c0;
+	width: 98%;
+}
+a.toggle-child-groups{
+	color: #fff;
+	background-color: #999;
+	margin: 0 auto 0px;
+	padding: 0 5px;
+	border-radius: 5px;
+	font-weight: bold;
+
+}
+a.toggle-child-groups:before{
+	display: none;
+}
+/* grouphierachy single group */
+body.single-item.groups #groups-list .item-list li{
+	padding: 30px 0 30px 2%;
+	border-bottom: 1px dotted #c0c0c0;
+	width: 96%;
+}
+body.single-item.groups #groups-list .item-list li.bp-single-group{
+	width: 98%;
+}
+body.single-item.groups #groups-list li.bp-single-group,
+body.single-item.groups #groups-list li.has-children{
+	display:inherit;
+	width: 98%;
+}
+
+body.directory.groups #hgbp-enable-tree-view-container{
+	display: none;
+}
+body.directory.groups #group-create-nav{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}

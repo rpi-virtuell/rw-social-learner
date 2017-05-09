@@ -31,6 +31,9 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.2.5 =
+* replaces BP Group Hierarchy with https://github.com/dcavins/hierarchical-groups-for-bp from David Cavins
+
 = 1.2.4 =
 * deny "Tiny MCE Advanced" in forums
 

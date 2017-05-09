@@ -6,6 +6,33 @@
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
+ * Build breadcrumbs for a group
+ * @required plugin: https://github.com/dcavins/hierarchical-groups-for-bp
+ */
+if (!function_exists('bp_group_hierarchy_breadcrumbs')){
+    function bp_group_hierarchy_breadcrumbs(){
+
+        if(function_exists('hgbp_get_ancestor_group_ids')){
+
+            $parents = hgbp_get_ancestor_group_ids();
+            $parts = array();
+            foreach ($parents as $p){
+                $g = new BP_Groups_Group($p);
+                $part =  '<a class="rw-group-hierarchy-breadcrumbs" href="/'.bp_get_groups_root_slug().'/'.$g->slug.'">'. $g->name . '</a>';
+                array_unshift($parts, $part);
+
+            }
+            echo implode(' > ', $parts);
+            if(count($parts)> 0) echo ' > ' ;
+            echo bp_get_current_group_name();
+
+        }
+
+    }
+}
+
+
+/**
  * Remove buggy limitations in bbpress integration from learnpress 
  * @see https://github.com/LearnPress/LearnPress-bbPress/blob/master/init.php 
  */
@@ -515,11 +542,11 @@ function enable_more_buttons($buttons) {
 }
 add_filter("mce_buttons", "enable_more_buttons",9999);
 function enable_more_buttons_2($buttons) {
-	
-	if(is_bbpress()){
-		return false;
-	}
-	
+
+    if(is_bbpress()){
+        return false;
+    }
+
 	if(bp_docs_is_doc_edit() or bp_docs_is_doc_create()){
 
 		$buttons =array(
@@ -600,8 +627,7 @@ function rw_bbp_kses_allowed_tags() {
         ),
         'br'   		   => array(),
         'p'		   => array(
-            'align' => true,
-			'style' => true
+            'align' => true
         ),
         'b'		   => array(),
         'input' 	   => array(
