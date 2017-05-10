@@ -883,4 +883,16 @@ function rw_bp_docs_redirect_fallback($status, $url){
 	return $status;
 }
 
+/**
+ * workarround for bug in buddypress 2.8 that exprects an array of  the activity types
+ */
 
+add_filter('bp_before_has_activities_parse_args', function($r){
+
+
+    if(isset($r["type"]) && !isset($r["action"])){
+        $r["action"]=$r["type"]=explode(',',$r["type"]);
+    }
+    return $r;
+
+}, 2);
