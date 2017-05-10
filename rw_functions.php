@@ -885,6 +885,7 @@ function rw_bp_docs_redirect_fallback($status, $url){
 
 /**
  * workarround for bug in buddypress 2.8 that exprects an array of  the activity types
+ * @link: https://buddypress.org/support/topic/bug-the-activitystream-filter-expects-an-array-of-activytype/
  */
 
 add_filter('bp_before_has_activities_parse_args', function($r){
