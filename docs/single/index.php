@@ -43,8 +43,7 @@
                     ?>
 
                     <?php get_template_part( 'docs/single/index', 'inner' ); ?>
-                    <?php comments_template( '/docs/single/comments.php' ) ?>
-
+                    
                     <?php
                     /**
                      * Fires after the display of the group home body.
