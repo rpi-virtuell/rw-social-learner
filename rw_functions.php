@@ -668,6 +668,15 @@ function rw_bbp_kses_allowed_tags() {
             'height'   	=> true,
             'width'    	=> true,
             'bgcolor'  	=> true,
+        ),
+	    'iframe'        => array(
+            'src'  => true,
+            'srcdoc'  => true,
+            'style'   => true,
+            'spacing'  => true,
+            'height'   => true,
+            'width'    => true,
+            'frameborder'  => true,
         )
     );
 }
