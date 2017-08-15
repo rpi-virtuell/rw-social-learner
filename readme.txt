@@ -1,8 +1,8 @@
 === Social Learner ===
 Contributors: BuddyBoss, Joachim Happel, rpi-virtuell
 Requires at least: 3.8
-Tested up to: 4.7.1
-Version: 1.2.4
+Tested up to: 4.8.1
+Version: 1.2.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,10 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+
+= 1.2.6 =
+* Fix: BuddyPress sidebar lists multiple blogs.
+
 = 1.2.5 =
 * replaces BP Group Hierarchy with https://github.com/dcavins/hierarchical-groups-for-bp from David Cavins
 * force compatibillity with bp 2.8
