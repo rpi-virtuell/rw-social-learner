@@ -57,14 +57,18 @@
 								<?php
 								/* Group Blog integration */
 								$group = groups_get_current_group();
+								$blogs = array();
 								$options = groups_get_groupmeta( $group->id, 'rw-group-blogs-blogdata' );
 								if($options){
-									?>
+									foreach ( $options as $key) {
+									    $blogs[ $key[ 'site_url']] = $key[ 'site_url'];
+									}
+										?>
 									<br>
 									<h3><?php _e("Group Blogs",'social-learner'); ?></h3>
 									<?php
-									foreach ( $options as $key) { ?>
-										<a href="<?php echo $key[ 'site_url']; ?>"><?php echo $key[ 'site_url']; ?></a><br>
+									foreach ( $blogs as $key => $value) { ?>
+										<a href="<?php echo $value; ?>"><?php echo $value; ?></a><br>
 									<?php
 								}}
 								?>
