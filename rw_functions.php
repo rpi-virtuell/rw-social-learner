@@ -906,3 +906,15 @@ add_filter('bp_before_has_activities_parse_args', function($r){
     return $r;
 
 }, 2);
+
+/**
+ * Ausgabe der Buddypress Docs Attachments nach Title sortieren
+ */
+
+add_filter('bp_docs_get_doc_attachments_args', 'rw_bp_docs_get_doc_attachments_args', 10, 2);
+function rw_bp_docs_get_doc_attachments_args($args_array, $doc_id){
+	$args_array['order'] = 'ASC';
+	$args_array['orderby'] = 'post_title';
+    return $args_array;
+}
+
