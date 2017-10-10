@@ -2,7 +2,7 @@
 	<?php bp_docs_media_buttons( 'doc_content' ) ?>
 <?php endif; ?>
 <?php if ( bp_docs_is_doc_create() ) : ?>
-	<?php _e( 'First save, then upload.' ) ?>
+	<?php _e( 'First save, then upload.', 'social-learner' ) ?>
 <?php endif; ?>
 <style>
 	#doc-attachments a.fancybox .doc-image{
