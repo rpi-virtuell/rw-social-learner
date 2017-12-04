@@ -356,7 +356,7 @@ class RW_BuddyPress_Docs_Tree {
 
 
         register_sidebar( array(
-            'name' => __( 'Docs', 'bp-docs' ),
+            'name' => __( 'Docs', 'buddypress-docs' ),
             'id' => 'docs',
             'description' => __( 'Widgets in this area will be shown on buddypress docs pages.', 'bp-docs-tree' ),
             'before_widget' => '<li id="%1$s" class="widget %2$s">',

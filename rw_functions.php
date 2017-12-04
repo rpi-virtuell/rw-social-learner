@@ -398,14 +398,14 @@ function rw_catch_attachment_request() {
         }
 
         if ( ! $bp->bp_docs->attachments->filename_is_safe( $fn ) ) {
-            wp_die( __( 'File not found.', 'bp-docs' ) );
+            wp_die( __( 'File not found.', 'buddypress-docs' ) );
         }
 
         $uploads = wp_upload_dir();
         $filepath = $uploads['path'] . DIRECTORY_SEPARATOR . $fn;
 
         if ( ! file_exists( $filepath ) ) {
-            wp_die( __( 'File not found.', 'bp-docs' ) );
+            wp_die( __( 'File not found.', 'buddypress-docs' ) );
         }
 
         $headers = $bp->bp_docs->attachments->generate_headers( $filepath );
@@ -503,7 +503,6 @@ function set_activity_widget_filter() {
 	setcookie( 'bp-activity-filter', $data, time()+ ( 60 * 60 ));
 }
 add_action('wp_login', 'set_activity_widget_filter');
-
 
 /**
 * tiny mce buttons

@@ -23,7 +23,7 @@
 	<div class="doc-content">
 
 	<div id="idle-warning" style="display:none">
-		<p><?php _e( 'You have been idle for <span id="idle-warning-time"></span>', 'bp-docs' ) ?></p>
+		<p><?php _e( 'You have been idle for <span id="idle-warning-time"></span>', 'buddypress-docs' ) ?></p>
 	</div>
 
 	<form action="" method="post" class="standard-form" id="doc-form">
@@ -37,13 +37,13 @@
 
 
 	    <div class="doc-content-wrapper">
-			<label for="doc-title"><?php _e( 'Title', 'bp-docs' ) ?></label>
+			<label for="doc-title"><?php _e( 'Title', 'buddypress-docs' ) ?></label>
 			<div id="doc-submit-options" style="float: right; display:flex; width:150px; margin-top: 0px; height:50px">
 
 				<?php wp_nonce_field( 'bp_docs_save' ) ?>
 
 				<input type="hidden" id="doc_id" name="doc_id" value="<?php echo $doc_id ?>" />
-				<input type="submit" name="doc-edit-submit" id="doc-edit-submit" value="<?php _e( 'Save', 'bp-docs' ) ?>">
+				<input type="submit" name="doc-edit-submit" id="doc-edit-submit" value="<?php _e( 'Save', 'buddypress-docs' ) ?>">
 
 			</div>
 
@@ -55,7 +55,7 @@
 
 		<?php if ( bp_docs_is_existing_doc() ) : ?>
 			<div id="doc-content-permalink">
-				<label for="doc-permalink"><?php _e( 'Permalink', 'bp-docs' ) ?></label>
+				<label for="doc-permalink"><?php _e( 'Permalink', 'buddypress-docs' ) ?></label>
 				<code><?php echo trailingslashit( bp_get_root_domain() ) . bp_docs_get_docs_slug() . '/' ?></code><input type="text" id="doc-permalink" name="doc[permalink]" class="long" value="<?php bp_docs_edit_doc_slug() ?>" />
 			</div>
 		<?php endif ?>
@@ -63,7 +63,7 @@
 		<?php do_action( 'bp_docs_before_doc_edit_content', $doc_id ) ?>
 
 		<div id="doc-content-textarea">
-			<label id="content-label" for="doc_content"><?php _e( 'Content', 'bp-docs' ) ?></label>
+			<label id="content-label" for="doc_content"><?php _e( 'Content', 'buddypress-docs' ) ?></label>
 			<div id="editor-toolbar">
 				<?php
 					if ( function_exists( 'wp_editor' ) ) {
@@ -83,7 +83,7 @@
 
 		<?php if ( bp_docs_enable_attachments() ) : ?>
 			<div id="doc-attachments">
-				<label for="insert-media-button"><?php _e( 'Attachments', 'bp-docs' ) ?></label>
+				<label for="insert-media-button"><?php _e( 'Attachments', 'buddypress-docs' ) ?></label>
 				<?php include ( bp_docs_locate_template( 'single/attachments.php' ) ) ?>
 			</div>
 		<?php endif ?>
@@ -97,8 +97,8 @@
 				<div id="doc-associated-group" class="doc-meta-box">
 					<div class="toggleable <?php bp_docs_toggleable_open_or_closed_class() ?>">
 						<p class="toggle-switch" id="associated-group-toggle">
-							<span class="hide-if-js toggle-link-no-js"><?php _e( 'Associated Group', 'bp-docs' ) ?></span>
-							<a class="hide-if-no-js toggle-link" id="associated-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Associated Group', 'bp-docs' ) ?></a>
+							<span class="hide-if-js toggle-link-no-js"><?php _e( 'Associated Group', 'buddypress-docs' ) ?></span>
+							<a class="hide-if-no-js toggle-link" id="associated-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Associated Group', 'buddypress-docs' ) ?></a>
 						</p>
 
 						<div class="toggle-content">
@@ -118,8 +118,8 @@
 				<div id="doc-settings" class="doc-meta-box">
 					<div class="toggleable <?php bp_docs_toggleable_open_or_closed_class() ?>">
 						<p class="toggle-switch" id="settings-toggle">
-							<span class="hide-if-js toggle-link-no-js"><?php _e( 'Access', 'bp-docs' ) ?></span>
-							<a class="hide-if-no-js toggle-link" id="settings-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Access', 'bp-docs' ) ?></a>
+							<span class="hide-if-js toggle-link-no-js"><?php _e( 'Access', 'buddypress-docs' ) ?></span>
+							<a class="hide-if-no-js toggle-link" id="settings-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Access', 'buddypress-docs' ) ?></a>
 						</p>
 
 						<div class="toggle-content">
@@ -138,16 +138,16 @@
 			<div id="doc-tax" class="doc-meta-box">
 				<div class="toggleable <?php bp_docs_toggleable_open_or_closed_class() ?>">
 					<p id="tags-toggle-edit" class="toggle-switch">
-						<span class="hide-if-js toggle-link-no-js"><?php _e( 'Tags', 'bp-docs' ) ?></span>
-						<a class="hide-if-no-js toggle-link" id="tags-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Tags', 'bp-docs' ) ?></a>
+						<span class="hide-if-js toggle-link-no-js"><?php _e( 'Tags', 'buddypress-docs' ) ?></span>
+						<a class="hide-if-no-js toggle-link" id="tags-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Tags', 'buddypress-docs' ) ?></a>
 					</p>
 
 					<div class="toggle-content">
 						<table class="toggle-table" id="toggle-table-tags">
 							<tr>
 								<td class="desc-column">
-									<label for="bp_docs_tag"><?php _e( 'Tags are words or phrases that help to describe and organize your Docs.', 'bp-docs' ) ?></label>
-									<span class="description"><?php _e( 'Separate tags with commas (for example: <em>orchestra, snare drum, piccolo, Brahms</em>)', 'bp-docs' ) ?></span>
+									<label for="bp_docs_tag"><?php _e( 'Tags are words or phrases that help to describe and organize your Docs.', 'buddypress-docs' ) ?></label>
+									<span class="description"><?php _e( 'Separate tags with commas (for example: <em>orchestra, snare drum, piccolo, Brahms</em>)', 'buddypress-docs' ) ?></span>
 								</td>
 
 								<td>
@@ -166,17 +166,17 @@
 			<div id="doc-parent" class="doc-meta-box">
 				<div class="toggleable <?php bp_docs_toggleable_open_or_closed_class() ?>">
 					<p class="toggle-switch" id="parent-toggle">
-						<span class="hide-if-js toggle-link-no-js"><?php _e( 'Parent', 'bp-docs' ) ?></span>
-						<a class="hide-if-no-js toggle-link" id="parent-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Parent', 'bp-docs' ) ?></a>
+						<span class="hide-if-js toggle-link-no-js"><?php _e( 'Parent', 'buddypress-docs' ) ?></span>
+						<a class="hide-if-no-js toggle-link" id="parent-toggle-link" href="#"><span class="show-pane plus-or-minus"></span><?php _e( 'Parent', 'buddypress-docs' ) ?></a>
 					</p>
 
 					<div class="toggle-content">
 						<table class="toggle-table" id="toggle-table-parent">
 							<tr>
 								<td class="desc-column">
-									<label for="parent_id"><?php _e( 'Select a parent for this Doc.', 'bp-docs' ) ?></label>
+									<label for="parent_id"><?php _e( 'Select a parent for this Doc.', 'buddypress-docs' ) ?></label>
 
-									<span class="description"><?php _e( '(Optional) Assigning a parent Doc means that a link to the parent will appear at the bottom of this Doc, and a link to this Doc will appear at the bottom of the parent.', 'bp-docs' ) ?></span>
+									<span class="description"><?php _e( '(Optional) Assigning a parent Doc means that a link to the parent will appear at the bottom of this Doc, and a link to this Doc will appear at the bottom of the parent.', 'buddypress-docs' ) ?></span>
 								</td>
 
 								<td class="content-column">
@@ -193,13 +193,13 @@
 		</div>
 
 		<div style="clear: both"> </div>
-			<input type="submit" name="doc-edit-submit" id="doc-edit-submit" value="<?php _e( 'Save', 'bp-docs' ) ?>">
+			<input type="submit" name="doc-edit-submit" id="doc-edit-submit" value="<?php _e( 'Save', 'buddypress-docs' ) ?>">
 			<?php if ( bp_docs_is_existing_doc() ) : ?>
 				<?php if ( current_user_can( 'bp_docs_manage', $doc_id ) ) : ?>
 					<?php bp_docs_delete_doc_button() ?>
 				<?php endif ?>
 			<?php endif ?>
-			<!--<a href="<?php bp_docs_cancel_edit_link() ?>" class="action safe"><?php _e( 'Cancel', 'bp-docs' ); ?></a>-->
+			<!--<a href="<?php bp_docs_cancel_edit_link() ?>" class="action safe"><?php _e( 'Cancel', 'buddypress-docs' ); ?></a>-->
 
 	    </div>
 	</form>
@@ -223,10 +223,10 @@
 	<div style="display:none;">
 	<div id="still_working_content" name="still_working_content">
 		<br />
-		<h3><?php _e( 'Are you still there?', 'bp-docs' ) ?></h3>
+		<h3><?php _e( 'Are you still there?', 'buddypress-docs' ) ?></h3>
 
-		<p><?php _e( 'In order to prevent overwriting content, only one person can edit a given doc at a time. For that reason, you must periodically ensure the system that you\'re still actively editing. If you are idle for more than 30 minutes, your changes will be auto-saved, and you\'ll be sent out of Edit mode so that others can access the doc.', 'bp-docs' ) ?></p>
+		<p><?php _e( 'In order to prevent overwriting content, only one person can edit a given doc at a time. For that reason, you must periodically ensure the system that you\'re still actively editing. If you are idle for more than 30 minutes, your changes will be auto-saved, and you\'ll be sent out of Edit mode so that others can access the doc.', 'buddypress-docs' ) ?></p>
 
-		<a href="#" onclick="jQuery.colorbox.close(); return false" class="button"><?php _e( 'I\'m still editing!', 'bp-docs' ) ?></a>
+		<a href="#" onclick="jQuery.colorbox.close(); return false" class="button"><?php _e( 'I\'m still editing!', 'buddypress-docs' ) ?></a>
 	</div>
 	</div>
