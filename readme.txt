@@ -31,6 +31,8 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.3.0 *
+*  new language files in buddypress-docs fix language issues
 
 = 1.2.9 *
 *  order docs attachments by title #193
