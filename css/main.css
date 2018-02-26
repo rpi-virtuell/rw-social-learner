@@ -294,7 +294,7 @@ body #titlebar-search #searchform {
 }
 .header-account-login {
     padding-left: 0;
-    float: right;
+    /*float: right;*/
 }
 .header-navigation > div > ul > li {
     vertical-align: middle;
