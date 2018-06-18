@@ -199,7 +199,7 @@ function rw_boss_get_user_social_array() {
 	                   "twitter" =>     array( "title"=>"Twitter",    'icon-url' => '' ),
 	                   "linkedin" =>    array( "title"=>"Linkedin",   'icon-url' => '' ),
 	                   "google-plus" => array( "title"=>"Google+",    'icon-url' => '' ),
-	                   "flickr" =>      array( "title"=>"Flickr",     'icon-url' => get_stylesheet_directory_uri() . '/images/flickr.svg' ),
+	                   "flickr" =>      array( "title"=>"Flickr",     'icon-url' => get_stylesheet_directory_uri() . '/images/flickr.png' ),
 	                   "soundcloud" =>  array( "title"=>"Soundcloud", 'icon-url' => get_stylesheet_directory_uri() . '/images/soundcloud.svg' ),
 	                   "wordpress" =>   array( "title"=>"WordPress",  'icon-url' => get_stylesheet_directory_uri() . '/images/wordpress.svg' ),
 	                   "vine" =>        array( "title"=>"Vine",       'icon-url' => get_stylesheet_directory_uri() . '/images/vine.svg' ),
