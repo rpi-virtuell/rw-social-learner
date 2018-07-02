@@ -1,8 +1,8 @@
 === Social Learner ===
 Contributors: BuddyBoss, Joachim Happel, rpi-virtuell
 Requires at least: 3.8
-Tested up to: 4.8.2
-Version: 1.3.0
+Tested up to: 4.9.6
+Version: 1.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,8 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+= 1.3.1 
+*   buddypress-docs fix language issues 
 = 1.3.0 *
 *  new language files in buddypress-docs fix language issues
 
