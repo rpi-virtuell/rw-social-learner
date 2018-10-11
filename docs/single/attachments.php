@@ -54,7 +54,8 @@
 
 			default:
 				$file = bp_docs_attachment_item_markup( $attachment->ID ) ;
-
+                $filename =  wp_basename( get_attached_file( $attachment->ID ) );
+                $file = str_replace( '<a ', '<a download="'. $filename .'"', $file );
 				$files[] = $file;
 		}
 
