@@ -69,6 +69,14 @@ li.permissiontab{
 .doc-content{
 	background-color: #fff;
 }
+
+.group-subscription-div{
+	padding: 0 0 0 20px;
+}
+.group-subscription-div hr{
+	margin:-14px 0 14px 0;
+	display:none;
+}
 /*******
 * Fix douple border in groups order
 *******/
@@ -82,30 +90,6 @@ li#activity-filter-select {
 	width: 300px;
 }
 
-/*******
-* Fix Layout for BuddyPress Group Email Subscription
-*******/
-
-.group-subscription-options, div.group-subscription-div{
-	display:none !important;
-}
-
-/*******
-* Fix Layout Adminbar
-*******/
-/*
-ul#wp-admin-bar-top-secondary{
-	display:none;
-}
-#wpadminbar {
-    background: #144A63 none repeat scroll 0 0;
-	border-bottom:1px solid #999;
-}
-.security-question-section{
-   margin: 0 auto !important;
-   max-width: 430px !important;
-}
-*/
 .single-bp_doc #bp-create-doc-button, .permissiontab{
 	display: none;
 }
@@ -524,7 +508,7 @@ a.toggle-child-groups{
 
 }
 a.toggle-child-groups:before{
-	display: none;
+	/*display: none;*/
 }
 /* grouphierachy single group */
 body.single-item.groups #groups-list .item-list li{

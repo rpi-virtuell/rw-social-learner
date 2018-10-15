@@ -3,20 +3,21 @@
 <?php /* Subnavigation on user pages is handled by BP's core functions */ ?>
 <?php if ( !bp_is_user() ) : ?>
 	<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-		<?php // bp_docs_tabs( bp_docs_current_user_can_create_in_context() ) ?>
-		<?php
-		if(! ( bp_docs_is_doc_edit() || bp_docs_is_doc_read() || bp_docs_is_doc_create() || bp_docs_is_doc_history() ) )
-		{
-			?><div class="create_doc" style=""><?php
-			bp_docs_tabs( bp_docs_current_user_can_create_in_context() ) ;
-			?></div><?php
-		}
-		?>
+		<?php bp_docs_tabs( bp_docs_current_user_can_create_in_context() ) ?>
 	</div><!-- .item-list-tabs -->
 <?php endif ?>
 
 <?php do_action( 'bp_docs_before_doc_header_content' ) ?>
+
 <?php if ( bp_docs_is_existing_doc() ) : ?>
+	
+	<div id="bp-docs-single-doc-header">
+		<?php if ( ! bp_docs_is_theme_compat_active() ) : ?>
+			<h2 class="doc-title"><?php the_title() ?><?php if ( bp_docs_is_doc_trashed() ) : ?> <span class="bp-docs-trashed-doc-notice" title="<?php esc_html_e( 'This Doc is in the Trash', 'buddypress-docs' ) ?>">Trash</span><?php endif ?></h2>
+		<?php endif ?>
+
+		<?php do_action( 'bp_docs_single_doc_header_fields' ) ?>
+	</div>
 
 	<div class="doc-tabs">
 		<ul>
@@ -31,22 +32,9 @@
 			<?php endif ?>
 
 			<?php do_action( 'bp_docs_header_tabs' ) ?>
-				<li class="bp-create-doc-button"><?php
-				if ( ! bp_docs_is_doc_create() && current_user_can( 'bp_docs_create' ) ) {
-					echo apply_filters( 'bp_docs_create_button', '<a href="' . bp_docs_get_create_link() . '">' . __( "Create New Doc", 'buddypress-docs' ) . '</a>' );
-				}
-				?></li>
 		</ul>
 	</div>
-	<?php do_action( 'bp_docs_before_doc_title' ) ?>
-	<div id="bp-docs-single-doc-header">
-		<?php if ( ! bp_docs_is_theme_compat_active() ) : ?>
-			<h2 class="doc-title"><?php the_title() ?><?php if ( bp_docs_is_doc_trashed() ) : ?> <span class="bp-docs-trashed-doc-notice" title="<?php esc_html_e( 'This Doc is in the Trash', 'buddypress-docs' ) ?>">Trash</span><?php endif ?></h2>
-		<?php endif ?>
-
-		<?php do_action( 'bp_docs_single_doc_header_fields' ) ?>
-	</div>
-
+<?php do_action( 'bp_docs_before_doc_title' ) ?>
 <?php elseif ( bp_docs_is_doc_create() ) : ?>
 
 	<h2><?php _e( 'New Doc', 'buddypress-docs' ); ?></h2>

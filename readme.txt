@@ -31,6 +31,11 @@ A child theme for the Boss theme, designed to be used in conjunction with Boss f
 5. Activate Social Learner from your Themes page.
 
 == Changelog ==
+
+= 2.0.0 =
+* recoding for bp-nouveau template
+  https://github.com/buddypress/next-template-packs/
+
 = 1.3.2 =
 * add html 5 download attribute to docs attacmend single
 
