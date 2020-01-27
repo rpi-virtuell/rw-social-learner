@@ -871,6 +871,22 @@ function rw_bp_docs_get_doc_attachments_args($args_array, $doc_id){
 }
 
 /**
+ * BP Docs For Groups Only
+ */
+add_action( 'bp_actions', function() {
+	bp_core_remove_nav_item( 'docs' );
+} );
+
+add_filter( 'bp_docs_filter_result_before_save', function( $result, $args ) {
+	if ( empty( $args['group_id'] ) ) {
+		$result['error'] = true;
+		$result['message'] = 'Du musst  eine Gruppe auswählen !';
+	}
+	return $result;
+}, 10, 2 );
+
+
+/**
 * Redirect buddypress and bbpress pages for not loogedin user
 */
 function rw_page_template_redirect()
@@ -878,18 +894,24 @@ function rw_page_template_redirect()
     //if not logged in and on a bp page except registration or activation
     if( ! is_user_logged_in()) {
 		
-			if ( (! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page() && is_buddypress() )
-				|| is_bbpress() 
-				|| (function_exists('bp_docs_is_doc_read') && bp_docs_is_doc_read()) 
-				|| is_search()
+			if ( (! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page()  )
+				//|| is_bbpress()
+                || bp_is_members_directory()
+                || bp_is_activity_directory()
+                || bp_docs_get_docs_slug()=='docs'
+				//|| (function_exists('bp_docs_is_doc_read') && bp_docs_is_doc_read())
+				//|| is_search()
 			)
 			{
-				wp_redirect( home_url( '/login' ) );
+				wp_redirect( home_url( '/' ) );
 				exit();
 			}
-				
-				
-		
+
+    }else{
+
+        if(bp_docs_get_docs_slug()=='docs' && !bp_is_group() && !bp_docs_is_bp_docs_page()){
+	        wp_redirect( home_url( '/groups' ) );
+        }
     }
 	
 }
@@ -1132,3 +1154,4 @@ function rw_get_privacy_label ($key){
     }
     return '';
 }
+
