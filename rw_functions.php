@@ -893,25 +893,27 @@ function rw_page_template_redirect()
 {
     //if not logged in and on a bp page except registration or activation
     if( ! is_user_logged_in()) {
-		
-			if ( (! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page()  )
-				//|| is_bbpress()
-                || bp_is_members_directory()
-                || bp_is_activity_directory()
-                || bp_docs_get_docs_slug()=='docs'
-				//|| (function_exists('bp_docs_is_doc_read') && bp_docs_is_doc_read())
-				//|| is_search()
-			)
-			{
-				wp_redirect( home_url( '/' ) );
-				exit();
-			}
+	    $url = wp_parse_url($_SERVER['REQUEST_URI']);
 
-    }else{
 
-        if(bp_docs_get_docs_slug()=='docs' && !bp_is_group() && !bp_docs_is_bp_docs_page()){
-	        wp_redirect( home_url( '/groups' ) );
+        if ( (! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page()  )
+            //|| is_bbpress()
+            || bp_is_members_directory()
+            || bp_is_activity_directory()
+            || str_replace('/','', $url["path"]) == bp_docs_get_docs_slug()
+            //|| (function_exists('bp_docs_is_doc_read') && bp_docs_is_doc_read())
+            || is_search()
+        )
+        {
+            wp_redirect( home_url( '/' ) );
+            exit();
         }
+
+    //}else{
+
+      //  if(bp_docs_get_docs_slug()=='docs' && !bp_is_group() && !bp_docs_is_bp_docs_page()){
+	     //   wp_redirect( home_url( '/groups' ) );
+      //  }
     }
 	
 }
