@@ -64,6 +64,6 @@ jQuery( document ).ready(function() {
 			jq('#activity-filter-by option[value="' + selArr[i] + '"]').prop('selected', true);
 		}
 	}
-	jq('.activity-filter-by').SumoSelect( { csvDispCount:2});
+	jq('#activity-filter-by').SumoSelect( { csvDispCount:2});
 });
 

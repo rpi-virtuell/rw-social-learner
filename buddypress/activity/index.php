@@ -30,6 +30,20 @@ get_header( 'buddypress' ); ?>
 
 			<?php if ( is_user_logged_in() ) : ?>
 
+			
+
+            <div style="clear:both; border:2px solid #41759C; background-color:#ddd; padding:5px 20px; margin:40px 70px 20px; border-radius:4px; font-size:14px;" class="bp-template-notice error">
+				
+				<h4 style="margin-bottom:10px;">Datenschutzhinweis:</h4>
+				Bitte beachte, dass Beiträge, die du auf dieser Pinnwand schreibst oder auf die du antwortest auch über Suchmaschinen auf deiner Profilseite zusammen mit den Antworten gefunden werden können, sofern du die Gruppe der Leseberechtigten nicht einschränkst. 
+				Die Pinnwand eignet sich nicht, um <b><a href="
+					<?php 
+						echo bp_custom_get_send_private_message_link(0,'','');
+						?>">
+					Private Nachrichten</a></b> zu senden.
+				
+			</div>
+
 				<?php bp_get_template_part( 'activity/post-form' ); ?>
 
 			<?php endif; ?>
@@ -150,6 +164,7 @@ get_header( 'buddypress' ); ?>
 			</div>
 
 
+			
 			<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
 			<div class="activity" role="main">

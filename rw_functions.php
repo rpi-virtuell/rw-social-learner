@@ -870,3 +870,69 @@ function rw_bp_docs_get_doc_attachments_args($args_array, $doc_id){
     return $args_array;
 }
 
+/**
+* Redirect buddypress and bbpress pages for not loogedin user
+*/
+function rw_page_template_redirect()
+{
+    //if not logged in and on a bp page except registration or activation
+    if( ! is_user_logged_in()) {
+		
+			if ( (! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page() && is_buddypress() )
+				|| is_bbpress() 
+				|| (function_exists('bp_docs_is_doc_read') && bp_docs_is_doc_read()) 
+				|| is_search()
+			)
+			{
+				wp_redirect( home_url( '/login' ) );
+				exit();
+			}
+				
+				
+		
+    }
+	
+}
+add_action( 'template_redirect', 'rw_page_template_redirect' );
+
+///Remove Google fonts
+/**
+ * Remove all google fonts loading by redux
+ */
+
+	function remove_google_font() {
+		wp_dequeue_style('redux-google-fonts-boss-options');
+		wp_dequeue_style('redux-google-fonts-boss-options-css');
+		
+		wp_deregister_style('redux-google-fonts-boss-options-css');
+		wp_deregister_style('redux-google-fonts-boss-options');
+		
+	}
+
+	add_action( 'wp_head', 'remove_google_font', 999 );
+	add_action( 'wp_enqueue_scripts', 'remove_google_font', 999 );
+	add_action( 'wp_print_styles', 'remove_google_font', 999 );
+	add_action( 'admin_enqueue_scripts', 'remove_google_font', 999 );
+	add_action( 'wp_footer', 'remove_google_font', 999 );
+	
+	add_filter( 'redux-google-fonts-api-url', function(){return false;},999);
+	
+
+
+
+function bp_custom_get_send_private_message_link($to_id,$subject=false,$message=false) {
+
+	//if user is not logged, do not prepare the link
+	if ( !is_user_logged_in() )
+		return false;
+
+	$compose_url=bp_loggedin_user_domain() . bp_get_messages_slug() . '/compose/?';
+	if($to_id)
+		$compose_url.=('r=' . bp_core_get_username( $to_id ));
+	if($subject) 
+		$compose_url.=('&subject='.$subject);
+	/*if($message)
+	$compose_url.=("&content=".$message);*/
+
+	return wp_nonce_url( $compose_url ) ;
+}

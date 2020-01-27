@@ -1051,3 +1051,10 @@ div.widget_sticky_acivity {
     padding-right: 0px !important;
 
 }
+
+#subnav.tabitems ul li {
+
+    float: left;
+    margin-right: 20px;
+
+}

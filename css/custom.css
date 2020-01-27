@@ -204,62 +204,12 @@ li#activity-filter-select {
 }
 
 
-/*** doc tree ***/
-.docs-tree{
-	position: relative;
-	margin-top: -30px; background-color: #CDD7E2;
-}
-.docs-tree, .docs-tree ul {
-	margin: 2px 0px 2px 2px;
-
-}
-.docs-tree li div, #sortableListsBase li div {
-	background-color: #ffffff;
-	padding: 7px 7px 7px 5px;
-}
-.docs-tree li, #sortableListsBase li {
-	margin: 0px 0px 0px 40px;
-	padding: 1px 0;
-	background-color: #CDD7E2;
-}
-.docs-tree-opener{
-	height: 18px;
-	margin-left: -44px;
-	margin-right: 5px;
-	margin-top: -7px;
-	padding: 7px 5px 7px 13px;
-	width: 18px;
-}
-.docs-tree li a, #sortableListsBase li a{
-	margin-left: 7px;
-	cursor: pointer;
-}
-a.docs-tree-link  .fa-file-o{
-	display: block;
-}
-#sortableListsBase li:first-of-type{
-	/*margin-top-top: -15px;*/
-
-}
-#sortableListsBase li div{
-	background-color: yellow;
-	cursor: crosshair;
-}
-.sortableListsClosed ,.docs-tree-opener .fa-minus{
-	color:  #00a6dc;
-}
-a.docs-tree-link .fa-file-o {
-	background-color: #00a6dc;
-	display: inline-block;
-	margin-right: 6px;
-	padding: 5px;
-	color: #ffffff;
-}
 
 
 /** fix missing buddyboss support for buddypress docs 1.9 **/
+
 .site .bp-docs-attachment-clip::before, .site .doc-attachment-mime-icon::before{
-	display:none;
+	
 }
 #doc-attachments-ul .doc-attachment-mime-icon::before{
 	display:block;
@@ -301,7 +251,7 @@ ul.children {
 }
 .folder-meta-info td{
 	padding:0 !important;
-	/*border-bottom: 1px solid #2e789b !important;*/
+	
 }
 .folder-meta-info .genericon-attachment{
 	display: none !important;
@@ -355,7 +305,7 @@ ul.children {
 }
 
 .directory-breadcrumb-separator::before{
-	/*font-size: 0;*/
+	
 }
 .site #buddypress div.docs-info-header {
 	margin-bottom: 8px;
@@ -425,9 +375,8 @@ h2.directory-title .breadcrumb-current 	.genericon{
 
 body {
 	color: #444;
-	font-family: "Open Sans",sans-serif;
+	font-family: "Roboto",sans-serif;
 	font-size: 13px;
-	line-height: 1.4em;
 	/*min-width: 400px;*/
 }
 body, html {
@@ -482,6 +431,11 @@ body.directory.groups.buddypress  form#groups-directory-form div.item-list-tabs 
 @media screen and (min-width: 901px){
 	#secondary.widget-area .widget_gce_widget>.inner {
 		max-width: 350px !important;
+	}
+	.single-item.groups #secondary.widget-area .widget > .inner {
+
+		max-width: unset;
+
 	}
 }
 /* end integration */

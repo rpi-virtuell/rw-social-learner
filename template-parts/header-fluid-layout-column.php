@@ -15,7 +15,8 @@ $boxed	= 'fluid';
 
             <?php } ?>
 
+<?php get_template_part( 'template-parts/header-middle-column' ); ?>
         </div><!--.header-links-->
-        <?php get_template_part( 'template-parts/header-middle-column' ); ?>
+        
    </div>
 </div><!--.left-col-->

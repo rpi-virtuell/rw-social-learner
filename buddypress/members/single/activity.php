@@ -11,32 +11,14 @@
     form#whats-new-form {
         position: inherit;
     }
-    html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#just-me-personal-li
-    {
-        display: inline !important;
-        padding-right: 10px;
-    }
-    html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#news-feed-personal-li
-    {
-        display: inline !important;
-        padding-right: 10px;
-    }
-    html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#favorites-personal-li
-    {
-        display: inline !important;
-        padding-right: 10px;
-    }
-    html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#activity-filter-select
-    {
-        display: inline !important;
-    }
+   
 </style>
-<div class="no-ajax no-hidden" id="subnav" role="navigation">
+<div class="tabitems no-ajax no-hidden" id="subnav" role="navigation"  style="display:inline;">
     <ul class="no-hidden">
 
         <?php bp_get_options_nav(); ?>
         <li id="activity-filter-select" style="float: right; z-index: 10000; padding-right: 0px;">
-            <label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
+            <label for="activity-filter-by" style="display:block!important;"><?php _e( 'Activity Filter:', 'buddypress' ); ?></label>
             <select id="activity-filter-by" class="activity-filter-by SumoUnder" multiple="multiple" >
                 <option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
@@ -56,6 +38,17 @@
     </ul>
 </div><!-- .item-list-tabs -->
 
+<div style="clear:both; border:2px solid #41759C; background-color:#ddd; padding:5px 20px; margin:40px 20px 20px; border-radius:4px; font-size:14px;" class="bp-template-notice error">
+	
+	<h4 style="margin-bottom:10px;">Datenschutzhinweis</h4>
+	Bitte beachte, dass Mitteilungen (Updates), die du hier schreibst oder auf die du antwortest auch über Suchmaschinen zusammen 
+	mit deinen Antworten gefunden werden können. Wenn du lieber eine private Nachricht versenden möchtest, klicke auf die 
+	<b style="color:#734F89; padding: 0px 3px 10px; font-size:20px; border-radius:4px;">...</b> rechts im Kopf dieser Seite und wähle "<b><a href="
+					<?php 
+						echo bp_custom_get_send_private_message_link(bp_displayed_user_id(),'','');
+						?>">Private Nachricht</a></b>".
+	
+</div>
 <?php
 
 /**

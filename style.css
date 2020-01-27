@@ -16,6 +16,32 @@ GitHub Branch:  master
 
 */
 
+.SumoSelect {
+    float: right;
+
+}
+
+.no-hidden li {
+    display: inline;
+}
+
+html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#just-me-personal-li
+{
+    display: inline !important;
+}
+html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#news-feed-personal-li
+{
+    display: inline !important;
+}
+html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#favorites-personal-li
+{
+    display: inline !important;
+}
+html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#activity-filter-select
+{
+    display: inline !important;
+}
+
 /*
 
 
@@ -68,29 +94,3 @@ of these devices. That's boss!
 
 
 */
-
-.SumoSelect {
-    float: right;
-
-}
-
-.no-hidden li {
-    display: inline;
-}
-
-html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#just-me-personal-li
-{
-    display: inline !important;
-}
-html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#news-feed-personal-li
-{
-    display: inline !important;
-}
-html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#favorites-personal-li
-{
-    display: inline !important;
-}
-html.js.csstransforms.csstransforms3d.csstransitions body.activity.bp-user.my-activity.my-account.just-me.buddypress.bbp-user-page.single.singular.bbpress.page.page-id-0.page-parent.page-template-default.logged-in.admin-bar.role-admin.has-activity.is-desktop.bp-active.left-menu-open.buddyboss-wall-active.buddyboss-media-has-photos-type.social-learner.js.customize-support div#panels.with-adminbar div#right-panel div#right-panel-inner div#main-wrap div#inner-wrap div#page.hfeed.site div#main.wrapper div.page-full-width.network-profile.my-profile div#primary.site-content div#content article div.entry-buddypress-content div#buddypress div.full-width div#item-main-content div#item-body div#subnav.no-ajax.no-hidden ul.no-hidden li#activity-filter-select
-{
-    display: inline !important;
-}
