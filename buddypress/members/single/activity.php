@@ -38,17 +38,6 @@
     </ul>
 </div><!-- .item-list-tabs -->
 
-<div style="clear:both; border:2px solid #41759C; background-color:#ddd; padding:5px 20px; margin:40px 20px 20px; border-radius:4px; font-size:14px;" class="bp-template-notice error">
-	
-	<h4 style="margin-bottom:10px;">Datenschutzhinweis</h4>
-	Bitte beachte, dass Mitteilungen (Updates), die du hier schreibst oder auf die du antwortest auch über Suchmaschinen zusammen 
-	mit deinen Antworten gefunden werden können. Wenn du lieber eine private Nachricht versenden möchtest, klicke auf die 
-	<b style="color:#734F89; padding: 0px 3px 10px; font-size:20px; border-radius:4px;">...</b> rechts im Kopf dieser Seite und wähle "<b><a href="
-					<?php 
-						echo bp_custom_get_send_private_message_link(bp_displayed_user_id(),'','');
-						?>">Private Nachricht</a></b>".
-	
-</div>
 <?php
 
 /**
@@ -59,8 +48,20 @@
 do_action( 'bp_before_member_activity_post_form' ); ?>
 
 <?php
-if ( is_user_logged_in() && bp_is_my_profile() && ( !bp_current_action() || bp_is_current_action( 'just-me' ) ) )
-    bp_get_template_part( 'activity/post-form' );
+
+if(bp_current_action()){
+	if ( is_user_logged_in() && !bp_is_my_profile() ){
+		do_action( 'bp_rw_before_friends_activity_post_form' );
+	}
+	if ( is_user_logged_in() && bp_is_my_profile() ){
+		do_action( 'bp_rw_before_activity_post_form' );
+	}
+}
+
+if ( is_user_logged_in() && bp_is_my_profile() && ( !bp_current_action() || bp_is_current_action( 'just-me' ) ) ){
+	bp_get_template_part( 'activity/post-form' );
+}
+
 
 /**
  * Fires after the display of the member activity post form.

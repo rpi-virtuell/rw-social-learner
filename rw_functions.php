@@ -900,25 +900,23 @@ add_action( 'template_redirect', 'rw_page_template_redirect' );
  * Remove all google fonts loading by redux
  */
 
-	function remove_google_font() {
-		wp_dequeue_style('redux-google-fonts-boss-options');
-		wp_dequeue_style('redux-google-fonts-boss-options-css');
-		
-		wp_deregister_style('redux-google-fonts-boss-options-css');
-		wp_deregister_style('redux-google-fonts-boss-options');
-		
-	}
+function remove_google_font() {
+    wp_dequeue_style('redux-google-fonts-boss-options');
+    wp_dequeue_style('redux-google-fonts-boss-options-css');
 
-	add_action( 'wp_head', 'remove_google_font', 999 );
-	add_action( 'wp_enqueue_scripts', 'remove_google_font', 999 );
-	add_action( 'wp_print_styles', 'remove_google_font', 999 );
-	add_action( 'admin_enqueue_scripts', 'remove_google_font', 999 );
-	add_action( 'wp_footer', 'remove_google_font', 999 );
+    wp_deregister_style('redux-google-fonts-boss-options-css');
+    wp_deregister_style('redux-google-fonts-boss-options');
+
+}
+
+add_action( 'wp_head', 'remove_google_font', 999 );
+add_action( 'wp_enqueue_scripts', 'remove_google_font', 999 );
+add_action( 'wp_print_styles', 'remove_google_font', 999 );
+add_action( 'admin_enqueue_scripts', 'remove_google_font', 999 );
+add_action( 'wp_footer', 'remove_google_font', 999 );
+
+add_filter( 'redux-google-fonts-api-url', function(){return false;},999);
 	
-	add_filter( 'redux-google-fonts-api-url', function(){return false;},999);
-	
-
-
 
 function bp_custom_get_send_private_message_link($to_id,$subject=false,$message=false) {
 
@@ -935,4 +933,202 @@ function bp_custom_get_send_private_message_link($to_id,$subject=false,$message=
 	$compose_url.=("&content=".$message);*/
 
 	return wp_nonce_url( $compose_url ) ;
+}
+
+
+/**
+ * privacy enhamcements
+ */
+function rw_new_order_pinnwand_visibility_lists($order){
+
+	$options = array(
+        "onlyme",
+		"grouponly",
+		"friends",
+        "loggedin",
+		"public"
+	);
+
+	if(bp_is_group()){
+	    $options = array("grouponly");
+    }
+
+	$new_order = array();
+
+
+	foreach ($options as $option){
+		if($order[$option]){
+			$new_order[$option] = $order[$option];
+        }
+    }
+
+
+    return $new_order;
+}
+
+add_filter('buddyboss_wall_get_visibility_lists', 'rw_new_order_pinnwand_visibility_lists');
+
+function rw_action_bp_before_profile_edit_content(  ) {
+	if( rw_is_dismissed_privacy_hint('profile') ){
+		return;
+	}
+    ?>
+    <div class="bp-template-notice privacy">
+	    <?php rw_dismiss_privacy_hints_link('profile'); ?>
+
+        <h4>Datenschutzhinweis:</h4>
+        <p>
+            Bitte beachte, dass du hinter jedem Feld, das du ausfüllst, die Möglichkeit hast, zu entscheiden,
+            wer die diese jeweilige Information sehen darf (Nur du selbst, deine Freunde, alle angemeldeten Nutzer oder jede Person internetweit).
+        </p>
+        <p>
+            Mit dem Schalter "Wechseln" kannst du einzelne Profilangaben unterschiedlich verbreiten.
+            <ul>
+                <li>"Für jeden sichtbar" bedeutet, dass meine Einzelangabe alle im Internet finden können.</li>
+                <li>"Nur für meine Freunde" bedeutet, dass nur meine Freunde meine Einzelangabe sehen können.</li>
+                <li>"Alle Mitglieder" bedeutet, dass alle mit einem Account in rpi-virtuell meine Einzelangabe sehen können.</li>
+                <li>"Nur mich" bedeutet, dass nur ich die Einzelangabe sehen kann.</li>
+            </ul>
+        Du kannst deine Einstellungen für die Verbreitung jederzeit ändern.
+        </p>
+
+    </div>
+<?php
+};
+add_action( 'bp_before_profile_edit_content', 'rw_action_bp_before_profile_edit_content', 10, 0 );
+
+// define the bp_before_profile_edit_content callback
+function rw_action_before_activity_post_form(  ) {
+	if( rw_is_dismissed_privacy_hint('mywall') ){
+		return;
+	}
+
+	?>
+    <div class="bp-template-notice privacy">
+	    <?php rw_dismiss_privacy_hints_link('mywall'); ?>
+        <h4>Datenschutzhinweis:</h4>
+        <p>
+            Bitte beachte, dass Beiträge, die du auf dieser Pinnwand schreibst oder auf die du antwortest internetweit gesehen werden können.
+            Sie sind auch über Suchmaschinen zusammen mit den Antworten auffindbar. Das gilt auch für Pinnwände von öffentlichen Gruppen.
+            Pinnwände in privaten Gruppen können nur deren Gruppenmitlieder lesen.
+        </p>
+
+    </div>
+<?php
+};
+add_action( 'bp_rw_before_activity_post_form', 'rw_action_before_activity_post_form', 10, 0 );
+
+function rw_action_before_friends_activity_post_form(  ) {
+
+    if( rw_is_dismissed_privacy_hint('freindwall') ){
+        return;
+    }
+
+	$user = get_userdata(bp_displayed_user_id());
+
+    ?>
+    <div class="bp-template-notice privacy">
+	    <?php rw_dismiss_privacy_hints_link('freindwall'); ?>
+        <h4 style="margin-bottom:10px;">Datenschutzhinweis</h4>
+	Bitte beachte, dass Mitteilungen (Updates), die du an  die öffentliche Pinnwand von <?php echo $user->display_name; ?> schreibst, auch über Suchmaschinen zusammen
+	mit deinen Antworten im Internet gefunden werden können. Wenn du lieber eine private Nachricht versenden möchtest, klicke auf die
+	<b style="color:#734F89; padding: 0px 3px 10px; font-size:20px; border-radius:4px;">...</b> rechts im Kopf dieser Seite und wähle "<b><a href="
+					<?php
+						echo bp_custom_get_send_private_message_link(bp_displayed_user_id(),'','');
+						?>">Private Nachricht</a></b>".
+
+    </div>
+<?php
+};
+add_action( 'bp_rw_before_friends_activity_post_form', 'rw_action_before_friends_activity_post_form');
+
+function rw_update_privacy_hints_red(){
+
+    if(isset($_REQUEST['have_red_privacy_hint'])){
+
+        $page = $_REQUEST['have_red_privacy_hint'];
+
+        if(in_array($page,array('profile','freindwall','mywall')));
+
+	    update_user_meta( get_current_user_id(), 'rw_have_red_privacy_hint_'.$page, 'yes' );
+
+	    echo "{'success':'true'}";
+	    die();
+    }
+
+}
+add_action( 'wp_ajax_rw_update_privacy_hints_red', 'rw_update_privacy_hints_red' );
+
+function rw_dismiss_privacy_hints_link($slug){
+
+    $ajax = "ajax_update_privacy_hints_red('$slug')";
+
+    $html = '<p class="dismiss-hint">'.
+            '<a href="#datenschutzhinweis-ausblenden" onclick="'.$ajax.'">
+             Diesen Hinweis nicht mehr anzeigen</a></p>';
+
+    echo $html;
+
+}
+function rw_is_dismissed_privacy_hint($page){
+
+    if( get_user_meta(get_current_user_id(),'rw_have_red_privacy_hint_'.$page  , true) == 'yes'){
+        return true;
+    }
+    return false;
+}
+
+remove_action( 'bp_activity_entry_meta', 'buddyboss_wall_editing_privacy', 10);
+function rw_show_activty_privacy($array) {
+	if(bp_is_group()){
+	    return;
+    }
+
+    global $activities_template;
+
+
+	if ( ( buddyboss_wall()->is_wall_privacy_enabled() ) && ( bp_get_activity_user_id() == bp_loggedin_user_id() ) ) {
+		/*
+		 * If activity is hidden sitewide, we shouldn't show activity privacy options
+	   */
+		if ( 1 == $activities_template->activity->hide_sitewide ) {
+			return;
+		}
+		if ( bp_is_group_home() ) {
+			$apply_class = 'buddyboss-group-privacy-filter';
+		} else {
+			$apply_class = '';
+		}
+		$visibility = bp_activity_get_meta( bp_get_activity_id(), 'bbwall-activity-privacy' );
+		?>
+        <a href="#" class="button bp-secondary-action buddyboss_privacy_filter <?php echo $apply_class; ?> " onclick="return buddyboss_wall_initiate_privacy_form( this );" data-activity_id="<?php bp_activity_id(); ?>" data-visibility="<?php echo $visibility; ?>" title="<?php _e( 'Privacy', 'buddyboss-wall' ); ?>">
+			<?php _e( 'Privacy', 'buddyboss-wall' ); ?>
+        </a>
+		<?php echo rw_get_privacy_label($visibility);
+
+	}elseif( buddyboss_wall()->is_wall_privacy_enabled() && $activities_template->activity->hide_sitewide != 1 ) {
+
+		$meta = bp_activity_get_meta( bp_get_activity_id() );
+		if($meta && isset($meta["bbwall-activity-privacy"])){
+			$visibility = ($meta["bbwall-activity-privacy"][0]);
+			echo rw_get_privacy_label($visibility);
+		}
+
+	}
+}
+add_action( 'bp_activity_entry_meta', 'rw_show_activty_privacy', 1 ,1);
+
+function rw_get_privacy_label ($key){
+    $values = array(
+            'friends' => 'für Freunde',
+            'onlyme' => 'nur für mich',
+            'loggedin' => 'für Angemeldete',
+            'grouponly' => 'in der Gruppe',
+            'public' => 'öffentlich'
+    );
+    $label = $values[$key];
+    if(! empty($label)){
+	    return '<i class="'.$key.'" title="'.$label.'">'. $label .' sichtbar</i> ';
+    }
+    return '';
 }

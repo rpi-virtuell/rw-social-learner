@@ -55,15 +55,46 @@
 /*
  * Added for multiple select on activity pages
  */
-jQuery( document ).ready(function() {
-	var jq = jQuery;
-	if ( undefined !== jq.cookie('bp-activity-filter') && jq('#activity-filter-select').length ) {
-		var sel = jq.cookie('bp-activity-filter');
+jQuery( document ).ready(function($) {
+
+	$('#whats-new-post-in').on('change', function () {
+
+		if($('#whats-new-post-in').val()>0){
+			$('#activity-visibility').hide();
+		}else{
+			$('#activity-visibility').show();
+		}
+
+
+	});
+	$('#whats-new-post-in-box span').html('An');
+
+	if ( undefined !== $.cookie('bp-activity-filter') && $('#activity-filter-select').length ) {
+		var sel = $.cookie('bp-activity-filter');
 		var selArr = sel.split( ',');
 		for ( i=0; i < selArr.length; i++ ) {
-			jq('#activity-filter-by option[value="' + selArr[i] + '"]').prop('selected', true);
+			$('#activity-filter-by option[value="' + selArr[i] + '"]').prop('selected', true);
 		}
 	}
-	jq('#activity-filter-by').SumoSelect( { csvDispCount:2});
+	$('#activity-filter-by').SumoSelect( { csvDispCount:2});
+
 });
+
+function ajax_update_privacy_hints_red(slug){
+	jQuery.ajax({
+		url: ajaxurl, // or example_ajax_obj.ajaxurl if using on frontend
+		data: {
+			'action': 'rw_update_privacy_hints_red',
+			'have_red_privacy_hint' : slug
+		},
+		success:function(data) {
+			// This outputs the result of the ajax request
+			console.log(data);
+			jQuery('.bp-template-notice.privacy').remove();
+		},
+		error: function(errorThrown){
+			console.log(errorThrown);
+		}
+	});
+}
 

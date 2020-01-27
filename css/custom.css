@@ -489,3 +489,41 @@ body.directory.groups #group-create-nav{
 .site #buddypress .plus-or-minus:before{
 	font-family:FontAwesome ;
 }
+.bp-template-notice.privacy{
+	clear:both;
+	border:2px solid #41759C; background-color:#ddd;
+	border-radius:4px; font-size:14px;
+
+	padding:5px 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	max-width: 800px;
+
+}
+.bp-template-notice.privacy h4{
+	margin-bottom:10px;
+}
+
+.bp-template-notice.privacy .dismiss-hint{
+	float:right;
+	width: 300px;
+	text-align: right;
+
+}
+.bp-template-notice.privacy .dismiss-hint a{
+	font-size: 13px;
+	font-style: italic;
+	color: #444;
+	text-decoration: #0080C6  underline;
+}
+.bp-template-notice.privacy ul{
+	margin: 5px 0 5px 30px;
+	padding: unset;
+	list-style: unset;
+}
+.bp-template-notice.privacy li{
+	margin: unset;
+	padding: unset;
+	list-style: unset;
+}
