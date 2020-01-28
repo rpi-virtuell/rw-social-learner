@@ -48,6 +48,10 @@
 			);
 		}
 
+		//knopf zum registrieren in der Kopfzeile erzeugen
+		if($('.register.screen-reader-shortcut').length<1){
+			$('.login').parent().append('<a href="https://konto.rpi-virtuell.de/registrieren/" class="register screen-reader-shortcut">Registrieren</a>');
+		}
 
 	});
 }( jQuery, document, window ) );
@@ -67,6 +71,7 @@ jQuery( document ).ready(function($) {
 
 
 	});
+
 	$('#whats-new-post-in-box span').html('An');
 
 	if ( undefined !== $.cookie('bp-activity-filter') && $('#activity-filter-select').length ) {
