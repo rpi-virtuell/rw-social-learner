@@ -894,18 +894,18 @@ function rw_page_template_redirect()
     //if not logged in and on a bp page except registration or activation
     if( ! is_user_logged_in()) {
 	    $url = wp_parse_url($_SERVER['REQUEST_URI']);
+	    $slug =str_replace('/','', $url["path"]);
 
 
         if ( (! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page()  )
-            //|| is_bbpress()
+            || is_bbpress()
             || bp_is_members_directory()
             || bp_is_activity_directory()
-            || str_replace('/','', $url["path"]) == bp_docs_get_docs_slug()
-            //|| (function_exists('bp_docs_is_doc_read') && bp_docs_is_doc_read())
+            ||  bp_docs_is_doc_edit() || bp_docs_is_doc_read() || bp_docs_is_doc_create() || bp_docs_is_doc_history()
             || is_search()
         )
         {
-            wp_redirect( home_url( '/' ) );
+            wp_redirect( home_url('/bitte-anmelden/').'?to='.urlencode(home_url().$_SERVER['REQUEST_URI'])  );
             exit();
         }
 
@@ -1157,3 +1157,22 @@ function rw_get_privacy_label ($key){
     return '';
 }
 
+/**
+ * shortcodes
+ */
+add_shortcode( 'bitte-anmelden', 'rw_bitte_anmelden' );
+function rw_bitte_anmelden( $atts, $content = "Anmelden" ) {
+
+	$url = $_GET['to'];
+
+	if (filter_var($url, FILTER_VALIDATE_URL,FILTER_FLAG_PATH_REQUIRED  )) {
+		$html =  '<a class="button login" href="https://gruppen.rpi-virtuell.de/wp-login.php?redirect_to='.urlencode("$url").'">'.$content.'</a>';
+	} else {
+		$html ='Bitte oben rechts auf "Anmelden" klicken';
+	}
+
+
+
+
+	return $html;
+}

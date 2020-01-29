@@ -50,7 +50,7 @@
 
 		//knopf zum registrieren in der Kopfzeile erzeugen
 		if($('.register.screen-reader-shortcut').length<1){
-			$('.login').parent().append('<a href="https://konto.rpi-virtuell.de/registrieren/" class="register screen-reader-shortcut">Registrieren</a>');
+			$('.login').parent().append('<a href="https://konto.rpi-virtuell.de/registrieren/?ref_service='+encodeURI(location.href)+'" class="register screen-reader-shortcut">Registrieren</a>');
 		}
 
 	});
